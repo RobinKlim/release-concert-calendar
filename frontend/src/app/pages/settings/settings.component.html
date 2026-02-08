@@ -80,15 +80,13 @@
             <table class="w-full text-sm">
               <thead>
                 <tr class="border-b border-gray-300 bg-gray-100">
-                  <th class="text-left px-3 py-2 font-semibold">Name</th>
-                  <th class="text-left px-3 py-2 font-semibold">Tracks</th>
+                  <th class="text-left px-3 py-2 font-semibold">Artist Name</th>
                 </tr>
               </thead>
               <tbody>
                 @for (artist of artists(); track artist.mbid; let i = $index) {
                   <tr [class.bg-gray-50]="i % 2 === 1" class="border-b border-gray-200 last:border-b-0">
                     <td class="px-3 py-2">{{ artist.name }}</td>
-                    <td class="px-3 py-2">{{ artist.track_count }}</td>
                   </tr>
                 }
               </tbody>
