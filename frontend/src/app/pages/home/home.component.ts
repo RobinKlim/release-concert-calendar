@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ApiService, Artist, Release } from '../../services/api.service';
@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   availableTypes = signal<string[]>([]);
   selectedTypes = signal<Set<string>>(new Set());
   showUpcomingOnly = signal(false);
+  showTypeDropdown = signal(false);
 
   constructor(
     private apiService: ApiService,
@@ -94,6 +95,19 @@ export class HomeComponent implements OnInit {
 
   toggleUpcomingOnly() {
     this.showUpcomingOnly.set(!this.showUpcomingOnly());
+  }
+
+  toggleTypeDropdown() {
+    this.showTypeDropdown.set(!this.showTypeDropdown());
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    // Close dropdown if clicking outside
+    if (!target.closest('.type-dropdown') && this.showTypeDropdown()) {
+      this.showTypeDropdown.set(false);
+    }
   }
 
   get filteredReleases(): Release[] {

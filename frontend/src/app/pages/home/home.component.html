@@ -44,47 +44,57 @@
         <h2 class="text-lg font-bold text-gray-900 mb-3">Releases ({{ filteredReleases.length }} / {{ releases().length }})</h2>
         
         <!-- Filters -->
-        <div class="border border-gray-300 p-4 mb-4">
-          <div class="flex items-start gap-6">
-            <!-- Type Filters -->
-            <div class="flex-1">
-              <div class="flex items-center gap-2 mb-2">
-                <span class="text-sm font-semibold text-gray-900">Type:</span>
-                <button
-                  (click)="toggleAllTypes()"
-                  class="px-2 py-1 text-xs border border-gray-400 hover:border-gray-600"
-                >
-                  {{ selectedTypes().size === availableTypes().length ? 'Deselect All' : 'Select All' }}
-                </button>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                @for (type of availableTypes(); track type) {
-                  <label class="flex items-center gap-2 text-sm cursor-pointer">
-                    <input
-                      type="checkbox"
-                      [checked]="selectedTypes().has(type)"
-                      (change)="toggleType(type)"
-                      class="cursor-pointer"
-                    />
-                    <span>{{ type }}</span>
-                  </label>
-                }
-              </div>
+        <div class="border border-gray-300 p-3 mb-4">
+          <div class="flex items-center gap-4 text-sm">
+            <span class="font-semibold">Filters:</span>
+            
+            <!-- Type Dropdown -->
+            <div class="relative type-dropdown">
+              <button
+                (click)="toggleTypeDropdown()"
+                class="px-2 py-1 border border-gray-400 hover:border-gray-600 flex items-center gap-2"
+              >
+                <span>Types ({{ selectedTypes().size }}/{{ availableTypes().length }})</span>
+                <span class="text-xs">{{ showTypeDropdown() ? '▲' : '▼' }}</span>
+              </button>
+              
+              @if (showTypeDropdown()) {
+                <div class="absolute top-full left-0 mt-1 border border-gray-400 bg-white shadow-sm z-10 min-w-[200px]">
+                  <div class="p-2 border-b border-gray-300">
+                    <button
+                      (click)="toggleAllTypes()"
+                      class="px-2 py-1 text-xs border border-gray-400 hover:border-gray-600 w-full"
+                    >
+                      {{ selectedTypes().size === availableTypes().length ? 'Deselect All' : 'Select All' }}
+                    </button>
+                  </div>
+                  <div class="p-2 max-h-60 overflow-y-auto">
+                    @for (type of availableTypes(); track type) {
+                      <label class="flex items-center gap-2 py-1 cursor-pointer hover:bg-gray-50">
+                        <input
+                          type="checkbox"
+                          [checked]="selectedTypes().has(type)"
+                          (change)="toggleType(type)"
+                          class="cursor-pointer"
+                        />
+                        <span>{{ type }}</span>
+                      </label>
+                    }
+                  </div>
+                </div>
+              }
             </div>
 
             <!-- Upcoming Filter -->
-            <div class="border-l border-gray-300 pl-6">
-              <span class="text-sm font-semibold text-gray-900 block mb-2">Filter:</span>
-              <label class="flex items-center gap-2 text-sm cursor-pointer">
-                <input
-                  type="checkbox"
-                  [checked]="showUpcomingOnly()"
-                  (change)="toggleUpcomingOnly()"
-                  class="cursor-pointer"
-                />
-                <span>Future releases only</span>
-              </label>
-            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                [checked]="showUpcomingOnly()"
+                (change)="toggleUpcomingOnly()"
+                class="cursor-pointer"
+              />
+              <span>Future only</span>
+            </label>
           </div>
         </div>
 
