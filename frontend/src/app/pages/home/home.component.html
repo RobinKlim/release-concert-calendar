@@ -41,7 +41,53 @@
     <!-- Releases -->
     @if (releases().length > 0) {
       <div>
-        <h2 class="text-lg font-bold text-gray-900 mb-3">Releases ({{ releases().length }})</h2>
+        <h2 class="text-lg font-bold text-gray-900 mb-3">Releases ({{ filteredReleases.length }} / {{ releases().length }})</h2>
+        
+        <!-- Filters -->
+        <div class="border border-gray-300 p-4 mb-4">
+          <div class="flex items-start gap-6">
+            <!-- Type Filters -->
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-sm font-semibold text-gray-900">Type:</span>
+                <button
+                  (click)="toggleAllTypes()"
+                  class="px-2 py-1 text-xs border border-gray-400 hover:border-gray-600"
+                >
+                  {{ selectedTypes().size === availableTypes().length ? 'Deselect All' : 'Select All' }}
+                </button>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                @for (type of availableTypes(); track type) {
+                  <label class="flex items-center gap-2 text-sm cursor-pointer">
+                    <input
+                      type="checkbox"
+                      [checked]="selectedTypes().has(type)"
+                      (change)="toggleType(type)"
+                      class="cursor-pointer"
+                    />
+                    <span>{{ type }}</span>
+                  </label>
+                }
+              </div>
+            </div>
+
+            <!-- Upcoming Filter -->
+            <div class="border-l border-gray-300 pl-6">
+              <span class="text-sm font-semibold text-gray-900 block mb-2">Filter:</span>
+              <label class="flex items-center gap-2 text-sm cursor-pointer">
+                <input
+                  type="checkbox"
+                  [checked]="showUpcomingOnly()"
+                  (change)="toggleUpcomingOnly()"
+                  class="cursor-pointer"
+                />
+                <span>Future releases only</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
         <div class="border border-gray-300">
           <table class="w-full text-sm">
             <thead>
@@ -54,7 +100,14 @@
               </tr>
             </thead>
             <tbody>
-              @for (release of releases(); track release.id; let i = $index) {
+              @if (filteredReleases.length === 0) {
+                <tr>
+                  <td colspan="5" class="px-3 py-6 text-center text-gray-500 text-sm">
+                    No releases match the selected filters.
+                  </td>
+                </tr>
+              }
+              @for (release of filteredReleases; track release.id; let i = $index) {
                 <tr [class.bg-gray-50]="i % 2 === 1" class="border-b border-gray-200 last:border-b-0">
                   <td class="px-3 py-2">{{ release.artist_name }}</td>
                   <td class="px-3 py-2">{{ release.title }}</td>

@@ -14,6 +14,11 @@ export class HomeComponent implements OnInit {
   releases = signal<Release[]>([]);
   loading = signal(false);
   fetching = signal(false);
+  
+  // Filters
+  availableTypes = signal<string[]>([]);
+  selectedTypes = signal<Set<string>>(new Set());
+  showUpcomingOnly = signal(false);
 
   constructor(
     private apiService: ApiService,
@@ -42,12 +47,69 @@ export class HomeComponent implements OnInit {
       next: (releases) => {
         this.releases.set(releases);
         this.loading.set(false);
+        this.updateAvailableTypes(releases);
       },
       error: (err) => {
         console.error('Error loading releases:', err);
         this.loading.set(false);
       }
     });
+  }
+
+  updateAvailableTypes(releases: Release[]) {
+    const types = new Set<string>();
+    releases.forEach(release => {
+      if (release.type) {
+        types.add(release.type);
+      }
+    });
+    this.availableTypes.set(Array.from(types).sort());
+    
+    // Initially select all types
+    if (this.selectedTypes().size === 0) {
+      this.selectedTypes.set(new Set(types));
+    }
+  }
+
+  toggleType(type: string) {
+    const current = new Set(this.selectedTypes());
+    if (current.has(type)) {
+      current.delete(type);
+    } else {
+      current.add(type);
+    }
+    this.selectedTypes.set(current);
+  }
+
+  toggleAllTypes() {
+    const current = this.selectedTypes();
+    if (current.size === this.availableTypes().length) {
+      // All selected, deselect all
+      this.selectedTypes.set(new Set());
+    } else {
+      // Some or none selected, select all
+      this.selectedTypes.set(new Set(this.availableTypes()));
+    }
+  }
+
+  toggleUpcomingOnly() {
+    this.showUpcomingOnly.set(!this.showUpcomingOnly());
+  }
+
+  get filteredReleases(): Release[] {
+    let filtered = this.releases();
+
+    // Filter by type
+    if (this.selectedTypes().size > 0) {
+      filtered = filtered.filter(r => this.selectedTypes().has(r.type));
+    }
+
+    // Filter by upcoming
+    if (this.showUpcomingOnly()) {
+      filtered = filtered.filter(r => this.isUpcoming(r.date));
+    }
+
+    return filtered;
   }
 
   fetchReleases() {
