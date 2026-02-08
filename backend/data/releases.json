@@ -7,7 +7,7 @@
     "type": "Single",
     "date": "2025-11-04",
     "year": 2025,
-    "created_at": 1770589371708
+    "created_at": 1770590524520
   },
   {
     "id": "598a1848-d43e-49fc-8948-55aa05b56698",
@@ -17,7 +17,7 @@
     "type": "Single",
     "date": "2025-08-21",
     "year": 2025,
-    "created_at": 1770589371708
+    "created_at": 1770590524520
   },
   {
     "id": "e70a18e6-0d37-44ae-8b1c-84d7852ac5d4",
@@ -27,6 +27,16 @@
     "type": "Broadcast",
     "date": "2025-12-13",
     "year": 2025,
-    "created_at": 1770589371708
+    "created_at": 1770590524520
+  },
+  {
+    "id": "c23e327b-75bb-4439-acc6-26ef5d5a81e6",
+    "artist_mbid": "abc31be8-02b2-4bb1-867d-604d50b7be78",
+    "artist_name": "L’Impératrice",
+    "title": "chrysalis",
+    "type": "Single",
+    "date": "2025-10-10",
+    "year": 2025,
+    "created_at": 1770590523642
   }
 ]

@@ -62,18 +62,13 @@ export class SettingsComponent implements OnInit {
     this.apiService.scanDirectory(this.directoryPath()).subscribe({
       next: (result) => {
         this.scanning.set(false);
-        this.success.set(`Found ${result.artists.length} artists with MusicBrainz IDs`);
+        this.success.set(`Found ${result.artists.length} artists`);
         
         // Save path to localStorage
         localStorage.setItem('musicLibraryPath', this.directoryPath());
         
         // Reload artists
         this.loadArtists();
-        
-        // Redirect to home after 2 seconds
-        setTimeout(() => {
-          this.router.navigate(['/']);
-        }, 2000);
       },
       error: (err) => {
         this.scanning.set(false);
