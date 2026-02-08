@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   releases = signal<Release[]>([]);
   loading = signal(false);
   fetching = signal(false);
+  fetchSuccess = signal(false);
   
   // Filters
   availableTypes = signal<string[]>([]);
@@ -128,17 +129,25 @@ export class HomeComponent implements OnInit {
 
   fetchReleases() {
     this.fetching.set(true);
+    this.fetchSuccess.set(false);
 
     this.apiService.fetchReleases().subscribe({
       next: (result) => {
         this.fetching.set(false);
         this.loadReleases();
         this.loadArtists();
-        alert(result.message);
+        
+        // Show success checkmark
+        this.fetchSuccess.set(true);
+        
+        // Hide after 3 seconds
+        setTimeout(() => {
+          this.fetchSuccess.set(false);
+        }, 3000);
       },
       error: (err) => {
         this.fetching.set(false);
-        alert(err.error?.error || 'Error fetching releases');
+        console.error('Error fetching releases:', err);
       }
     });
   }

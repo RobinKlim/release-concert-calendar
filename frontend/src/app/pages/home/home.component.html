@@ -12,6 +12,9 @@
           >
             {{ fetching() ? 'Fetching...' : 'Fetch Releases' }}
           </button>
+          @if (fetchSuccess()) {
+            <span class="text-green-600 font-bold">✓</span>
+          }
           <button
             (click)="goToSettings()"
             class="px-3 py-1 text-sm border border-gray-400 hover:border-gray-600"
