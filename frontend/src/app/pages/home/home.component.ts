@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
   scanning = signal(false);
   fetching = signal(false);
   error = signal('');
-  selectedView = signal<'calendar' | 'list'>('calendar');
 
   constructor(private apiService: ApiService) {}
 
@@ -88,24 +87,6 @@ export class HomeComponent implements OnInit {
         this.error.set(err.error?.error || 'Error fetching releases');
       }
     });
-  }
-
-  groupReleasesByDate() {
-    const grouped = new Map<string, Release[]>();
-    
-    for (const release of this.releases()) {
-      if (!release.date) continue;
-      
-      const date = release.date;
-      if (!grouped.has(date)) {
-        grouped.set(date, []);
-      }
-      grouped.get(date)!.push(release);
-    }
-
-    return Array.from(grouped.entries())
-      .sort(([a], [b]) => a.localeCompare(b))
-      .map(([date, releases]) => ({ date, releases }));
   }
 
   formatDate(dateString: string): string {
