@@ -8,7 +8,7 @@ A local web application that tracks upcoming releases from artists in your music
 - 🎵 Automatically detect artists from your music collection
 - 📅 Fetch upcoming releases from MusicBrainz API
 - 🎨 Clean, simple UI built with Angular and Tailwind CSS
-- 💾 Local SQLite database for caching
+- 💾 Local JSON storage for caching
 
 ## Architecture
 
@@ -20,7 +20,7 @@ A local web application that tracks upcoming releases from artists in your music
 
 ### Frontend (Angular + Tailwind)
 - Clean, responsive UI
-- Calendar and list views for releases
+- Simple list view for releases
 - Artist management
 - Directory scanning interface
 
@@ -83,9 +83,9 @@ Open your browser and navigate to `http://localhost:4200`
    - This may take a few minutes depending on the number of artists
 
 3. **View Releases**
-   - Switch between Calendar View and List View
-   - See upcoming releases highlighted
-   - Browse by date or see all releases in a list
+   - See all releases in a simple list view
+   - Upcoming releases are highlighted with a green badge
+   - Sorted chronologically
 
 ## API Endpoints
 

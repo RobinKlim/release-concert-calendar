@@ -59,9 +59,9 @@ Then open your browser to: **http://localhost:4200**
 3. Releases will appear in the calendar
 
 ### Step 3: Explore
-- Switch between **Calendar View** and **List View**
-- See upcoming releases highlighted in **green**
-- Browse releases by date
+- See all releases in a simple **list view**
+- Upcoming releases are highlighted in **green**
+- Sorted chronologically
 
 ---
 

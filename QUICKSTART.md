@@ -73,8 +73,7 @@ Open your browser and go to: **http://localhost:4200**
 
 ## Using the App
 
-- **Calendar View**: See releases grouped by date
-- **List View**: See all releases in a list
+- **Simple list view**: All releases in chronological order
 - **Upcoming releases** are highlighted in green
 - Each release shows:
   - Title
