@@ -2,7 +2,7 @@ import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from '../../services/api.service';
+import { ApiService, Artist } from '../../services/api.service';
 
 @Component({
   selector: 'app-settings',
@@ -15,6 +15,8 @@ export class SettingsComponent implements OnInit {
   scanning = signal(false);
   error = signal('');
   success = signal('');
+  artists = signal<Artist[]>([]);
+  showArtists = signal(false);
 
   constructor(
     private apiService: ApiService,
@@ -27,6 +29,24 @@ export class SettingsComponent implements OnInit {
     if (savedPath) {
       this.directoryPath.set(savedPath);
     }
+    
+    // Load artists
+    this.loadArtists();
+  }
+
+  loadArtists() {
+    this.apiService.getArtists().subscribe({
+      next: (artists) => {
+        this.artists.set(artists);
+      },
+      error: (err) => {
+        console.error('Error loading artists:', err);
+      }
+    });
+  }
+
+  toggleArtists() {
+    this.showArtists.set(!this.showArtists());
   }
 
   scanDirectory() {
@@ -46,6 +66,9 @@ export class SettingsComponent implements OnInit {
         
         // Save path to localStorage
         localStorage.setItem('musicLibraryPath', this.directoryPath());
+        
+        // Reload artists
+        this.loadArtists();
         
         // Redirect to home after 2 seconds
         setTimeout(() => {

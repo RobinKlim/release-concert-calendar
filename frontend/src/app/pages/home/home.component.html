@@ -38,31 +38,6 @@
       </div>
     }
 
-    <!-- Artists -->
-    @if (artists().length > 0) {
-      <div class="mb-6">
-        <h2 class="text-lg font-bold text-gray-900 mb-3">Artists ({{ artists().length }})</h2>
-        <div class="border border-gray-300">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="border-b border-gray-300 bg-gray-100">
-                <th class="text-left px-3 py-2 font-semibold">Name</th>
-                <th class="text-left px-3 py-2 font-semibold">Tracks</th>
-              </tr>
-            </thead>
-            <tbody>
-              @for (artist of artists(); track artist.mbid; let i = $index) {
-                <tr [class.bg-gray-50]="i % 2 === 1" class="border-b border-gray-200 last:border-b-0">
-                  <td class="px-3 py-2">{{ artist.name }}</td>
-                  <td class="px-3 py-2">{{ artist.track_count }}</td>
-                </tr>
-              }
-            </tbody>
-          </table>
-        </div>
-      </div>
-    }
-
     <!-- Releases -->
     @if (releases().length > 0) {
       <div>
