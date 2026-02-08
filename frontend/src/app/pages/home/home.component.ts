@@ -1,24 +1,24 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService, Artist, Release } from '../../services/api.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule],
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
-  directoryPath = signal('');
   artists = signal<Artist[]>([]);
   releases = signal<Release[]>([]);
   loading = signal(false);
-  scanning = signal(false);
   fetching = signal(false);
-  error = signal('');
 
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.loadArtists();
@@ -50,43 +50,25 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  scanDirectory() {
-    if (!this.directoryPath()) {
-      this.error.set('Please enter a directory path');
-      return;
-    }
-
-    this.scanning.set(true);
-    this.error.set('');
-
-    this.apiService.scanDirectory(this.directoryPath()).subscribe({
-      next: (result) => {
-        this.scanning.set(false);
-        this.loadArtists();
-        alert(`Found ${result.artists.length} artists with MusicBrainz IDs`);
-      },
-      error: (err) => {
-        this.scanning.set(false);
-        this.error.set(err.error?.error || 'Error scanning directory');
-      }
-    });
-  }
-
   fetchReleases() {
     this.fetching.set(true);
-    this.error.set('');
 
     this.apiService.fetchReleases().subscribe({
       next: (result) => {
         this.fetching.set(false);
         this.loadReleases();
+        this.loadArtists();
         alert(result.message);
       },
       error: (err) => {
         this.fetching.set(false);
-        this.error.set(err.error?.error || 'Error fetching releases');
+        alert(err.error?.error || 'Error fetching releases');
       }
     });
+  }
+
+  goToSettings() {
+    this.router.navigate(['/settings']);
   }
 
   formatDate(dateString: string): string {
