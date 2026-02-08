@@ -1,49 +1,37 @@
-<div class="min-h-screen bg-gray-50">
+<div class="min-h-screen bg-white">
   <!-- Header -->
-  <header class="bg-white shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <header class="border-b border-gray-300">
+    <div class="max-w-6xl mx-auto px-6 py-4">
       <div class="flex items-center justify-between">
-        <div>
-          <h1 class="text-3xl font-bold text-gray-900">Release Calendar</h1>
-          <p class="mt-1 text-sm text-gray-500">Track upcoming releases from your music library</p>
-        </div>
-        <div class="flex items-center gap-4">
+        <h1 class="text-xl font-bold text-gray-900">Release Calendar</h1>
+        <div class="flex items-center gap-2">
           <button
             (click)="fetchReleases()"
             [disabled]="fetching()"
-            class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-medium"
+            class="px-3 py-1 text-sm border border-gray-400 hover:border-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {{ fetching() ? 'Fetching...' : 'Fetch Releases' }}
           </button>
           <button
             (click)="goToSettings()"
-            class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+            class="px-3 py-1 text-sm border border-gray-400 hover:border-gray-600"
             title="Settings"
           >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
+            Settings
           </button>
         </div>
       </div>
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <main class="max-w-6xl mx-auto px-6 py-6">
     <!-- Empty State -->
     @if (artists().length === 0) {
-      <div class="bg-white rounded-lg shadow p-8 text-center">
-        <svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
-        </svg>
-        <h2 class="text-xl font-semibold text-gray-900 mb-2">No Artists Found</h2>
-        <p class="text-gray-600 mb-6">
-          Configure your music library path in settings to get started.
-        </p>
+      <div class="border border-gray-300 p-6 text-center">
+        <p class="text-gray-700 mb-4">No artists found. Configure your music library path in settings.</p>
         <button
           (click)="goToSettings()"
-          class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+          class="px-4 py-2 text-sm border border-gray-400 hover:border-gray-600"
         >
           Go to Settings
         </button>
@@ -52,68 +40,73 @@
 
     <!-- Artists -->
     @if (artists().length > 0) {
-      <div class="bg-white rounded-lg shadow p-6 mb-8">
-        <div class="flex items-center justify-between mb-4">
-          <div>
-            <h2 class="text-xl font-semibold text-gray-900">Your Artists</h2>
-            <p class="text-sm text-gray-500 mt-1">{{ artists().length }} artists found</p>
-          </div>
-        </div>
-
-        <!-- Artist Grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          @for (artist of artists(); track artist.mbid) {
-            <div class="p-3 bg-gray-50 rounded-lg border border-gray-200">
-              <p class="font-medium text-gray-900 text-sm truncate">{{ artist.name }}</p>
-              <p class="text-xs text-gray-500 mt-1">{{ artist.track_count }} tracks</p>
-            </div>
-          }
+      <div class="mb-6">
+        <h2 class="text-lg font-bold text-gray-900 mb-3">Artists ({{ artists().length }})</h2>
+        <div class="border border-gray-300">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-gray-300 bg-gray-100">
+                <th class="text-left px-3 py-2 font-semibold">Name</th>
+                <th class="text-left px-3 py-2 font-semibold">Tracks</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (artist of artists(); track artist.mbid; let i = $index) {
+                <tr [class.bg-gray-50]="i % 2 === 1" class="border-b border-gray-200 last:border-b-0">
+                  <td class="px-3 py-2">{{ artist.name }}</td>
+                  <td class="px-3 py-2">{{ artist.track_count }}</td>
+                </tr>
+              }
+            </tbody>
+          </table>
         </div>
       </div>
     }
 
-    <!-- Releases Section -->
+    <!-- Releases -->
     @if (releases().length > 0) {
-      <div class="bg-white rounded-lg shadow">
-        <div class="border-b border-gray-200 px-6 py-4">
-          <h2 class="text-xl font-semibold text-gray-900">Releases</h2>
-        </div>
-
-        <div class="divide-y divide-gray-200">
-          @for (release of releases(); track release.id) {
-            <div class="px-6 py-4 hover:bg-gray-50 transition-colors">
-              <div class="flex items-start justify-between">
-                <div class="flex-1">
-                  <h4 class="font-semibold text-gray-900">{{ release.title }}</h4>
-                  <p class="text-sm text-gray-600 mt-1">{{ release.artist_name }}</p>
-                </div>
-                <div class="text-right ml-4">
-                  <div class="flex items-center gap-2 justify-end mb-1">
-                    <p class="text-sm font-medium text-gray-900">{{ formatDate(release.date) }}</p>
+      <div>
+        <h2 class="text-lg font-bold text-gray-900 mb-3">Releases ({{ releases().length }})</h2>
+        <div class="border border-gray-300">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-gray-300 bg-gray-100">
+                <th class="text-left px-3 py-2 font-semibold">Artist</th>
+                <th class="text-left px-3 py-2 font-semibold">Title</th>
+                <th class="text-left px-3 py-2 font-semibold">Type</th>
+                <th class="text-left px-3 py-2 font-semibold">Date</th>
+                <th class="text-left px-3 py-2 font-semibold">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (release of releases(); track release.id; let i = $index) {
+                <tr [class.bg-gray-50]="i % 2 === 1" class="border-b border-gray-200 last:border-b-0">
+                  <td class="px-3 py-2">{{ release.artist_name }}</td>
+                  <td class="px-3 py-2">{{ release.title }}</td>
+                  <td class="px-3 py-2">{{ release.type }}</td>
+                  <td class="px-3 py-2">{{ formatDate(release.date) }}</td>
+                  <td class="px-3 py-2">
                     @if (isUpcoming(release.date)) {
-                      <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">
-                        Upcoming
-                      </span>
+                      <span class="font-semibold">Upcoming</span>
+                    } @else {
+                      <span class="text-gray-500">Released</span>
                     }
-                  </div>
-                  <span class="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">
-                    {{ release.type }}
-                  </span>
-                </div>
-              </div>
-            </div>
-          }
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
         </div>
       </div>
     } @else if (artists().length > 0 && !loading()) {
-      <div class="bg-white rounded-lg shadow p-8 text-center">
-        <p class="text-gray-600">No releases found. Click "Fetch Releases" to get data from MusicBrainz.</p>
+      <div class="border border-gray-300 p-6 text-center">
+        <p class="text-gray-700">No releases found. Click "Fetch Releases" to get data from MusicBrainz.</p>
       </div>
     }
 
     @if (loading()) {
-      <div class="bg-white rounded-lg shadow p-8 text-center">
-        <p class="text-gray-600">Loading releases...</p>
+      <div class="border border-gray-300 p-6 text-center">
+        <p class="text-gray-700">Loading releases...</p>
       </div>
     }
   </main>
