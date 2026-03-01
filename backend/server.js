@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
@@ -24,6 +24,13 @@ app.use('/api/releases', releaseRoutes);
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
+});
+
+// Serve Angular frontend (for Electron/production)
+const frontendPath = process.env.FRONTEND_BUILD_PATH || join(__dirname, '../frontend/dist/frontend/browser');
+app.use(express.static(frontendPath));
+app.get('*', (req, res) => {
+  res.sendFile(join(frontendPath, 'index.html'));
 });
 
 app.listen(PORT, () => {

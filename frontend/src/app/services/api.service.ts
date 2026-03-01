@@ -28,7 +28,9 @@ export interface ScanResult {
   providedIn: 'root'
 })
 export class ApiService {
-  private readonly API_URL = 'http://localhost:3000/api';
+  private readonly API_URL = window.location.port === '4200'
+    ? 'http://localhost:3000/api'
+    : `${window.location.origin}/api`;
 
   constructor(private http: HttpClient) {}
 
