@@ -1,13 +1,15 @@
-import { Component, OnInit, signal, HostListener } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ApiService, Artist, Release } from '../../services/api.service';
 import { HeaderComponent } from '../../components/header/header.component';
+import { VinylSpinnerComponent } from '../../components/vinyl-spinner/vinyl-spinner.component';
+import { ReleaseTableComponent } from '../../components/release-table/release-table.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderComponent],
+  imports: [CommonModule, HeaderComponent, VinylSpinnerComponent, ReleaseTableComponent],
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
@@ -15,12 +17,10 @@ export class HomeComponent implements OnInit {
   releases = signal<Release[]>([]);
   loading = signal(false);
   fetching = signal(false);
-  fetchSuccess = signal(false);
 
   // Type filter
   availableTypes = signal<string[]>([]);
   selectedTypes = signal<Set<string>>(new Set());
-  showTypeDropdown = signal(false);
 
   constructor(
     private apiService: ApiService,
@@ -29,7 +29,24 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.loadArtists();
-    this.loadReleases();
+    this.loadReleasesAndFetch();
+  }
+
+  loadReleasesAndFetch() {
+    this.loading.set(true);
+    this.apiService.getAllReleases().subscribe({
+      next: (releases) => {
+        this.releases.set(releases);
+        this.updateAvailableTypes(releases);
+
+        // Auto-fetch from MusicBrainz after loading cached releases
+        this.fetchReleases();
+      },
+      error: (err) => {
+        console.error('Error loading releases:', err);
+        this.loading.set(false);
+      }
+    });
   }
 
   loadArtists() {
@@ -92,18 +109,6 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  toggleTypeDropdown() {
-    this.showTypeDropdown.set(!this.showTypeDropdown());
-  }
-
-  @HostListener('document:click', ['$event'])
-  onDocumentClick(event: MouseEvent) {
-    const target = event.target as HTMLElement;
-    if (!target.closest('.type-dropdown') && this.showTypeDropdown()) {
-      this.showTypeDropdown.set(false);
-    }
-  }
-
   get upcomingReleases(): Release[] {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -126,24 +131,17 @@ export class HomeComponent implements OnInit {
 
   fetchReleases() {
     this.fetching.set(true);
-    this.fetchSuccess.set(false);
 
     this.apiService.fetchReleases().subscribe({
       next: (result) => {
         this.fetching.set(false);
+        this.loading.set(false);
         this.loadReleases();
         this.loadArtists();
-
-        // Show success checkmark
-        this.fetchSuccess.set(true);
-
-        // Hide after 3 seconds
-        setTimeout(() => {
-          this.fetchSuccess.set(false);
-        }, 3000);
       },
       error: (err) => {
         this.fetching.set(false);
+        this.loading.set(false);
         console.error('Error fetching releases:', err);
       }
     });
@@ -151,26 +149,5 @@ export class HomeComponent implements OnInit {
 
   goToSettings() {
     this.router.navigate(['/settings']);
-  }
-
-  formatDate(dateString: string): string {
-    const date = new Date(dateString);
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const year = date.getFullYear();
-    return `${day}.${month}.${year}`;
-  }
-
-  daysUntilRelease(dateString: string): string {
-    const releaseDate = new Date(dateString);
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    releaseDate.setHours(0, 0, 0, 0);
-
-    const diffTime = releaseDate.getTime() - today.getTime();
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-    if (diffDays === 0) return 'Today';
-    return `${diffDays}`;
   }
 }

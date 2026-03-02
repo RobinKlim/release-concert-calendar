@@ -1,0 +1,27 @@
+<table class="w-full text-sm text-white table-fixed">
+  <thead>
+    <tr class="border-b bg-amber-700">
+      <th class="text-left px-3 py-2 font-semibold w-[25%]">Artist</th>
+      <th class="text-left px-3 py-2 font-semibold w-[35%]">Title</th>
+      <th class="text-left px-3 py-2 font-semibold w-[15%]">Type</th>
+      <th class="text-left px-3 py-2 font-semibold w-[15%]">Date</th>
+      <th class="text-left px-3 py-2 font-semibold w-[10%]">Days</th>
+    </tr>
+  </thead>
+  <tbody>
+    @if (releases.length === 0) {
+      <tr>
+        <td colspan="5" class="px-3 py-4 text-center text-gray-500">No releases</td>
+      </tr>
+    }
+    @for (release of releases; track release.id; let i = $index) {
+      <tr [class.bg-gray-50]="i % 2 === 1" class="border-b border-gray-200 text-gray-900 last:border-b-0">
+        <td class="px-3 py-2">{{ release.artist_name }}</td>
+        <td class="px-3 py-2">{{ release.title }}</td>
+        <td class="px-3 py-2">{{ release.type }}</td>
+        <td class="px-3 py-2">{{ formatDate(release.date) }}</td>
+        <td class="px-3 py-2">{{ daysUntilRelease(release.date) }}</td>
+      </tr>
+    }
+  </tbody>
+</table>

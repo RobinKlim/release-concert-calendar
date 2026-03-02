@@ -1,18 +1,15 @@
-<div class="min-h-screen bg-white">
-  <app-header title="Release Calendar">
-    <button
-      (click)="fetchReleases()"
-      [disabled]="fetching()"
-      class="px-3 py-2 text-sm border bg-gray-100 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-    >
-      {{ fetching() ? 'Fetching...' : 'Fetch Releases' }}
-    </button>
-    @if (fetchSuccess()) {
-      <span class="text-green-600 font-bold">✓</span>
-    }
+<div class="min-h-screen bg-gray-50">
+  <!-- Loading Overlay -->
+  @if (loading() || fetching()) {
+    <div class="fixed inset-0 bg-white/80 z-50 flex items-center justify-center">
+      <app-vinyl-spinner></app-vinyl-spinner>
+    </div>
+  }
+
+  <app-header title="Robins Musicbox ♥">
     <button
       (click)="goToSettings()"
-      class="px-3 py-2 text-sm border bg-gray-100 hover:bg-gray-50"
+      class="px-3 py-2 text-sm border bg-gray-50 hover:bg-gray-100"
       title="Settings"
     >
       Settings
@@ -40,104 +37,36 @@
           <h2 class="text-lg font-bold text-gray-900">Upcoming ({{ upcomingReleases.length }})</h2>
 
           <!-- Type Filter -->
-          <div class="relative type-dropdown">
+          <div class="flex items-center gap-4">
             <button
-              (click)="toggleTypeDropdown()"
-              class="px-2 py-1 text-sm border border-gray-400 hover:border-gray-600 flex items-center gap-2"
+              (click)="toggleAllTypes()"
+              class="px-2 py-1 text-xs border border-gray-400 hover:border-gray-600"
             >
-              <span>Types ({{ selectedTypes().size }}/{{ availableTypes().length }})</span>
-              <span class="text-xs">{{ showTypeDropdown() ? '▲' : '▼' }}</span>
+              {{ selectedTypes().size === availableTypes().length ? 'Deselect All' : 'Select All' }}
             </button>
-
-            @if (showTypeDropdown()) {
-              <div class="absolute top-full right-0 mt-1 border border-gray-400 bg-white shadow-sm z-10 min-w-[200px]">
-                <div class="p-2 border-b border-gray-300">
-                  <button
-                    (click)="toggleAllTypes()"
-                    class="px-2 py-1 text-xs border border-gray-400 hover:border-gray-600 w-full"
-                  >
-                    {{ selectedTypes().size === availableTypes().length ? 'Deselect All' : 'Select All' }}
-                  </button>
-                </div>
-                <div class="p-2 max-h-60 overflow-y-auto">
-                  @for (type of availableTypes(); track type) {
-                    <label class="flex items-center gap-2 py-1 cursor-pointer hover:bg-gray-50">
-                      <input
-                        type="checkbox"
-                        [checked]="selectedTypes().has(type)"
-                        (change)="toggleType(type)"
-                        class="cursor-pointer"
-                      />
-                      <span>{{ type }}</span>
-                    </label>
-                  }
-                </div>
-              </div>
-            }
+            <div class="flex items-center gap-3">
+              @for (type of availableTypes(); track type) {
+                <label class="flex items-center gap-1 cursor-pointer text-sm">
+                  <input
+                    type="checkbox"
+                    [checked]="selectedTypes().has(type)"
+                    (change)="toggleType(type)"
+                    class="cursor-pointer"
+                  />
+                  <span>{{ type }}</span>
+                </label>
+              }
+            </div>
           </div>
         </div>
 
-        <div class="border border-gray-300">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="border-b border-gray-300 bg-gray-100">
-                <th class="text-left px-3 py-2 font-semibold">Artist</th>
-                <th class="text-left px-3 py-2 font-semibold">Title</th>
-                <th class="text-left px-3 py-2 font-semibold">Type</th>
-                <th class="text-left px-3 py-2 font-semibold">Date</th>
-                <th class="text-left px-3 py-2 font-semibold">Days</th>
-              </tr>
-            </thead>
-            <tbody>
-              @if (upcomingReleases.length === 0) {
-                <tr>
-                  <td colspan="5" class="px-3 py-4 text-center text-gray-500">No upcoming releases</td>
-                </tr>
-              }
-              @for (release of upcomingReleases; track release.id; let i = $index) {
-                <tr [class.bg-gray-50]="i % 2 === 1" class="border-b border-gray-200 last:border-b-0">
-                  <td class="px-3 py-2">{{ release.artist_name }}</td>
-                  <td class="px-3 py-2">{{ release.title }}</td>
-                  <td class="px-3 py-2">{{ release.type }}</td>
-                  <td class="px-3 py-2">{{ formatDate(release.date) }}</td>
-                  <td class="px-3 py-2">{{ daysUntilRelease(release.date) }}</td>
-                </tr>
-              }
-            </tbody>
-          </table>
-        </div>
+        <app-release-table [releases]="upcomingReleases" [showDaysUntil]="true"></app-release-table>
       </div>
 
       <!-- Past Releases -->
       <div>
         <h2 class="text-lg font-bold text-gray-900 mb-3">Past Releases ({{ pastReleases.length }})</h2>
-        <div class="border border-gray-300">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="border-b border-gray-300 bg-gray-100">
-                <th class="text-left px-3 py-2 font-semibold">Artist</th>
-                <th class="text-left px-3 py-2 font-semibold">Title</th>
-                <th class="text-left px-3 py-2 font-semibold">Type</th>
-                <th class="text-left px-3 py-2 font-semibold">Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              @if (pastReleases.length === 0) {
-                <tr>
-                  <td colspan="4" class="px-3 py-4 text-center text-gray-500">No past releases</td>
-                </tr>
-              }
-              @for (release of pastReleases; track release.id; let i = $index) {
-                <tr [class.bg-gray-50]="i % 2 === 1" class="border-b border-gray-200 last:border-b-0">
-                  <td class="px-3 py-2">{{ release.artist_name }}</td>
-                  <td class="px-3 py-2">{{ release.title }}</td>
-                  <td class="px-3 py-2">{{ release.type }}</td>
-                  <td class="px-3 py-2">{{ formatDate(release.date) }}</td>
-                </tr>
-              }
-            </tbody>
-          </table>
-        </div>
+        <app-release-table [releases]="pastReleases" [showDaysUntil]="false"></app-release-table>
       </div>
     }
 
@@ -147,10 +76,5 @@
       </div>
     }
 
-    @if (loading()) {
-      <div class="border border-gray-300 p-6 text-center">
-        <p class="text-gray-700">Loading releases...</p>
-      </div>
-    }
   </main>
 </div>
