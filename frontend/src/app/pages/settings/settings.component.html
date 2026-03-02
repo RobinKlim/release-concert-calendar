@@ -1,18 +1,12 @@
 <div class="min-h-screen bg-white">
-  <!-- Header -->
-  <header class="border-b border-gray-300">
-    <div class="max-w-6xl mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        <h1 class="text-xl font-bold text-gray-900">Settings</h1>
-        <button
-          (click)="goBack()"
-          class="px-3 py-1 text-sm border border-gray-400 hover:border-gray-600"
-        >
-          Back
-        </button>
-      </div>
-    </div>
-  </header>
+  <app-header title="Settings">
+    <button
+      (click)="goBack()"
+      class="px-3 py-2 text-sm border bg-gray-100 hover:bg-gray-50"
+    >
+      Back
+    </button>
+  </app-header>
 
   <main class="max-w-4xl mx-auto px-6 py-6">
     <!-- Music Library Path -->

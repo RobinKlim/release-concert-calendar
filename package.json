@@ -55,7 +55,8 @@
           "target": "dmg",
           "arch": ["arm64"]
         }
-      ]
+      ],
+      "icon": "assets/icon.icns"
     },
     "linux": {
       "target": [
@@ -68,7 +69,8 @@
           "arch": ["x64"]
         }
       ],
-      "category": "Audio"
+      "category": "Audio",
+      "icon": "assets/icon.png"
     },
     "npmRebuild": true,
     "asar": false
