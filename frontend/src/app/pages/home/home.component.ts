@@ -15,11 +15,10 @@ export class HomeComponent implements OnInit {
   loading = signal(false);
   fetching = signal(false);
   fetchSuccess = signal(false);
-  
-  // Filters
+
+  // Type filter
   availableTypes = signal<string[]>([]);
   selectedTypes = signal<Set<string>>(new Set());
-  showUpcomingOnly = signal(false);
   showTypeDropdown = signal(false);
 
   constructor(
@@ -66,10 +65,10 @@ export class HomeComponent implements OnInit {
       }
     });
     this.availableTypes.set(Array.from(types).sort());
-    
-    // Initially select all types
+
+    // Initially select only Album
     if (this.selectedTypes().size === 0) {
-      this.selectedTypes.set(new Set(types));
+      this.selectedTypes.set(new Set(['Album']));
     }
   }
 
@@ -86,16 +85,10 @@ export class HomeComponent implements OnInit {
   toggleAllTypes() {
     const current = this.selectedTypes();
     if (current.size === this.availableTypes().length) {
-      // All selected, deselect all
       this.selectedTypes.set(new Set());
     } else {
-      // Some or none selected, select all
       this.selectedTypes.set(new Set(this.availableTypes()));
     }
-  }
-
-  toggleUpcomingOnly() {
-    this.showUpcomingOnly.set(!this.showUpcomingOnly());
   }
 
   toggleTypeDropdown() {
@@ -105,26 +98,29 @@ export class HomeComponent implements OnInit {
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
     const target = event.target as HTMLElement;
-    // Close dropdown if clicking outside
     if (!target.closest('.type-dropdown') && this.showTypeDropdown()) {
       this.showTypeDropdown.set(false);
     }
   }
 
-  get filteredReleases(): Release[] {
-    let filtered = this.releases();
+  get upcomingReleases(): Release[] {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
-    // Filter by type
-    if (this.selectedTypes().size > 0) {
-      filtered = filtered.filter(r => this.selectedTypes().has(r.type));
-    }
+    return this.releases()
+      .filter(r => new Date(r.date) >= today)
+      .filter(r => this.selectedTypes().has(r.type))
+      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  }
 
-    // Filter by upcoming
-    if (this.showUpcomingOnly()) {
-      filtered = filtered.filter(r => this.isUpcoming(r.date));
-    }
+  get pastReleases(): Release[] {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
-    return filtered;
+    return this.releases()
+      .filter(r => new Date(r.date) < today)
+      .filter(r => this.selectedTypes().has(r.type))
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }
 
   fetchReleases() {
@@ -136,10 +132,10 @@ export class HomeComponent implements OnInit {
         this.fetching.set(false);
         this.loadReleases();
         this.loadArtists();
-        
+
         // Show success checkmark
         this.fetchSuccess.set(true);
-        
+
         // Hide after 3 seconds
         setTimeout(() => {
           this.fetchSuccess.set(false);
@@ -158,14 +154,22 @@ export class HomeComponent implements OnInit {
 
   formatDate(dateString: string): string {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    });
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;
   }
 
-  isUpcoming(dateString: string): boolean {
-    return new Date(dateString) >= new Date();
+  daysUntilRelease(dateString: string): string {
+    const releaseDate = new Date(dateString);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    releaseDate.setHours(0, 0, 0, 0);
+
+    const diffTime = releaseDate.getTime() - today.getTime();
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 0) return 'Today';
+    return `${diffDays}`;
   }
 }

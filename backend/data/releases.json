@@ -7,7 +7,7 @@
     "type": "Single",
     "date": "2025-11-04",
     "year": 2025,
-    "created_at": 1772187281387
+    "created_at": 1772445618802
   },
   {
     "id": "598a1848-d43e-49fc-8948-55aa05b56698",
@@ -27,7 +27,7 @@
     "type": "Broadcast",
     "date": "2025-12-13",
     "year": 2025,
-    "created_at": 1772187281387
+    "created_at": 1772445618802
   },
   {
     "id": "c23e327b-75bb-4439-acc6-26ef5d5a81e6",
@@ -37,7 +37,7 @@
     "type": "Single",
     "date": "2025-10-10",
     "year": 2025,
-    "created_at": 1772187280537
+    "created_at": 1772445617767
   },
   {
     "id": "fbe4e8af-572e-46b9-ae35-95da31089b9f",
@@ -47,6 +47,36 @@
     "type": "Single",
     "date": "2026-01-29",
     "year": 2026,
-    "created_at": 1772186462398
+    "created_at": 1772445615839
+  },
+  {
+    "id": "12ad825e-eeab-4bcc-afb0-b4f362170ff6",
+    "artist_mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
+    "artist_name": "James Blake",
+    "title": "Death of Love",
+    "type": "Single",
+    "date": "2026-01-22",
+    "year": 2026,
+    "created_at": 1772445616802
+  },
+  {
+    "id": "7e425ff2-c85a-4316-b015-d1546aadc186",
+    "artist_mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
+    "artist_name": "James Blake",
+    "title": "Trying Times",
+    "type": "Album",
+    "date": "2026-03-13",
+    "year": 2026,
+    "created_at": 1772445616802
+  },
+  {
+    "id": "8768b4e4-1725-4fd4-9a16-2dd2ae6e619e",
+    "artist_mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
+    "artist_name": "James Blake",
+    "title": "I Had a Dream She Took My Hand",
+    "type": "Single",
+    "date": "2026-02-12",
+    "year": 2026,
+    "created_at": 1772445616802
   }
 ]

@@ -2,6 +2,11 @@
   "name": "release-concert-calendar",
   "version": "1.0.0",
   "description": "Desktop app to track music releases and concerts",
+  "author": {
+    "name": "Robin Klimczak",
+    "email": "klimczak.robin@gmail.com"
+  },
+  "homepage": "https://github.com/robinklimczak/release-concert-calendar",
   "main": "electron/main.js",
   "private": true,
   "scripts": {
@@ -33,7 +38,8 @@
       "frontend/dist/**/*",
       "node_modules/**/*",
       "!backend/node_modules/**/*",
-      "!frontend/node_modules/**/*"
+      "!frontend/node_modules/**/*",
+      "!music-library/**/*"
     ],
     "extraResources": [
       {
@@ -53,8 +59,14 @@
     },
     "linux": {
       "target": [
-        "AppImage",
-        "deb"
+        {
+          "target": "AppImage",
+          "arch": ["x64"]
+        },
+        {
+          "target": "deb",
+          "arch": ["x64"]
+        }
       ],
       "category": "Audio"
     },

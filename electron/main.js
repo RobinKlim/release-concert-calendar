@@ -69,7 +69,7 @@ async function startBackend() {
   // Set environment variables before importing the backend
   process.env.DATA_DIR = dataDir;
   process.env.FRONTEND_BUILD_PATH = frontendPath;
-  process.env.PORT = '3000';
+  process.env.PORT = '47291';
 
   // Dynamically import the ES module backend (this starts the server)
   try {
@@ -93,7 +93,7 @@ function createWindow() {
 
   // Wait for backend to start, then load the app
   setTimeout(() => {
-    mainWindow.loadURL('http://localhost:3000');
+    mainWindow.loadURL('http://localhost:47291');
   }, 1000);
 
   mainWindow.on('closed', () => {
