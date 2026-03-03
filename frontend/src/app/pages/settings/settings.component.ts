@@ -4,14 +4,23 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService, Artist } from '../../services/api.service';
 import { HeaderComponent } from '../../components/header/header.component';
+import { PageContainer } from '../../components/page-container/page-container';
 
 @Component({
   selector: 'app-settings',
   standalone: true,
-  imports: [CommonModule, FormsModule, HeaderComponent],
+  imports: [CommonModule, FormsModule, HeaderComponent, PageContainer],
   templateUrl: './settings.component.html'
 })
 export class SettingsComponent implements OnInit {
+  selectedSection = signal<'music-library' | 'concerts' | 'style'>('music-library');
+  
+  navigationItems = [
+    { id: 'music-library' as const, label: 'Music Library Path', isLast: false },
+    { id: 'concerts' as const, label: 'Concerts', isLast: false },
+    { id: 'style' as const, label: 'Style', isLast: true }
+  ];
+  
   directoryPath = signal('');
   scanning = signal(false);
   error = signal('');
@@ -76,9 +85,5 @@ export class SettingsComponent implements OnInit {
         this.error.set(err.error?.error || 'Error scanning directory');
       }
     });
-  }
-
-  goBack() {
-    this.router.navigate(['/']);
   }
 }

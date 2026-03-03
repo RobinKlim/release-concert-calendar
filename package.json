@@ -14,7 +14,9 @@
     "electron:build": "npm run build:frontend && electron-builder",
     "electron:build:mac": "npm run build:frontend && electron-builder --mac",
     "electron:build:linux": "npm run build:frontend && electron-builder --linux",
-    "build:frontend": "cd frontend && npm run build"
+    "build:frontend": "cd frontend && npm run build",
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && npm start"
   },
   "dependencies": {
     "express": "^4.18.2",

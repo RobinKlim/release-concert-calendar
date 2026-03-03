@@ -1,10 +1,6 @@
-<div class="min-h-screen bg-gray-50">
+<div class="min-h-screen">
   <!-- Loading Overlay -->
-  @if (loading() || fetching()) {
-    <div class="fixed inset-0 bg-white/80 z-50 flex items-center justify-center">
-      <app-vinyl-spinner></app-vinyl-spinner>
-    </div>
-  }
+  <app-loading-overlay [show]="loading() || fetching()"></app-loading-overlay>
 
   <app-header title="Robins Musicbox ♥">
     <button
@@ -16,7 +12,7 @@
     </button>
   </app-header>
 
-  <main class="max-w-6xl mx-auto px-6 py-6">
+  <app-page-container>
     <!-- Empty State -->
     @if (artists().length === 0) {
       <div class="border border-gray-300 p-6 text-center">
@@ -76,5 +72,5 @@
       </div>
     }
 
-  </main>
+  </app-page-container>
 </div>

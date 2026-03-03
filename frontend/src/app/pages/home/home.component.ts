@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ApiService, Artist, Release } from '../../services/api.service';
 import { HeaderComponent } from '../../components/header/header.component';
-import { VinylSpinnerComponent } from '../../components/vinyl-spinner/vinyl-spinner.component';
+import { LoadingOverlay } from '../../components/loading-overlay/loading-overlay';
 import { ReleaseTableComponent } from '../../components/release-table/release-table.component';
+import { PageContainer } from '../../components/page-container/page-container';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, VinylSpinnerComponent, ReleaseTableComponent],
+  imports: [CommonModule, HeaderComponent, LoadingOverlay, ReleaseTableComponent, PageContainer],
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {

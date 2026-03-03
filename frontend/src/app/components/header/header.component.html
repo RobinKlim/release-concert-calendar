@@ -1,7 +1,15 @@
-<header class="border-b border-gray-300 bg-amber-700">
-  <div class="max-w-6xl mx-auto px-6 py-4">
+<header class= "bg-amber-600 relative overflow-hidden">
+  <app-ambient-glow></app-ambient-glow>
+
+  <div class="max-w-6xl mx-auto px-6 py-4 relative">
     <div class="flex items-center justify-between">
-      <h1 class="text-2xl text-gray-100" style="font-family: 'Molle', cursive; font-style: italic;">{{ title }}</h1>
+      <button
+        (click)="navigateHome()"
+        class="text-3xl text-gray-100 cursor-pointer"
+        style="font-family: 'Molle', cursive; font-style: italic;"
+      >
+        {{ title }}
+      </button>
       <div class="flex items-center gap-2">
         <ng-content></ng-content>
       </div>

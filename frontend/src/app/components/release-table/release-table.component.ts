@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Release } from '../../services/api.service';
+import { AmbientGlowComponent } from '../ambient-glow/ambient-glow.component';
 
 @Component({
   selector: 'app-release-table',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AmbientGlowComponent],
   templateUrl: './release-table.component.html'
 })
 export class ReleaseTableComponent {
