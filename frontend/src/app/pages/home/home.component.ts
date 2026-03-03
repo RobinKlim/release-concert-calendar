@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { ApiService, Artist, Release } from '../../services/api.service';
 import { HeaderComponent } from '../../components/header/header.component';
 import { LoadingOverlay } from '../../components/loading-overlay/loading-overlay';
@@ -11,7 +11,7 @@ import { PageContainer } from '../../components/page-container/page-container';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, LoadingOverlay, ReleaseTableComponent, PageContainer],
+  imports: [CommonModule, RouterLink, HeaderComponent, LoadingOverlay, ReleaseTableComponent, PageContainer],
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit, OnDestroy {
@@ -25,10 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   availableTypes = signal<string[]>([]);
   selectedTypes = signal<Set<string>>(new Set());
 
-  constructor(
-    private apiService: ApiService,
-    private router: Router
-  ) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
     this.loadArtists();
@@ -157,7 +154,4 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
 
-  goToSettings() {
-    this.router.navigate(['/settings']);
-  }
 }

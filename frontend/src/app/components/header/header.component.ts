@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AmbientGlowComponent } from '../ambient-glow/ambient-glow.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, AmbientGlowComponent],
+  imports: [CommonModule, RouterLink, RouterLinkActive, AmbientGlowComponent],
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-  constructor(private router: Router) {}
-
-  navigateHome() {
-    this.router.navigate(['/']);
-  }
+  navItems = [
+    { label: 'Releases', path: '/', exact: true },
+    { label: 'Concerts', path: '/concerts', exact: false },
+    { label: 'Settings', path: '/settings', exact: false },
+  ];
 }

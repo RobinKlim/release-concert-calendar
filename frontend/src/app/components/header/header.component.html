@@ -1,18 +1,24 @@
-<header class= "bg-amber-600 relative overflow-hidden">
+<header class= "bg-amber-600 relative">
   <app-ambient-glow></app-ambient-glow>
 
   <div class="max-w-6xl mx-auto px-6 py-4 relative">
     <div class="flex items-center justify-between ">
-      <button
-        (click)="navigateHome()"
-        class="group text-5xl text-gray-100 cursor-pointer pr-2"
+      <a
+        routerLink="/"
+        class="group text-5xl text-gray-100 cursor-pointer pr-2 no-underline"
         style="font-family: 'Molle', cursive; font-style: italic; text-shadow: -4px 4px 0 #3b82f6;"
       >Robins Musicbox <span class="inline-block group-hover:animate-bounce">♥</span>
-      </button>
-      <div class="flex items-center gap-2">
-        <ng-content></ng-content>
-      </div>
-
+      </a>
+      <nav class="flex items-center gap-2">
+        @for (item of navItems; track item.path) {
+          <a
+            [routerLink]="item.path"
+            routerLinkActive=" font-semibold [box-shadow:-4px_4px_0_#3b82f6]"
+            [routerLinkActiveOptions]="{ exact: item.exact }"
+            class="px-3 py-2 text-sm border bg-gray-50 hover:bg-gray-100 no-underline text-gray-900 inline-block hover:[box-shadow:-4px_4px_0_#3b82f6]"
+          >{{ item.label }}</a>
+        }
+      </nav>
     </div>
   </div>
 </header>
