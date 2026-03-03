@@ -1,4 +1,5 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ApiService, Artist, Release } from '../../services/api.service';
@@ -13,11 +14,12 @@ import { PageContainer } from '../../components/page-container/page-container';
   imports: [CommonModule, HeaderComponent, LoadingOverlay, ReleaseTableComponent, PageContainer],
   templateUrl: './home.component.html'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   artists = signal<Artist[]>([]);
   releases = signal<Release[]>([]);
   loading = signal(false);
   fetching = signal(false);
+  private sseSub?: Subscription;
 
   // Type filter
   availableTypes = signal<string[]>([]);
@@ -31,6 +33,15 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.loadArtists();
     this.loadReleasesAndFetch();
+
+    this.sseSub = this.apiService.listenToEvents().subscribe(() => {
+      this.loadArtists();
+      this.loadReleases();
+    });
+  }
+
+  ngOnDestroy() {
+    this.sseSub?.unsubscribe();
   }
 
   loadReleasesAndFetch() {
@@ -39,9 +50,7 @@ export class HomeComponent implements OnInit {
       next: (releases) => {
         this.releases.set(releases);
         this.updateAvailableTypes(releases);
-
-        // Auto-fetch from MusicBrainz after loading cached releases
-        this.fetchReleases();
+        this.loading.set(false);
       },
       error: (err) => {
         console.error('Error loading releases:', err);

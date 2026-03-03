@@ -68,7 +68,38 @@
 
     @if (artists().length > 0 && !loading() && releases().length === 0) {
       <div class="border border-gray-300 p-6 text-center">
-        <p class="text-gray-700">No releases found. Click "Fetch Releases" to get data from MusicBrainz.</p>
+        <p class="text-gray-700">No releases found. Releases are fetched automatically in the background.</p>
+      </div>
+    }
+
+    <!-- Artists -->
+    @if (artists().length > 0) {
+      <div class="mt-8">
+        <h2 class="text-lg font-bold text-gray-900 mb-3">Artists ({{ artists().length }})</h2>
+        <table class="w-full border-collapse border border-gray-300 text-sm">
+          <thead>
+            <tr class="bg-gray-50">
+              <th class="border border-gray-300 px-3 py-2 text-left">Name</th>
+
+              <th class="border border-gray-300 px-3 py-2 text-left">Last Fetched</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (artist of artists(); track artist.mbid) {
+              <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 px-3 py-2">{{ artist.name }}</td>
+
+                <td class="border border-gray-300 px-3 py-2">
+                  @if (artist.last_updated) {
+                    {{ artist.last_updated | date:'short' }}
+                  } @else {
+                    <span class="text-gray-400">Pending</span>
+                  }
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
       </div>
     }
 

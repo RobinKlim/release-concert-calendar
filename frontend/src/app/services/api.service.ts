@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { NgZone } from '@angular/core';
 
 export interface Artist {
   mbid: string;
   name: string;
-  track_count: number;
+
   last_updated?: number;
 }
 
@@ -32,7 +33,7 @@ export class ApiService {
     ? 'http://localhost:3000/api'
     : `${window.location.origin}/api`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private zone: NgZone) {}
 
   scanDirectory(path: string): Observable<ScanResult> {
     return this.http.post<ScanResult>(`${this.API_URL}/scan`, { path });
@@ -60,5 +61,28 @@ export class ApiService {
 
   fetchReleases(artistMbid?: string): Observable<any> {
     return this.http.post(`${this.API_URL}/releases/fetch`, { artistMbid });
+  }
+
+  listenToEvents(): Observable<{ mbid: string; name: string }> {
+    return new Observable(subscriber => {
+      const eventSource = new EventSource(`${this.API_URL}/events`);
+
+      eventSource.addEventListener('artist-updated', (event: MessageEvent) => {
+        this.zone.run(() => {
+          subscriber.next(JSON.parse(event.data));
+        });
+      });
+
+      eventSource.onerror = () => {
+        // Only complete if the connection is permanently closed.
+        // Transient errors (readyState === CONNECTING) are handled
+        // by EventSource's built-in reconnect.
+        if (eventSource.readyState === EventSource.CLOSED) {
+          subscriber.complete();
+        }
+      };
+
+      return () => eventSource.close();
+    });
   }
 }

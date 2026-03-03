@@ -62,13 +62,12 @@ export function saveArtists(artists) {
   const existing = loadArtists();
   const artistMap = new Map(existing.map(a => [a.mbid, a]));
   
-  const now = Date.now();
   for (const artist of artists) {
+    const existing_artist = artistMap.get(artist.mbid);
     artistMap.set(artist.mbid, {
       mbid: artist.mbid,
       name: artist.name,
-      track_count: artist.trackCount,
-      last_updated: now
+      last_updated: existing_artist?.last_updated
     });
   }
   
@@ -82,6 +81,22 @@ export function getAllArtists() {
 export function getArtist(mbid) {
   const artists = loadArtists();
   return artists.find(a => a.mbid === mbid);
+}
+
+export function updateArtistLastUpdated(mbid) {
+  const artists = loadArtists();
+  const artist = artists.find(a => a.mbid === mbid);
+  if (artist) {
+    artist.last_updated = Date.now();
+    delete artist.releases_fetched_at;
+    saveArtistsToFile(artists);
+  }
+}
+
+export function getStaleArtists(maxAgeMs = 24 * 60 * 60 * 1000) {
+  const artists = loadArtists();
+  const now = Date.now();
+  return artists.filter(a => !a.last_updated || (now - a.last_updated) > maxAgeMs);
 }
 
 // Release operations

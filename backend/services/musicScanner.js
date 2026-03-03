@@ -58,11 +58,8 @@ async function processAudioFile(filePath, artists) {
       if (!artists.has(artistMBID)) {
         artists.set(artistMBID, {
           mbid: artistMBID,
-          name: artistName,
-          trackCount: 1
+          name: artistName
         });
-      } else {
-        artists.get(artistMBID).trackCount++;
       }
     }
   } catch (error) {

@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllArtists, getReleasesByArtist, getAllReleases, getUpcomingReleases, saveReleases } from '../services/database.js';
+import { getAllArtists, getArtist, getReleasesByArtist, getAllReleases, getUpcomingReleases, saveReleases, updateArtistLastUpdated } from '../services/database.js';
 import { getArtistReleases, filterRelevantReleases } from '../services/musicbrainz.js';
 
 const router = express.Router();
@@ -81,6 +81,8 @@ router.post('/fetch', async (req, res) => {
         saveReleases(artist.mbid, relevantReleases);
         totalReleases += relevantReleases.length;
       }
+
+      updateArtistLastUpdated(artist.mbid);
     }
     
     res.json({

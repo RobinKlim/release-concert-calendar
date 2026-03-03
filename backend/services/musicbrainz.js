@@ -67,7 +67,7 @@ export async function getArtistReleases(mbid) {
     }));
   } catch (error) {
     console.error(`Error fetching releases for artist ${mbid}:`, error.message);
-    return [];
+    throw error;
   }
 }
 
