@@ -1,6 +1,6 @@
 <div class="relative">
   <!-- Table Header with Glow -->
-  <div class="bg-amber-600 relative overflow-hidden">
+  <div class="bg-amber-600 relative z-10">
     <app-ambient-glow></app-ambient-glow>
     <div class="grid grid-cols-[25%_35%_15%_15%_10%] text-white text-sm font-semibold relative">
       <div class="text-left px-3 py-2">Artist</div>
@@ -26,7 +26,7 @@
       </tr>
     }
     @for (release of releases; track release.id; let i = $index) {
-      <tr [class.bg-amber-50]="i % 2 === 1">
+      <tr [class.bg-blue-50]="i % 2 === 1">
         <td class="px-3 py-2">{{ release.artist_name }}</td>
         <td class="px-3 py-2">{{ release.title }}</td>
         <td class="px-3 py-2">{{ release.type }}</td>
