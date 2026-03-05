@@ -1,0 +1,48 @@
+<div class="relative">
+  <!-- Table Header with Glow -->
+  <div class="bg-amber-600 relative z-10">
+    <app-ambient-glow></app-ambient-glow>
+    <div class="grid grid-cols-[20%_25%_20%_15%_10%_10%] text-white text-sm font-semibold relative">
+      <div class="text-left px-3 py-2">Artist</div>
+      <div class="text-left px-3 py-2">Event</div>
+      <div class="text-left px-3 py-2">Venue</div>
+      <div class="text-left px-3 py-2">City</div>
+      <div class="text-left px-3 py-2">Date</div>
+      <div class="text-left px-3 py-2">Days</div>
+    </div>
+  </div>
+
+  <table class="w-full text-sm table-fixed">
+    <colgroup>
+      <col class="w-[20%]">
+      <col class="w-[25%]">
+      <col class="w-[20%]">
+      <col class="w-[15%]">
+      <col class="w-[10%]">
+      <col class="w-[10%]">
+    </colgroup>
+  <tbody>
+    @if (concerts.length === 0) {
+      <tr>
+        <td colspan="6" class="px-3 py-4 text-center text-gray-500">No concerts</td>
+      </tr>
+    }
+    @for (concert of concerts; track concert.id; let i = $index) {
+      <tr [class.bg-blue-50]="i % 2 === 1">
+        <td class="px-3 py-2">{{ concert.artist_name }}</td>
+        <td class="px-3 py-2">
+          @if (concert.url) {
+            <a [href]="concert.url" target="_blank" rel="noopener" class="text-blue-600 hover:underline">{{ concert.event_name }}</a>
+          } @else {
+            {{ concert.event_name }}
+          }
+        </td>
+        <td class="px-3 py-2">{{ concert.venue }}</td>
+        <td class="px-3 py-2">{{ concert.city }}</td>
+        <td class="px-3 py-2">{{ formatDate(concert.date) }}</td>
+        <td class="px-3 py-2">{{ daysUntilConcert(concert.date) }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
+</div>

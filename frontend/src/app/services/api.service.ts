@@ -20,6 +20,17 @@ export interface Release {
   year: number;
 }
 
+export interface Concert {
+  id: string;
+  artist_mbid: string;
+  artist_name?: string;
+  event_name: string;
+  venue: string;
+  city: string;
+  date: string;
+  url: string;
+}
+
 export interface ScanResult {
   message: string;
   artists: Artist[];
@@ -63,20 +74,39 @@ export class ApiService {
     return this.http.post(`${this.API_URL}/releases/fetch`, { artistMbid });
   }
 
-  listenToEvents(): Observable<{ mbid: string; name: string }> {
+  getAllConcerts(): Observable<Concert[]> {
+    return this.http.get<Concert[]>(`${this.API_URL}/concerts`);
+  }
+
+  getUpcomingConcerts(): Observable<Concert[]> {
+    return this.http.get<Concert[]>(`${this.API_URL}/concerts/upcoming`);
+  }
+
+  getArtistConcerts(mbid: string): Observable<Concert[]> {
+    return this.http.get<Concert[]>(`${this.API_URL}/concerts/artist/${mbid}`);
+  }
+
+  fetchConcerts(): Observable<any> {
+    return this.http.post(`${this.API_URL}/concerts/fetch`, {});
+  }
+
+  listenToEvents(): Observable<{ mbid: string; name: string; type?: string }> {
     return new Observable(subscriber => {
       const eventSource = new EventSource(`${this.API_URL}/events`);
 
       eventSource.addEventListener('artist-updated', (event: MessageEvent) => {
         this.zone.run(() => {
-          subscriber.next(JSON.parse(event.data));
+          subscriber.next({ ...JSON.parse(event.data), type: 'artist-updated' });
+        });
+      });
+
+      eventSource.addEventListener('concerts-updated', (event: MessageEvent) => {
+        this.zone.run(() => {
+          subscriber.next({ ...JSON.parse(event.data), type: 'concerts-updated' });
         });
       });
 
       eventSource.onerror = () => {
-        // Only complete if the connection is permanently closed.
-        // Transient errors (readyState === CONNECTING) are handled
-        // by EventSource's built-in reconnect.
         if (eventSource.readyState === EventSource.CLOSED) {
           subscriber.complete();
         }

@@ -8,6 +8,7 @@ const __dirname = dirname(__filename);
 const DATA_DIR = process.env.DATA_DIR || join(__dirname, '../data');
 const ARTISTS_FILE = join(DATA_DIR, 'artists.json');
 const RELEASES_FILE = join(DATA_DIR, 'releases.json');
+const CONCERTS_FILE = join(DATA_DIR, 'concerts.json');
 
 // Ensure data directory exists
 if (!existsSync(DATA_DIR)) {
@@ -148,4 +149,92 @@ export function getUpcomingReleases() {
   return releases
     .filter(r => r.date && r.date >= today)
     .sort((a, b) => a.date.localeCompare(b.date));
+}
+
+// Concert operations
+function loadConcerts() {
+  if (!existsSync(CONCERTS_FILE)) {
+    return [];
+  }
+  try {
+    const data = readFileSync(CONCERTS_FILE, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error loading concerts:', error);
+    return [];
+  }
+}
+
+function saveConcertsToFile(concerts) {
+  try {
+    writeFileSync(CONCERTS_FILE, JSON.stringify(concerts, null, 2));
+  } catch (error) {
+    console.error('Error saving concerts:', error);
+  }
+}
+
+export function saveConcerts(artistMbid, concerts) {
+  const existing = loadConcerts();
+  const concertMap = new Map(existing.map(c => [c.id, c]));
+
+  const artist = getArtist(artistMbid);
+  const artistName = artist ? artist.name : 'Unknown Artist';
+
+  const now = Date.now();
+  for (const concert of concerts) {
+    concertMap.set(concert.id, {
+      id: concert.id,
+      artist_mbid: artistMbid,
+      artist_name: artistName,
+      event_name: concert.event_name,
+      venue: concert.venue,
+      city: concert.city,
+      date: concert.date,
+      url: concert.url,
+      created_at: now
+    });
+  }
+
+  saveConcertsToFile(Array.from(concertMap.values()));
+}
+
+export function getAllConcerts() {
+  const concerts = loadConcerts();
+  return concerts.sort((a, b) => {
+    if (b.date && a.date) return a.date.localeCompare(b.date);
+    return 0;
+  });
+}
+
+export function getUpcomingConcerts() {
+  const today = new Date().toISOString().split('T')[0];
+  const concerts = loadConcerts();
+  return concerts
+    .filter(c => c.date && c.date >= today)
+    .sort((a, b) => a.date.localeCompare(b.date));
+}
+
+export function getConcertsByArtist(artistMbid) {
+  const concerts = loadConcerts();
+  return concerts
+    .filter(c => c.artist_mbid === artistMbid)
+    .sort((a, b) => a.date.localeCompare(b.date));
+}
+
+export function updateArtistConcertsLastUpdated(mbid, songkickId) {
+  const artists = loadArtists();
+  const artist = artists.find(a => a.mbid === mbid);
+  if (artist) {
+    artist.concerts_last_updated = Date.now();
+    if (songkickId) {
+      artist.songkick_id = songkickId;
+    }
+    saveArtistsToFile(artists);
+  }
+}
+
+export function getStaleConcertArtists(maxAgeMs = 24 * 60 * 60 * 1000) {
+  const artists = loadArtists();
+  const now = Date.now();
+  return artists.filter(a => !a.concerts_last_updated || (now - a.concerts_last_updated) > maxAgeMs);
 }

@@ -5,7 +5,9 @@ import { dirname, join } from 'path';
 import artistRoutes from './routes/artists.js';
 import scanRoutes from './routes/scan.js';
 import releaseRoutes from './routes/releases.js';
+import concertRoutes from './routes/concerts.js';
 import { startReleaseCron, cronEmitter } from './services/releaseCron.js';
+import { startConcertCron, concertCronEmitter } from './services/concertCron.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -21,6 +23,7 @@ app.use(express.json());
 app.use('/api/artists', artistRoutes);
 app.use('/api/scan', scanRoutes);
 app.use('/api/releases', releaseRoutes);
+app.use('/api/concerts', concertRoutes);
 
 // SSE endpoint
 app.get('/api/events', (req, res) => {
@@ -34,11 +37,16 @@ app.get('/api/events', (req, res) => {
   const onArtistUpdated = (data) => {
     res.write(`event: artist-updated\ndata: ${JSON.stringify(data)}\n\n`);
   };
+  const onConcertsUpdated = (data) => {
+    res.write(`event: concerts-updated\ndata: ${JSON.stringify(data)}\n\n`);
+  };
 
   cronEmitter.on('artist-updated', onArtistUpdated);
+  concertCronEmitter.on('concerts-updated', onConcertsUpdated);
 
   req.on('close', () => {
     cronEmitter.off('artist-updated', onArtistUpdated);
+    concertCronEmitter.off('concerts-updated', onConcertsUpdated);
   });
 });
 
@@ -57,4 +65,5 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   startReleaseCron();
+  startConcertCron();
 });
