@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 import { Subject, Subscription, debounceTime, distinctUntilChanged, switchMap, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { ApiService, Artist, Concert, GeoResult } from '../../services/api.service';
 import { HeaderComponent } from '../../components/header/header.component';
@@ -12,7 +11,7 @@ import { PageContainer } from '../../components/page-container/page-container';
 @Component({
   selector: 'app-concerts',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, HeaderComponent, LoadingOverlay, ConcertTableComponent, PageContainer],
+  imports: [CommonModule, RouterLink, HeaderComponent, LoadingOverlay, ConcertTableComponent, PageContainer],
   templateUrl: './concerts.component.html'
 })
 export class ConcertsComponent implements OnInit, OnDestroy {
@@ -29,6 +28,7 @@ export class ConcertsComponent implements OnInit, OnDestroy {
   showDropdown = signal(false);
   radius = signal<number>(0);
   radiusOptions = [0, 25, 50, 100, 250, 500];
+  showRadiusDropdown = signal(false);
 
   private citySearch$ = new Subject<string>();
 
@@ -121,12 +121,15 @@ export class ConcertsComponent implements OnInit, OnDestroy {
     this.citySearch$.next(value);
   }
 
-  selectCity(result: GeoResult) {
-    this.selectedCity.set(result);
-    this.cityQuery.set(result.name.split(',')[0]);
-    this.showDropdown.set(false);
-    this.cityResults.set([]);
-    this.persistFilter();
+  selectCity(index: number) {
+    const result = this.cityResults()[index];
+    if (result) {
+      this.selectedCity.set(result);
+      this.cityQuery.set(result.name.split(',')[0]);
+      this.showDropdown.set(false);
+      this.cityResults.set([]);
+      this.persistFilter();
+    }
   }
 
   clearCity() {
@@ -137,13 +140,18 @@ export class ConcertsComponent implements OnInit, OnDestroy {
     this.persistFilter();
   }
 
-  onRadiusChange(value: number) {
+  hideDropdown() {
+    setTimeout(() => this.showDropdown.set(false), 200);
+  }
+
+  onRadiusSelect(value: number) {
     this.radius.set(value);
+    this.showRadiusDropdown.set(false);
     this.persistFilter();
   }
 
-  hideDropdown() {
-    setTimeout(() => this.showDropdown.set(false), 200);
+  hideRadiusDropdown() {
+    setTimeout(() => this.showRadiusDropdown.set(false), 200);
   }
 
   private filterByLocation(concerts: Concert[]): Concert[] {

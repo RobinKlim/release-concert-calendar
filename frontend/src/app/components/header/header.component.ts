@@ -13,6 +13,6 @@ export class HeaderComponent {
   navItems = [
     { label: 'Releases', path: '/', exact: true },
     { label: 'Concerts', path: '/concerts', exact: false },
-    { label: 'Settings', path: '/settings', exact: false },
+    { label: 'Artists', path: '/artists', exact: false },
   ];
 }

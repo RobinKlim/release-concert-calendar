@@ -9,12 +9,12 @@ import { ReleaseTableComponent } from '../../components/release-table/release-ta
 import { PageContainer } from '../../components/page-container/page-container';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-releases',
   standalone: true,
   imports: [CommonModule, RouterLink, HeaderComponent, LoadingOverlay, ReleaseTableComponent, PageContainer],
-  templateUrl: './home.component.html'
+  templateUrl: './releases.component.html'
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class ReleasesComponent implements OnInit, OnDestroy {
   artists = signal<Artist[]>([]);
   releases = signal<Release[]>([]);
   loading = signal(false);

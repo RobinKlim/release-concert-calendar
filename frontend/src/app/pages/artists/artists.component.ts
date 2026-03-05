@@ -1,62 +1,37 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
 import { ApiService, Artist } from '../../services/api.service';
 import { HeaderComponent } from '../../components/header/header.component';
 import { PageContainer } from '../../components/page-container/page-container';
 
 @Component({
-  selector: 'app-settings',
+  selector: 'app-artists',
   standalone: true,
-  imports: [CommonModule, FormsModule, HeaderComponent, PageContainer],
-  templateUrl: './settings.component.html'
+  imports: [CommonModule, HeaderComponent, PageContainer],
+  templateUrl: './artists.component.html'
 })
-export class SettingsComponent implements OnInit {
-  selectedSection = signal<'music-library' | 'concerts' | 'style'>('music-library');
-  
-  navigationItems = [
-    { id: 'music-library' as const, label: 'Music Library Path', isLast: false },
-    { id: 'concerts' as const, label: 'Concerts', isLast: false },
-    { id: 'style' as const, label: 'Style', isLast: true }
-  ];
-  
+export class ArtistsComponent implements OnInit {
   directoryPath = signal('');
   scanning = signal(false);
   error = signal('');
   success = signal('');
   artists = signal<Artist[]>([]);
-  showArtists = signal(false);
 
-  constructor(
-    private apiService: ApiService,
-    private router: Router
-  ) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    // Load saved path from localStorage if available
     const savedPath = localStorage.getItem('musicLibraryPath');
     if (savedPath) {
       this.directoryPath.set(savedPath);
     }
-    
-    // Load artists
     this.loadArtists();
   }
 
   loadArtists() {
     this.apiService.getArtists().subscribe({
-      next: (artists) => {
-        this.artists.set(artists);
-      },
-      error: (err) => {
-        console.error('Error loading artists:', err);
-      }
+      next: (artists) => this.artists.set(artists),
+      error: (err) => console.error('Error loading artists:', err)
     });
-  }
-
-  toggleArtists() {
-    this.showArtists.set(!this.showArtists());
   }
 
   scanDirectory() {
@@ -72,12 +47,9 @@ export class SettingsComponent implements OnInit {
     this.apiService.scanDirectory(this.directoryPath()).subscribe({
       next: (result) => {
         this.scanning.set(false);
-        this.success.set(`Found ${result.artists.length} artists`);
-        
-        // Save path to localStorage
+        this.success.set('done');
+        setTimeout(() => this.success.set(''), 2000);
         localStorage.setItem('musicLibraryPath', this.directoryPath());
-        
-        // Reload artists
         this.loadArtists();
       },
       error: (err) => {
