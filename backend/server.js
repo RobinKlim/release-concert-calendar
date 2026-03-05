@@ -6,6 +6,8 @@ import artistRoutes from './routes/artists.js';
 import scanRoutes from './routes/scan.js';
 import releaseRoutes from './routes/releases.js';
 import concertRoutes from './routes/concerts.js';
+import geocodeRoutes from './routes/geocode.js';
+import settingsRoutes from './routes/settings.js';
 import { startReleaseCron, cronEmitter } from './services/releaseCron.js';
 import { startConcertCron, concertCronEmitter } from './services/concertCron.js';
 
@@ -24,6 +26,8 @@ app.use('/api/artists', artistRoutes);
 app.use('/api/scan', scanRoutes);
 app.use('/api/releases', releaseRoutes);
 app.use('/api/concerts', concertRoutes);
+app.use('/api/geocode', geocodeRoutes);
+app.use('/api/settings', settingsRoutes);
 
 // SSE endpoint
 app.get('/api/events', (req, res) => {

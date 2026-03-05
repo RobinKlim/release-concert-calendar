@@ -29,6 +29,14 @@ export interface Concert {
   city: string;
   date: string;
   url: string;
+  lat: number | null;
+  lng: number | null;
+}
+
+export interface GeoResult {
+  name: string;
+  lat: number;
+  lng: number;
 }
 
 export interface ScanResult {
@@ -88,6 +96,18 @@ export class ApiService {
 
   fetchConcerts(): Observable<any> {
     return this.http.post(`${this.API_URL}/concerts/fetch`, {});
+  }
+
+  geocode(query: string): Observable<GeoResult[]> {
+    return this.http.get<GeoResult[]>(`${this.API_URL}/geocode`, { params: { q: query } });
+  }
+
+  getSettings(): Observable<Record<string, any>> {
+    return this.http.get<Record<string, any>>(`${this.API_URL}/settings`);
+  }
+
+  saveSettings(settings: Record<string, any>): Observable<Record<string, any>> {
+    return this.http.put<Record<string, any>>(`${this.API_URL}/settings`, settings);
   }
 
   listenToEvents(): Observable<{ mbid: string; name: string; type?: string }> {

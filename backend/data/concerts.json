@@ -8,7 +8,9 @@
     "city": "Berlin, Germany",
     "date": "2026-03-16",
     "url": "https://www.songkick.com/concerts/43008852-james-blake-at-lido?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 52.49921,
+    "lng": 13.44505,
+    "created_at": 1772717420756
   },
   {
     "id": "43063677",
@@ -19,7 +21,9 @@
     "city": "Brighton, UK",
     "date": "2026-03-23",
     "url": "https://www.songkick.com/concerts/43063677-james-blake-at-chalk?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 50.81997,
+    "lng": -0.13821,
+    "created_at": 1772717420756
   },
   {
     "id": "43063678",
@@ -30,7 +34,9 @@
     "city": "London, UK",
     "date": "2026-03-24",
     "url": "https://www.songkick.com/concerts/43063678-james-blake-at-union-chapel?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 51.54477,
+    "lng": -0.10288,
+    "created_at": 1772717420756
   },
   {
     "id": "43069046",
@@ -41,7 +47,9 @@
     "city": "Bristol, UK",
     "date": "2026-03-26",
     "url": "https://www.songkick.com/concerts/43069046-james-blake-at-st-georges-bristol?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 51.45344,
+    "lng": -2.60448,
+    "created_at": 1772717420756
   },
   {
     "id": "43070687",
@@ -52,7 +60,9 @@
     "city": "Liverpool, UK",
     "date": "2026-03-30",
     "url": "https://www.songkick.com/concerts/43070687-james-blake-at-jacaranda-baltic?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 53.3933,
+    "lng": -2.9786,
+    "created_at": 1772717420756
   },
   {
     "id": "43045265",
@@ -63,7 +73,9 @@
     "city": "Atlanta, US",
     "date": "2026-05-27",
     "url": "https://www.songkick.com/concerts/43045265-james-blake-at-tabernacle?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 33.7587,
+    "lng": -84.39146,
+    "created_at": 1772717420756
   },
   {
     "id": "43046031",
@@ -74,7 +86,9 @@
     "city": "Brooklyn, US",
     "date": "2026-05-29",
     "url": "https://www.songkick.com/concerts/43046031-james-blake-at-brooklyn-paramount?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 40.69126,
+    "lng": -73.98122,
+    "created_at": 1772717420756
   },
   {
     "id": "43045935",
@@ -85,7 +99,9 @@
     "city": "Brooklyn, US",
     "date": "2026-05-30",
     "url": "https://www.songkick.com/concerts/43045935-james-blake-at-brooklyn-paramount?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 40.69126,
+    "lng": -73.98122,
+    "created_at": 1772717420756
   },
   {
     "id": "43045190",
@@ -96,7 +112,9 @@
     "city": "Boston, US",
     "date": "2026-05-31",
     "url": "https://www.songkick.com/concerts/43045190-james-blake-at-roadrunner-boston?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": null,
+    "lng": null,
+    "created_at": 1772717420756
   },
   {
     "id": "43045606",
@@ -107,7 +125,9 @@
     "city": "Washington, US",
     "date": "2026-06-02",
     "url": "https://www.songkick.com/concerts/43045606-james-blake-at-anthem?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 38.88009,
+    "lng": -77.02611,
+    "created_at": 1772717420756
   },
   {
     "id": "43045192",
@@ -118,7 +138,9 @@
     "city": "Philadelphia, US",
     "date": "2026-06-04",
     "url": "https://www.songkick.com/concerts/43045192-james-blake-at-franklin-music-hall?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 39.95893,
+    "lng": -75.15002,
+    "created_at": 1772717420756
   },
   {
     "id": "43044741",
@@ -129,7 +151,9 @@
     "city": "Toronto, Canada",
     "date": "2026-06-06",
     "url": "https://www.songkick.com/concerts/43044741-james-blake-at-history?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 43.66682,
+    "lng": -79.31351,
+    "created_at": 1772717420756
   },
   {
     "id": "43045993",
@@ -140,7 +164,9 @@
     "city": "Chicago, US",
     "date": "2026-06-08",
     "url": "https://www.songkick.com/concerts/43045993-james-blake-at-shed-the-salt-shed?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 41.90692,
+    "lng": -87.65962,
+    "created_at": 1772717420756
   },
   {
     "id": "43045211",
@@ -151,7 +177,9 @@
     "city": "Berkeley, US",
     "date": "2026-06-11",
     "url": "https://www.songkick.com/concerts/43045211-james-blake-at-greek-theatre-uc-berkeley?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 37.87355,
+    "lng": -122.25447,
+    "created_at": 1772717420756
   },
   {
     "id": "43046074",
@@ -162,7 +190,9 @@
     "city": "Los Angeles (LA), US",
     "date": "2026-06-12",
     "url": "https://www.songkick.com/concerts/43046074-james-blake-at-greek-theatre?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 34.12047,
+    "lng": -118.29662,
+    "created_at": 1772717420756
   },
   {
     "id": "42839118",
@@ -173,7 +203,9 @@
     "city": "London, UK",
     "date": "2025-11-20",
     "url": "https://www.songkick.com/concerts/42839118-house-gospel-choir-at-royal-albert-hall?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 51.50091,
+    "lng": -0.17737,
+    "created_at": 1772717420756
   },
   {
     "id": "42808289",
@@ -184,7 +216,9 @@
     "city": "Paris, France",
     "date": "2025-10-25",
     "url": "https://www.songkick.com/concerts/42808289-camille-yembe-at-la-gaite-lyrique?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": 48.86669,
+    "lng": 2.35361,
+    "created_at": 1772717420756
   },
   {
     "id": "42726776",
@@ -195,7 +229,9 @@
     "city": "London, UK",
     "date": "2025-09-17",
     "url": "https://www.songkick.com/concerts/42726776-madame-gandhi-at-ovo-arena-wembley?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716622491
+    "lat": null,
+    "lng": null,
+    "created_at": 1772717420756
   },
   {
     "id": "2021-07-02-tom-misch-&-yussef-dayes-@-glynde-place",
@@ -206,7 +242,9 @@
     "city": "Lewes, UK",
     "date": "2021-07-02",
     "url": "https://www.songkick.com/festivals/614799-love-supreme-jazz/id/39448538-love-supreme-jazz-festival-2021?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716626379
+    "lat": 50.86474,
+    "lng": 0.0674,
+    "created_at": 1772717422346
   },
   {
     "id": "43029965",
@@ -217,7 +255,9 @@
     "city": "Leipzig, Germany",
     "date": "2026-10-29",
     "url": "https://www.songkick.com/concerts/43029965-apsilon-at-felsenkeller?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 51.33258,
+    "lng": 12.33845,
+    "created_at": 1772717424656
   },
   {
     "id": "43029966",
@@ -228,7 +268,9 @@
     "city": "Hamburg, Germany",
     "date": "2026-10-30",
     "url": "https://www.songkick.com/concerts/43029966-apsilon-at-georg-elser-halle?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 53.55632,
+    "lng": 9.97007,
+    "created_at": 1772717424656
   },
   {
     "id": "43029967",
@@ -239,7 +281,9 @@
     "city": "Stuttgart, Germany",
     "date": "2026-11-04",
     "url": "https://www.songkick.com/concerts/43029967-apsilon-at-halle-im-wizemann?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 48.80808,
+    "lng": 9.20091,
+    "created_at": 1772717424656
   },
   {
     "id": "43029358",
@@ -250,7 +294,9 @@
     "city": "Zürich, Switzerland",
     "date": "2026-11-05",
     "url": "https://www.songkick.com/concerts/43029358-apsilon-at-komplex-457?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 47.38732,
+    "lng": 8.49986,
+    "created_at": 1772717424656
   },
   {
     "id": "43029968",
@@ -261,7 +307,9 @@
     "city": "Munich, Germany",
     "date": "2026-11-06",
     "url": "https://www.songkick.com/concerts/43029968-apsilon-at-muffathalle?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 48.13321,
+    "lng": 11.58971,
+    "created_at": 1772717424656
   },
   {
     "id": "43029969",
@@ -272,7 +320,9 @@
     "city": "Vienna, Austria",
     "date": "2026-11-07",
     "url": "https://www.songkick.com/concerts/43029969-apsilon-at-ottakringer-brauerei?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 48.21092,
+    "lng": 16.32272,
+    "created_at": 1772717424656
   },
   {
     "id": "43029970",
@@ -283,7 +333,9 @@
     "city": "Nuremberg, Germany",
     "date": "2026-11-10",
     "url": "https://www.songkick.com/concerts/43029970-apsilon-at-zbau?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 49.43047,
+    "lng": 11.09448,
+    "created_at": 1772717424656
   },
   {
     "id": "43029971",
@@ -294,7 +346,9 @@
     "city": "Münster, Germany",
     "date": "2026-11-11",
     "url": "https://www.songkick.com/concerts/43029971-apsilon-at-skaters-palace?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 51.93834,
+    "lng": 7.62943,
+    "created_at": 1772717424656
   },
   {
     "id": "43029972",
@@ -305,7 +359,9 @@
     "city": "Cologne, Germany",
     "date": "2026-11-12",
     "url": "https://www.songkick.com/concerts/43029972-apsilon-at-carlswerk-victoria?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 50.96591,
+    "lng": 7.01087,
+    "created_at": 1772717424656
   },
   {
     "id": "43029973",
@@ -316,7 +372,9 @@
     "city": "Hannover, Germany",
     "date": "2026-11-14",
     "url": "https://www.songkick.com/concerts/43029973-apsilon-at-capitol?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 52.36815,
+    "lng": 9.72039,
+    "created_at": 1772717424656
   },
   {
     "id": "43029974",
@@ -327,7 +385,9 @@
     "city": "Wiesbaden, Germany",
     "date": "2026-11-16",
     "url": "https://www.songkick.com/concerts/43029974-apsilon-at-schlachthof-wiesbaden?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 50.06616,
+    "lng": 8.24808,
+    "created_at": 1772717424656
   },
   {
     "id": "43029975",
@@ -338,7 +398,9 @@
     "city": "Berlin, Germany",
     "date": "2026-11-19",
     "url": "https://www.songkick.com/concerts/43029975-apsilon-at-columbiahalle?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 52.48465,
+    "lng": 13.39221,
+    "created_at": 1772717424656
   },
   {
     "id": "2025-12-02-apsilon-@-columbiahalle",
@@ -349,7 +411,9 @@
     "city": "Berlin, Germany",
     "date": "2025-12-02",
     "url": "https://www.songkick.com/festivals/3755478-berlin-fur-gaza/id/42856424-berlin-fr-gaza-2025?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 52.48465,
+    "lng": 13.39221,
+    "created_at": 1772717424656
   },
   {
     "id": "42395627",
@@ -360,7 +424,9 @@
     "city": "Dortmund, Germany",
     "date": "2025-09-07",
     "url": "https://www.songkick.com/concerts/42395627-apsilon-at-junkyard-open-air?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 51.53309,
+    "lng": 7.47253,
+    "created_at": 1772717424656
   },
   {
     "id": "2025-09-05-apsilon-@-rothaus-arena,-messe-freiburg",
@@ -371,7 +437,9 @@
     "city": "Freiburg, Germany",
     "date": "2025-09-05",
     "url": "https://www.songkick.com/festivals/3686951-heroes-freiburg/id/42460248-heroes-festival-freiburg-2025?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716630566
+    "lat": 48.01587,
+    "lng": 7.84069,
+    "created_at": 1772717424656
   },
   {
     "id": "43059658",
@@ -382,7 +450,9 @@
     "city": "Nottingham, UK",
     "date": "2026-03-06",
     "url": "https://www.songkick.com/concerts/43059658-cat-at-bodega?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716634547
+    "lat": 52.95367,
+    "lng": -1.14596,
+    "created_at": 1772717426573
   },
   {
     "id": "43060605",
@@ -393,7 +463,9 @@
     "city": "Potsdam, Germany",
     "date": "2026-04-17",
     "url": "https://www.songkick.com/concerts/43060605-romy-at-theaterschiff-potsdam?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716634547
+    "lat": 52.40236,
+    "lng": 13.07539,
+    "created_at": 1772717426573
   },
   {
     "id": "42901735",
@@ -404,7 +476,9 @@
     "city": "Stuttgart, Germany",
     "date": "2026-04-26",
     "url": "https://www.songkick.com/concerts/42901735-romy-at-theaterhaus-t4?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716634547
+    "lat": 48.81059,
+    "lng": 9.17919,
+    "created_at": 1772717426573
   },
   {
     "id": "43032528",
@@ -415,7 +489,9 @@
     "city": "Fornebu, Norway",
     "date": "2026-07-11",
     "url": "https://www.songkick.com/concerts/43032528-robyn-at-unity-arena?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716634547
+    "lat": 59.8989,
+    "lng": 10.60629,
+    "created_at": 1772717426573
   },
   {
     "id": "43032529",
@@ -426,7 +502,9 @@
     "city": "Copenhagen, Denmark",
     "date": "2026-07-14",
     "url": "https://www.songkick.com/concerts/43032529-robyn-at-royal-arena?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716634547
+    "lat": 55.62575,
+    "lng": 12.5737,
+    "created_at": 1772717426573
   },
   {
     "id": "43030893",
@@ -437,7 +515,9 @@
     "city": "Brooklyn, US",
     "date": "2026-09-10",
     "url": "https://www.songkick.com/concerts/43030893-robyn-at-barclays-center?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716634547
+    "lat": 40.68266,
+    "lng": -73.97528,
+    "created_at": 1772717426573
   },
   {
     "id": "43043947",
@@ -448,7 +528,9 @@
     "city": "Inglewood, US",
     "date": "2026-09-24",
     "url": "https://www.songkick.com/concerts/43043947-robyn-at-kia-forum?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716634547
+    "lat": 33.9582,
+    "lng": -118.34053,
+    "created_at": 1772717426573
   },
   {
     "id": "2025-06-07-romy-@-victoria-park",
@@ -459,7 +541,9 @@
     "city": "London, UK",
     "date": "2025-06-07",
     "url": "https://www.songkick.com/festivals/3733912-lido-jamie-xx/id/42249161-lido-festival-jamie-xx-2025?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716634547
+    "lat": 51.53292,
+    "lng": -0.04159,
+    "created_at": 1772717426573
   },
   {
     "id": "42415576",
@@ -470,7 +554,9 @@
     "city": "Salford, UK",
     "date": "2025-02-22",
     "url": "https://www.songkick.com/concerts/42415576-romy-at-islington-mill?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716634547
+    "lat": 53.48192,
+    "lng": -2.26317,
+    "created_at": 1772717426573
   },
   {
     "id": "42174470",
@@ -481,7 +567,9 @@
     "city": "Glasgow, UK",
     "date": "2024-12-14",
     "url": "https://www.songkick.com/concerts/42174470-romy-at-old-fruitmarket?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716634547
+    "lat": 55.85825,
+    "lng": -4.24573,
+    "created_at": 1772717426573
   },
   {
     "id": "42754404",
@@ -492,7 +580,9 @@
     "city": "Seoul, Korea, Republic Of",
     "date": "2025-12-03",
     "url": "https://www.songkick.com/concerts/42754404-limperatrice-at-shinhancard-sol-pay-square-livehall?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716638527
+    "lat": null,
+    "lng": null,
+    "created_at": 1772717430967
   },
   {
     "id": "42754403",
@@ -503,7 +593,9 @@
     "city": "Singapore, Singapore",
     "date": "2025-12-01",
     "url": "https://www.songkick.com/concerts/42754403-limperatrice-at-theatre-at-mediacorp?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716638527
+    "lat": 1.29555,
+    "lng": 103.79224,
+    "created_at": 1772717430967
   },
   {
     "id": "2025-11-29-l'impératrice-@-senayan-park",
@@ -514,7 +606,9 @@
     "city": "Jakarta, Indonesia",
     "date": "2025-11-29",
     "url": "https://www.songkick.com/festivals/3749586-joyland-sessions/id/42793016-joyland-sessions-2025?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716638527
+    "lat": -6.21331,
+    "lng": 106.80407,
+    "created_at": 1772717430967
   },
   {
     "id": "42754402",
@@ -525,7 +619,9 @@
     "city": "Bangkok, Thailand",
     "date": "2025-11-27",
     "url": "https://www.songkick.com/concerts/42754402-limperatrice-at-street-ratchada-hall?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716638527
+    "lat": 13.77017,
+    "lng": 100.57208,
+    "created_at": 1772717430967
   },
   {
     "id": "42754401",
@@ -536,7 +632,9 @@
     "city": "Tokyo, Japan",
     "date": "2025-11-25",
     "url": "https://www.songkick.com/concerts/42754401-limperatrice-at-kanda-square-hall?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716638527
+    "lat": 35.69313,
+    "lng": 139.7632,
+    "created_at": 1772717430967
   },
   {
     "id": "2025-11-07-l'impératrice-@-área-de-eventos-itaipava-(petrópolis)",
@@ -547,7 +645,9 @@
     "city": "Rio de Janeiro, Brazil",
     "date": "2025-11-07",
     "url": "https://www.songkick.com/festivals/3715637-rock-the-mountain-week-2/id/42441523-rock-the-mountain-week-2-2025?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716638527
+    "lat": null,
+    "lng": null,
+    "created_at": 1772717430967
   },
   {
     "id": "42592453",
@@ -558,7 +658,9 @@
     "city": "São Paulo, Brazil",
     "date": "2025-11-04",
     "url": "https://www.songkick.com/concerts/42592453-limperatrice-at-audio-eventos?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716638527
+    "lat": null,
+    "lng": null,
+    "created_at": 1772717430967
   },
   {
     "id": "2025-10-31-l'impératrice-@-área-de-eventos-itaipava-(petrópolis)",
@@ -569,7 +671,9 @@
     "city": "Rio de Janeiro, Brazil",
     "date": "2025-10-31",
     "url": "https://www.songkick.com/festivals/3715636-rock-the-mountain-week-1/id/42441519-rock-the-mountain-week-1-2025?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716638527
+    "lat": null,
+    "lng": null,
+    "created_at": 1772717430967
   },
   {
     "id": "42592450",
@@ -580,7 +684,9 @@
     "city": "Bogota, Colombia",
     "date": "2025-10-29",
     "url": "https://www.songkick.com/concerts/42592450-limperatrice-at-royal-center?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716638527
+    "lat": 4.65339,
+    "lng": -74.06284,
+    "created_at": 1772717430967
   },
   {
     "id": "42592449",
@@ -591,6 +697,8 @@
     "city": "Austin, US",
     "date": "2025-10-26",
     "url": "https://www.songkick.com/concerts/42592449-limperatrice-at-stubbs-waller-creek-amphitheater?utm_medium=organic&utm_source=microformat",
-    "created_at": 1772716638527
+    "lat": 30.26857,
+    "lng": -97.73608,
+    "created_at": 1772717430967
   }
 ]

@@ -9,6 +9,7 @@ const DATA_DIR = process.env.DATA_DIR || join(__dirname, '../data');
 const ARTISTS_FILE = join(DATA_DIR, 'artists.json');
 const RELEASES_FILE = join(DATA_DIR, 'releases.json');
 const CONCERTS_FILE = join(DATA_DIR, 'concerts.json');
+const SETTINGS_FILE = join(DATA_DIR, 'settings.json');
 
 // Ensure data directory exists
 if (!existsSync(DATA_DIR)) {
@@ -191,6 +192,8 @@ export function saveConcerts(artistMbid, concerts) {
       city: concert.city,
       date: concert.date,
       url: concert.url,
+      lat: concert.lat || null,
+      lng: concert.lng || null,
       created_at: now
     });
   }
@@ -237,4 +240,30 @@ export function getStaleConcertArtists(maxAgeMs = 24 * 60 * 60 * 1000) {
   const artists = loadArtists();
   const now = Date.now();
   return artists.filter(a => !a.concerts_last_updated || (now - a.concerts_last_updated) > maxAgeMs);
+}
+
+// Settings operations
+export function getSettings() {
+  if (!existsSync(SETTINGS_FILE)) {
+    return {};
+  }
+  try {
+    const data = readFileSync(SETTINGS_FILE, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error loading settings:', error);
+    return {};
+  }
+}
+
+export function saveSettings(settings) {
+  try {
+    const existing = getSettings();
+    const merged = { ...existing, ...settings };
+    writeFileSync(SETTINGS_FILE, JSON.stringify(merged, null, 2));
+    return merged;
+  } catch (error) {
+    console.error('Error saving settings:', error);
+    throw error;
+  }
 }

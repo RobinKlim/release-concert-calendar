@@ -116,7 +116,11 @@ function parseLdJsonEvent(event) {
   const idMatch = url.match(/\/concerts\/(\d+)/);
   const id = idMatch ? idMatch[1] : `${date}-${name}`.replace(/\s+/g, '-').toLowerCase();
 
-  return { id, event_name: name, venue, city, date, url };
+  const geo = location.geo || {};
+  const lat = geo.latitude || null;
+  const lng = geo.longitude || null;
+
+  return { id, event_name: name, venue, city, date, url, lat, lng };
 }
 
 function parseEventElement($, $el) {
@@ -146,5 +150,5 @@ function parseEventElement($, $el) {
   const idMatch = url.match(/\/concerts\/(\d+)/);
   const id = idMatch ? idMatch[1] : `${date}-${eventName}`.replace(/\s+/g, '-').toLowerCase();
 
-  return { id, event_name: eventName || 'Concert', venue, city, date, url };
+  return { id, event_name: eventName || 'Concert', venue, city, date, url, lat: null, lng: null };
 }

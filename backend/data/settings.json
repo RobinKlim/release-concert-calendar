@@ -1,0 +1,8 @@
+{
+  "concertCity": {
+    "name": "Hamburg, Germany",
+    "lat": 53.550341,
+    "lng": 10.000654
+  },
+  "concertRadius": 250
+}

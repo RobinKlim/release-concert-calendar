@@ -21,7 +21,60 @@
     <!-- Upcoming Concerts -->
     @if (concerts().length > 0) {
       <div class="mb-8">
-        <h2 class="text-lg font-bold text-gray-900 mb-3">Upcoming ({{ upcomingConcerts.length }})</h2>
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-lg font-bold text-gray-900">Upcoming ({{ upcomingConcerts.length }})</h2>
+
+          <!-- Location Filter -->
+          <div class="flex items-center gap-3">
+            <div class="relative">
+              <div class="flex items-center">
+                <input
+                  type="text"
+                  [value]="cityQuery()"
+                  (input)="onCityInput($any($event.target).value)"
+                  (focus)="cityResults().length > 0 && showDropdown.set(true)"
+                  (blur)="hideDropdown()"
+                  placeholder="City..."
+                  class="w-44 px-3 py-1 border border-gray-400 text-sm focus:outline-none focus:border-gray-600"
+                />
+                @if (selectedCity()) {
+                  <button
+                    (click)="clearCity()"
+                    class="ml-1 px-2 py-1 text-sm text-gray-500 hover:text-gray-800 border border-gray-400 hover:border-gray-600"
+                  >
+                    x
+                  </button>
+                }
+              </div>
+              @if (showDropdown()) {
+                <ul class="absolute right-0 z-20 w-72 bg-white border border-gray-400 mt-0.5 max-h-48 overflow-y-auto shadow-sm">
+                  @for (result of cityResults(); track result.name) {
+                    <li>
+                      <button
+                        (mousedown)="selectCity(result)"
+                        class="w-full text-left px-3 py-2 text-sm hover:bg-gray-100 truncate"
+                      >
+                        {{ result.name }}
+                      </button>
+                    </li>
+                  }
+                </ul>
+              }
+            </div>
+
+            <select
+              [ngModel]="radius()"
+              (ngModelChange)="onRadiusChange($event)"
+              class="px-3 py-1 border border-gray-400 text-sm focus:outline-none focus:border-gray-600 bg-white"
+              [disabled]="!selectedCity()"
+            >
+              @for (r of radiusOptions; track r) {
+                <option [ngValue]="r">{{ r === 0 ? 'Any' : r + ' km' }}</option>
+              }
+            </select>
+          </div>
+        </div>
+
         <app-concert-table [concerts]="upcomingConcerts" [showDaysUntil]="true"></app-concert-table>
       </div>
 
