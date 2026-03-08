@@ -62,18 +62,42 @@ function saveReleasesToFile(releases) {
 // Artist operations
 export function saveArtists(artists) {
   const existing = loadArtists();
-  const artistMap = new Map(existing.map(a => [a.mbid, a]));
-  
-  for (const artist of artists) {
-    const existing_artist = artistMap.get(artist.mbid);
-    artistMap.set(artist.mbid, {
+  console.log(`[Scan] Existing: ${existing.length} artists, Scanned: ${artists.length} artists`);
+  console.log(`[Scan] Existing MBIDs:`, existing.map(a => a.name));
+  console.log(`[Scan] Scanned MBIDs:`, artists.map(a => a.name));
+  const existingMap = new Map(existing.map(a => [a.mbid, a]));
+  const newMbids = new Set(artists.map(a => a.mbid));
+
+  // Build new artist list, preserving metadata for artists that remain
+  const updatedArtists = artists.map(artist => {
+    const prev = existingMap.get(artist.mbid);
+    return {
       mbid: artist.mbid,
       name: artist.name,
-      last_updated: existing_artist?.last_updated
-    });
+      last_updated: prev?.last_updated,
+      concerts_last_updated: prev?.concerts_last_updated,
+      songkick_id: prev?.songkick_id
+    };
+  });
+
+  saveArtistsToFile(updatedArtists);
+
+  // Remove releases and concerts for artists no longer in the library
+  const removedMbids = existing
+    .filter(a => !newMbids.has(a.mbid))
+    .map(a => a.mbid);
+
+  if (removedMbids.length > 0) {
+    const removedSet = new Set(removedMbids);
+
+    const releases = loadReleases().filter(r => !removedSet.has(r.artist_mbid));
+    saveReleasesToFile(releases);
+
+    const concerts = loadConcerts().filter(c => !removedSet.has(c.artist_mbid));
+    saveConcertsToFile(concerts);
+
+    console.log(`[Scan] Removed data for ${removedMbids.length} artist(s) no longer in library`);
   }
-  
-  saveArtistsToFile(Array.from(artistMap.values()));
 }
 
 export function getAllArtists() {

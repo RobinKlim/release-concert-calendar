@@ -9,7 +9,7 @@ let isFetching = false;
 
 async function fetchReleasesForStaleArtists() {
   if (isFetching) {
-    console.log('[Cron] Previous fetch still running, skipping this tick');
+    console.log('[ReleaseCron] Previous fetch still running, skipping this tick');
     return;
   }
 
@@ -18,35 +18,34 @@ async function fetchReleasesForStaleArtists() {
     const staleArtists = getStaleArtists();
 
     if (staleArtists.length === 0) {
-      console.log('[Cron] All artists are up to date');
       return;
     }
 
-    console.log(`[Cron] Found ${staleArtists.length} stale artist(s), fetching...`);
+    console.log(`[ReleaseCron] Found ${staleArtists.length} stale artist(s), fetching...`);
 
     for (const artist of staleArtists) {
       try {
-        console.log(`[Cron] Fetching releases for ${artist.name}...`);
+        console.log(`[ReleaseCron] Fetching releases for ${artist.name}...`);
         const releases = await getArtistReleases(artist.mbid);
         const relevantReleases = filterRelevantReleases(releases);
 
         if (relevantReleases.length > 0) {
           saveReleases(artist.mbid, relevantReleases);
-          console.log(`[Cron] Saved ${relevantReleases.length} releases for ${artist.name}`);
+          console.log(`[ReleaseCron] Saved ${relevantReleases.length} releases for ${artist.name}`);
         } else {
-          console.log(`[Cron] No relevant releases found for ${artist.name}`);
+          console.log(`[ReleaseCron] No relevant releases found for ${artist.name}`);
         }
 
         updateArtistLastUpdated(artist.mbid);
         cronEmitter.emit('artist-updated', { mbid: artist.mbid, name: artist.name });
       } catch (error) {
-        console.error(`[Cron] Error fetching releases for ${artist.name}:`, error.message);
+        console.error(`[ReleaseCron] Error fetching releases for ${artist.name}:`, error.message);
       }
     }
 
-    console.log('[Cron] Finished fetching all stale artists');
+    console.log('[ReleaseCron] Finished fetching all stale artists');
   } catch (error) {
-    console.error('[Cron] Error:', error.message);
+    console.error('[ReleaseCron] Error:', error.message);
   } finally {
     isFetching = false;
   }
@@ -57,8 +56,7 @@ export function startReleaseCron() {
   fetchReleasesForStaleArtists();
 
   cron.schedule('*/10 * * * * *', () => {
-    console.log('[Cron] Tick');
     fetchReleasesForStaleArtists();
   });
-  console.log('[Cron] Release fetch cron job started (every 10 seconds)');
+  console.log('[ReleaseCron] Release fetch cron job started (every 10 seconds)');
 }

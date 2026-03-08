@@ -1,5 +1,5 @@
 {
-  "name": "release-concert-backend",
+  "name": "robins-musicbox-backend",
   "version": "1.0.0",
   "description": "Backend for release concert calendar",
   "main": "server.js",

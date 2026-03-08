@@ -18,7 +18,6 @@ async function fetchConcertsForStaleArtists() {
     const staleArtists = getStaleConcertArtists();
 
     if (staleArtists.length === 0) {
-      console.log('[ConcertCron] All artists are up to date');
       return;
     }
 
@@ -70,7 +69,6 @@ export function startConcertCron() {
   fetchConcertsForStaleArtists();
 
   cron.schedule('*/10 * * * * *', () => {
-    console.log('[ConcertCron] Tick');
     fetchConcertsForStaleArtists();
   });
   console.log('[ConcertCron] Concert fetch cron job started (every 10 seconds)');

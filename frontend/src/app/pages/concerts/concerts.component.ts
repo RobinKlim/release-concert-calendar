@@ -4,14 +4,13 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ApiService, Artist, Concert, GeoResult } from '../../services/api.service';
 import { HeaderComponent } from '../../components/header/header.component';
-import { LoadingOverlay } from '../../components/loading-overlay/loading-overlay';
 import { ConcertTableComponent } from '../../components/concert-table/concert-table.component';
 import { PageContainer } from '../../components/page-container/page-container';
 
 @Component({
   selector: 'app-concerts',
   standalone: true,
-  imports: [CommonModule, RouterLink, HeaderComponent, LoadingOverlay, ConcertTableComponent, PageContainer],
+  imports: [CommonModule, RouterLink, HeaderComponent, ConcertTableComponent, PageContainer],
   templateUrl: './concerts.component.html'
 })
 export class ConcertsComponent implements OnInit, OnDestroy {

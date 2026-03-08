@@ -18,17 +18,14 @@ router.post('/', async (req, res) => {
   try {
     console.log(`Scanning directory: ${path}`);
     const artists = await scanMusicDirectory(path);
-    
+
     if (artists.length === 0) {
-      return res.json({ 
-        message: 'No artists with MusicBrainz IDs found',
-        artists: []
-      });
+      return res.status(400).json({ error: 'No artists with MusicBrainz IDs found in directory' });
     }
-    
-    // Save artists to database
+
+    // Save artists to database (also cleans up removed artists, releases, concerts)
     saveArtists(artists);
-    
+
     res.json({
       message: `Found ${artists.length} artists`,
       artists

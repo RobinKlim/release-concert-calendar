@@ -1,5 +1,5 @@
 {
-  "name": "release-concert-calendar",
+  "name": "robins-musicbox",
   "version": "1.0.0",
   "description": "Desktop app to track music releases and concerts",
   "author": {
@@ -22,15 +22,17 @@
     "express": "^4.18.2",
     "cors": "^2.8.5",
     "music-metadata": "^9.0.0",
-    "axios": "^1.6.0"
+    "axios": "^1.6.0",
+    "node-cron": "^4.2.1",
+    "cheerio": "^1.2.0"
   },
   "devDependencies": {
     "electron": "^33.0.0",
     "electron-builder": "^25.0.0"
   },
   "build": {
-    "appId": "com.release-concert-calendar.app",
-    "productName": "Release Concert Calendar",
+    "appId": "com.robins-musicbox.app",
+    "productName": "Robins Musicbox",
     "directories": {
       "output": "dist-electron"
     },
@@ -63,16 +65,30 @@
     "linux": {
       "target": [
         {
-          "target": "AppImage",
-          "arch": ["x64"]
-        },
-        {
           "target": "deb",
           "arch": ["x64"]
         }
       ],
       "category": "Audio",
-      "icon": "assets/icon.png"
+      "icon": "assets/icon.png",
+      "desktop": {
+        "StartupWMClass": "robins-musicbox"
+      }
+    },
+    "deb": {
+      "depends": [
+        "libgtk-3-0",
+        "libnotify4",
+        "libnss3",
+        "libxss1",
+        "libxtst6",
+        "xdg-utils",
+        "libatspi2.0-0",
+        "libuuid1",
+        "libsecret-1-0",
+        "libgbm1"
+      ],
+      "afterInstall": "build/linux/after-install.sh"
     },
     "npmRebuild": true,
     "asar": false

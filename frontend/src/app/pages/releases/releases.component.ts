@@ -4,14 +4,13 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ApiService, Artist, Release } from '../../services/api.service';
 import { HeaderComponent } from '../../components/header/header.component';
-import { LoadingOverlay } from '../../components/loading-overlay/loading-overlay';
 import { ReleaseTableComponent } from '../../components/release-table/release-table.component';
 import { PageContainer } from '../../components/page-container/page-container';
 
 @Component({
   selector: 'app-releases',
   standalone: true,
-  imports: [CommonModule, RouterLink, HeaderComponent, LoadingOverlay, ReleaseTableComponent, PageContainer],
+  imports: [CommonModule, RouterLink, HeaderComponent, ReleaseTableComponent, PageContainer],
   templateUrl: './releases.component.html'
 })
 export class ReleasesComponent implements OnInit, OnDestroy {

@@ -1,8 +1,8 @@
 {
   "concertCity": {
-    "name": "Hamburg, Germany",
-    "lat": 53.550341,
-    "lng": 10.000654
+    "name": "Ham, Péronne, Somme, Hauts-de-France, Metropolitan France, 80400, France",
+    "lat": 49.746322,
+    "lng": 3.0733031
   },
-  "concertRadius": 250
+  "concertRadius": 25
 }

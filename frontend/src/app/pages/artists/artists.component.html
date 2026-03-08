@@ -21,7 +21,7 @@
         <button
           (click)="scanDirectory()"
           [disabled]="scanning()"
-          class="px-3 py-2 text-sm bg-white text-gray-900  hover:[box-shadow:-4px_4px_0_#3b82f6] disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+          class="px-3 py-2 text-sm bg-white hover:bg-gray-100 text-gray-900  hover:[box-shadow:-4px_4px_0_#3b82f6] disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
         >
           Scan Library
         </button>
@@ -31,10 +31,7 @@
         }
 
         @if (error()) {
-          <span class="text-red-600 text-sm flex items-center gap-1 whitespace-nowrap">
-            <span class="font-bold">✗</span>
-            <span>{{ error() }}</span>
-          </span>
+          <span class="text-red-600 text-sm whitespace-nowrap">{{ error() }}</span>
         }
       </div>
     </div>
@@ -47,12 +44,14 @@
           <thead>
             <tr class="bg-white">
               <th class="border border-gray-300 px-3 py-2 text-left">Name</th>
+              <th class="border border-gray-300 px-3 py-2 text-left">MusicBrainz ID</th>
             </tr>
           </thead>
           <tbody>
             @for (artist of artists(); track artist.mbid; let i = $index) {
               <tr class="hover:bg-white">
                 <td class="border border-gray-300 px-3 py-2">{{ artist.name }}</td>
+                <td class="border border-gray-300 px-3 py-2 font-mono text-xs text-gray-900">{{ artist.mbid }}</td>
               </tr>
             }
           </tbody>

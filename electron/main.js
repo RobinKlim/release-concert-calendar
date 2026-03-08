@@ -2,6 +2,12 @@ const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
+// Fix SIGTRAP crashes on Linux
+if (process.platform === 'linux') {
+  app.commandLine.appendSwitch('no-sandbox');
+  app.commandLine.appendSwitch('disable-gpu-sandbox');
+}
+
 let mainWindow;
 
 const isDev = !app.isPackaged;
@@ -32,31 +38,26 @@ function copyDefaultData() {
     fs.mkdirSync(dataDir, { recursive: true });
   }
 
-  const artistsFile = path.join(dataDir, 'artists.json');
-  const releasesFile = path.join(dataDir, 'releases.json');
+  let sourceDir;
+  if (isDev) {
+    sourceDir = path.join(__dirname, '../backend/data');
+  } else {
+    sourceDir = path.join(process.resourcesPath, 'data');
+  }
 
-  // Copy default data files on first run
-  if (!fs.existsSync(artistsFile)) {
-    let sourceDir;
-    if (isDev) {
-      sourceDir = path.join(__dirname, '../backend/data');
-    } else {
-      sourceDir = path.join(process.resourcesPath, 'data');
-    }
+  // Copy all data files on first run
+  const dataFiles = ['artists.json', 'releases.json', 'concerts.json', 'settings.json'];
+  const firstRun = !fs.existsSync(path.join(dataDir, 'artists.json'));
 
-    const sourceArtists = path.join(sourceDir, 'artists.json');
-    const sourceReleases = path.join(sourceDir, 'releases.json');
-
-    if (fs.existsSync(sourceArtists)) {
-      fs.copyFileSync(sourceArtists, artistsFile);
-    } else {
-      fs.writeFileSync(artistsFile, '[]');
-    }
-
-    if (fs.existsSync(sourceReleases)) {
-      fs.copyFileSync(sourceReleases, releasesFile);
-    } else {
-      fs.writeFileSync(releasesFile, '[]');
+  if (firstRun) {
+    for (const file of dataFiles) {
+      const source = path.join(sourceDir, file);
+      const dest = path.join(dataDir, file);
+      if (fs.existsSync(source)) {
+        fs.copyFileSync(source, dest);
+      } else {
+        fs.writeFileSync(dest, '{}');
+      }
     }
   }
 }
