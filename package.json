@@ -71,9 +71,9 @@
       ],
       "category": "Audio",
       "icon": "assets/icon.png",
+      "executableArgs": ["--no-sandbox"],
       "desktop": {
-        "StartupWMClass": "robins-musicbox",
-        "Exec": "/opt/robins-musicbox/robins-musicbox --no-sandbox %U"
+        "StartupWMClass": "robins-musicbox"
       }
     },
     "deb": {

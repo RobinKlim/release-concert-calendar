@@ -1,6 +1,7 @@
 import { parseFile } from 'music-metadata';
 import { readdir, stat } from 'fs/promises';
 import { join } from 'path';
+import { getArtistInfo } from './musicbrainz.js';
 
 const AUDIO_EXTENSIONS = ['.mp3', '.flac', '.m4a', '.ogg', '.wav', '.wma', '.aac'];
 
@@ -10,29 +11,40 @@ const AUDIO_EXTENSIONS = ['.mp3', '.flac', '.m4a', '.ogg', '.wav', '.wma', '.aac
  * @returns {Promise<Array>} Array of artist objects with MBIDs
  */
 export async function scanMusicDirectory(dirPath) {
-  const artists = new Map();
-  
+  const mbids = new Set();
+
   async function scanDir(path) {
     try {
       const entries = await readdir(path);
-      
+
       for (const entry of entries) {
         const fullPath = join(path, entry);
         const stats = await stat(fullPath);
-        
+
         if (stats.isDirectory()) {
           await scanDir(fullPath);
         } else if (stats.isFile() && isAudioFile(entry)) {
-          await processAudioFile(fullPath, artists);
+          await processAudioFile(fullPath, mbids);
         }
       }
     } catch (error) {
       console.error(`Error scanning directory ${path}:`, error.message);
     }
   }
-  
+
   await scanDir(dirPath);
-  return Array.from(artists.values());
+
+  // Look up each artist's name from MusicBrainz
+  const artists = [];
+  for (const mbid of mbids) {
+    const info = await getArtistInfo(mbid);
+    artists.push({
+      mbid,
+      name: info?.name || mbid
+    });
+  }
+
+  return artists;
 }
 
 /**
@@ -44,22 +56,17 @@ function isAudioFile(filename) {
 }
 
 /**
- * Processes an audio file and extracts artist information
+ * Processes an audio file and extracts album artist MBIDs
  */
-async function processAudioFile(filePath, artists) {
+async function processAudioFile(filePath, mbids) {
   try {
     const metadata = await parseFile(filePath);
-    
-    // Extract artist information
-    const artistName = metadata.common.artist || metadata.common.albumartist;
-    const artistMBID = metadata.common.musicbrainz_artistid?.[0];
-    
-    if (artistName && artistMBID) {
-      if (!artists.has(artistMBID)) {
-        artists.set(artistMBID, {
-          mbid: artistMBID,
-          name: artistName
-        });
+
+    const albumArtistMBIDs = metadata.common.musicbrainz_albumartistid;
+
+    if (albumArtistMBIDs && albumArtistMBIDs.length > 0) {
+      for (const mbid of albumArtistMBIDs) {
+        mbids.add(mbid);
       }
     }
   } catch (error) {
