@@ -1,5 +1,45 @@
 [
   {
+    "id": "12ad825e-eeab-4bcc-afb0-b4f362170ff6",
+    "artist_mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
+    "artist_name": "James Blake",
+    "title": "Death of Love",
+    "type": "Single",
+    "date": "2026-01-22",
+    "year": 2026,
+    "created_at": 1773445410113
+  },
+  {
+    "id": "34c3804e-c4b5-441b-8d9f-6c48b3c5b5ac",
+    "artist_mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
+    "artist_name": "James Blake",
+    "title": "Stars & Snow",
+    "type": "Single",
+    "date": "2026-03",
+    "year": 2026,
+    "created_at": 1773445410113
+  },
+  {
+    "id": "7e425ff2-c85a-4316-b015-d1546aadc186",
+    "artist_mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
+    "artist_name": "James Blake",
+    "title": "Trying Times",
+    "type": "Album",
+    "date": "2026-03-13",
+    "year": 2026,
+    "created_at": 1773445410113
+  },
+  {
+    "id": "8768b4e4-1725-4fd4-9a16-2dd2ae6e619e",
+    "artist_mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
+    "artist_name": "James Blake",
+    "title": "I Had a Dream She Took My Hand",
+    "type": "Single",
+    "date": "2026-02-12",
+    "year": 2026,
+    "created_at": 1773445410113
+  },
+  {
     "id": "9dadae64-9345-4e61-ba60-c1d71c1b8093",
     "artist_mbid": "fc3e8983-1f51-4c80-b2b5-146bf2162dc2",
     "artist_name": "Tom Misch",
@@ -7,7 +47,7 @@
     "type": "Single",
     "date": "2026-02-26",
     "year": 2026,
-    "created_at": 1773441590110
+    "created_at": 1773445411060
   },
   {
     "id": "e6c09cdc-f128-4c56-a00e-a1a1872947fb",
@@ -17,7 +57,7 @@
     "type": "Album",
     "date": "2026-03-27",
     "year": 2026,
-    "created_at": 1773441590110
+    "created_at": 1773445411060
   },
   {
     "id": "4c133e5f-fffb-4211-9c1b-90d0de07ef74",
@@ -27,7 +67,7 @@
     "type": "Album",
     "date": "2026-03-06",
     "year": 2026,
-    "created_at": 1773441600128
+    "created_at": 1773445412051
   },
   {
     "id": "79260173-a327-41a1-beef-03b1c4dbfbe9",
@@ -37,7 +77,7 @@
     "type": "Album",
     "date": "2025-10",
     "year": 2025,
-    "created_at": 1773441600128
+    "created_at": 1773445412051
   },
   {
     "id": "93658fce-f511-4ff3-8028-c2dcfdf7ace2",
@@ -47,6 +87,56 @@
     "type": "Single",
     "date": "2025-11-19",
     "year": 2025,
-    "created_at": 1773441600128
+    "created_at": 1773445412051
+  },
+  {
+    "id": "fbe4e8af-572e-46b9-ae35-95da31089b9f",
+    "artist_mbid": "1ac970a1-2d7d-4ac6-b962-f242874f0a4a",
+    "artist_name": "Apsilon",
+    "title": "Weg hier raus",
+    "type": "Single",
+    "date": "2026-01-29",
+    "year": 2026,
+    "created_at": 1773445413061
+  },
+  {
+    "id": "4cf9de63-3a73-42ac-a29a-d2ac18b11201",
+    "artist_mbid": "b46efb1e-ecd9-4044-9820-14c64c2d657e",
+    "artist_name": "Romy",
+    "title": "Love Who You Love",
+    "type": "Single",
+    "date": "2025-11-04",
+    "year": 2025,
+    "created_at": 1773445414056
+  },
+  {
+    "id": "7ee01a4f-1389-47ad-a68c-ffd737165e98",
+    "artist_mbid": "b46efb1e-ecd9-4044-9820-14c64c2d657e",
+    "artist_name": "Romy",
+    "title": "Love Who You Love (KI/KI Remix - Radio Edit)",
+    "type": "Single",
+    "date": "2026-03-13",
+    "year": 2026,
+    "created_at": 1773445414056
+  },
+  {
+    "id": "e70a18e6-0d37-44ae-8b1c-84d7852ac5d4",
+    "artist_mbid": "b46efb1e-ecd9-4044-9820-14c64c2d657e",
+    "artist_name": "Romy",
+    "title": "2025-12-13: BBC Radio 1 Essential Mix",
+    "type": "Broadcast",
+    "date": "2025-12-13",
+    "year": 2025,
+    "created_at": 1773445414056
+  },
+  {
+    "id": "c23e327b-75bb-4439-acc6-26ef5d5a81e6",
+    "artist_mbid": "abc31be8-02b2-4bb1-867d-604d50b7be78",
+    "artist_name": "L’Impératrice",
+    "title": "chrysalis",
+    "type": "Single",
+    "date": "2025-10-10",
+    "year": 2025,
+    "created_at": 1773445415062
   }
 ]

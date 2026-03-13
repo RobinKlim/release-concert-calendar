@@ -45,12 +45,12 @@ async function fetchConcertsForStaleArtists() {
         if (concerts.length > 0) {
           saveConcerts(artist.mbid, concerts);
           console.log(`[ConcertCron] Saved ${concerts.length} concerts for ${artist.name}`);
+          concertCronEmitter.emit('concerts-updated', { mbid: artist.mbid, name: artist.name });
         } else {
           console.log(`[ConcertCron] No upcoming concerts for ${artist.name}`);
         }
 
         updateArtistConcertsLastUpdated(artist.mbid, songkickId);
-        concertCronEmitter.emit('concerts-updated', { mbid: artist.mbid, name: artist.name });
       } catch (error) {
         console.error(`[ConcertCron] Error fetching concerts for ${artist.name}:`, error.message);
         updateArtistConcertsLastUpdated(artist.mbid, artist.songkick_id || null);

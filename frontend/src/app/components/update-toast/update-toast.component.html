@@ -1,0 +1,17 @@
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex flex-col items-center gap-2 pointer-events-none">
+  @for (toast of toasts; track toast.id) {
+    <div
+      class="toast pointer-events-auto bg-white border border-gray-300 px-4 py-2.5 flex items-center gap-2.5 text-sm text-gray-900 whitespace-nowrap"
+      [class.toast-enter]="toast.state === 'entering'"
+      [class.toast-visible]="toast.state === 'visible'"
+      [class.toast-leave]="toast.state === 'leaving'"
+      style="box-shadow: -4px 4px 0 #3b82f6;"
+    >
+      <span class="text-lg toast-emoji">{{ getEmoji(toast.type) }}</span>
+      <span>
+        <span class="font-semibold">{{ toast.name }}</span>
+        &mdash; {{ getLabel(toast.type) }} updated!
+      </span>
+    </div>
+  }
+</div>

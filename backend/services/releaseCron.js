@@ -32,12 +32,12 @@ async function fetchReleasesForStaleArtists() {
         if (relevantReleases.length > 0) {
           saveReleases(artist.mbid, relevantReleases);
           console.log(`[ReleaseCron] Saved ${relevantReleases.length} releases for ${artist.name}`);
+          cronEmitter.emit('artist-updated', { mbid: artist.mbid, name: artist.name });
         } else {
           console.log(`[ReleaseCron] No relevant releases found for ${artist.name}`);
         }
 
         updateArtistLastUpdated(artist.mbid);
-        cronEmitter.emit('artist-updated', { mbid: artist.mbid, name: artist.name });
       } catch (error) {
         console.error(`[ReleaseCron] Error fetching releases for ${artist.name}:`, error.message);
       }
