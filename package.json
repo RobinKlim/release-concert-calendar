@@ -70,7 +70,7 @@
         }
       ],
       "category": "Audio",
-      "icon": "assets/icon.png",
+      "icon": "assets/icons",
       "executableArgs": ["--no-sandbox"],
       "desktop": {
         "StartupWMClass": "robins-musicbox"
