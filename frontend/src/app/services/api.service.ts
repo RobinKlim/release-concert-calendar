@@ -126,6 +126,12 @@ export class ApiService {
         });
       });
 
+      eventSource.addEventListener('scan-progress', (event: MessageEvent) => {
+        this.zone.run(() => {
+          subscriber.next({ ...JSON.parse(event.data), type: 'scan-progress' });
+        });
+      });
+
       eventSource.onerror = () => {
         if (eventSource.readyState === EventSource.CLOSED) {
           subscriber.complete();

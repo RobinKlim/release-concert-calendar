@@ -3,38 +3,49 @@ import axios from 'axios';
 const MUSICBRAINZ_BASE_URL = 'https://musicbrainz.org/ws/2';
 const USER_AGENT = 'ReleaseConcertCalendar/1.0.0';
 
-// Rate limiting: MusicBrainz allows 1 request per second
-const RATE_LIMIT_MS = 1000;
+// Rate limiting: MusicBrainz allows 1 request per second, use 1.2s to be safe
+const RATE_LIMIT_MS = 1200;
 let lastRequestTime = 0;
 
 async function rateLimit() {
   const now = Date.now();
   const timeSinceLastRequest = now - lastRequestTime;
-  
+
   if (timeSinceLastRequest < RATE_LIMIT_MS) {
     await new Promise(resolve => setTimeout(resolve, RATE_LIMIT_MS - timeSinceLastRequest));
   }
-  
+
   lastRequestTime = Date.now();
 }
 
 /**
- * Fetches artist information from MusicBrainz
+ * Fetches artist information from MusicBrainz with retry logic
  */
+const MAX_RETRIES = 3;
+
 export async function getArtistInfo(mbid) {
-  await rateLimit();
-  
-  try {
-    const response = await axios.get(`${MUSICBRAINZ_BASE_URL}/artist/${mbid}`, {
-      params: { fmt: 'json' },
-      headers: { 'User-Agent': USER_AGENT }
-    });
-    
-    return response.data;
-  } catch (error) {
-    console.error(`Error fetching artist info for ${mbid}:`, error.message);
-    return null;
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    await rateLimit();
+
+    try {
+      const response = await axios.get(`${MUSICBRAINZ_BASE_URL}/artist/${mbid}`, {
+        params: { fmt: 'json' },
+        headers: { 'User-Agent': USER_AGENT }
+      });
+
+      return response.data;
+    } catch (error) {
+      console.error(`Error fetching artist info for ${mbid} (attempt ${attempt}/${MAX_RETRIES}):`, error.message);
+
+      if (attempt < MAX_RETRIES) {
+        const backoff = attempt * 2000;
+        console.log(`Retrying in ${backoff}ms...`);
+        await new Promise(resolve => setTimeout(resolve, backoff));
+      }
+    }
   }
+
+  return null;
 }
 
 /**

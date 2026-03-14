@@ -1,8 +1,9 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService, Artist } from '../../services/api.service';
 import { HeaderComponent } from '../../components/header/header.component';
 import { PageContainer } from '../../components/page-container/page-container';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-artists',
@@ -10,12 +11,13 @@ import { PageContainer } from '../../components/page-container/page-container';
   imports: [CommonModule, HeaderComponent, PageContainer],
   templateUrl: './artists.component.html'
 })
-export class ArtistsComponent implements OnInit {
+export class ArtistsComponent implements OnInit, OnDestroy {
   directoryPath = signal('');
   scanning = signal(false);
   error = signal('');
   success = signal('');
   artists = signal<Artist[]>([]);
+  private sseSub?: Subscription;
 
   constructor(private apiService: ApiService) {}
 
@@ -25,6 +27,10 @@ export class ArtistsComponent implements OnInit {
       this.directoryPath.set(savedPath);
     }
     this.loadArtists();
+  }
+
+  ngOnDestroy() {
+    this.sseSub?.unsubscribe();
   }
 
   loadArtists() {
@@ -43,10 +49,24 @@ export class ArtistsComponent implements OnInit {
     this.scanning.set(true);
     this.error.set('');
     this.success.set('');
+    this.artists.set([]);
+
+    // Listen to SSE for live artist updates during scan
+    this.sseSub?.unsubscribe();
+    this.sseSub = this.apiService.listenToEvents().subscribe(event => {
+      if (event.type === 'scan-progress') {
+        const data = event as any;
+        this.artists.update(current => [
+          ...current,
+          { mbid: data.mbid, name: data.name }
+        ]);
+      }
+    });
 
     this.apiService.scanDirectory(this.directoryPath()).subscribe({
       next: (result) => {
         this.scanning.set(false);
+        this.sseSub?.unsubscribe();
         this.success.set('done');
         setTimeout(() => this.success.set(''), 2000);
         localStorage.setItem('musicLibraryPath', this.directoryPath());
@@ -54,6 +74,7 @@ export class ArtistsComponent implements OnInit {
       },
       error: (err) => {
         this.scanning.set(false);
+        this.sseSub?.unsubscribe();
         this.error.set(err.error?.error || 'Error scanning directory');
       }
     });

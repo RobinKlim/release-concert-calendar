@@ -26,7 +26,10 @@ export class UpdateToastComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sseSub = this.apiService.listenToEvents().subscribe(event => {
-      if (event.name && typeof event.name === 'string' && event.name.trim().length > 0) {
+      if (event.type === 'scan-progress') {
+        const status = (event as any).status;
+        this.addToast(event.name, status === 'resolved' ? 'scan-resolved' : 'scan-failed');
+      } else if (event.name && typeof event.name === 'string' && event.name.trim().length > 0) {
         this.addToast(event.name, event.type || 'artist-updated');
       }
     });
@@ -62,10 +65,16 @@ export class UpdateToastComponent implements OnInit, OnDestroy {
   }
 
   getEmoji(type: string): string {
-    return type === 'concerts-updated' ? '\uD83C\uDFB8' : '\uD83D\uDCBF';
+    if (type === 'concerts-updated') return '\uD83C\uDFB8';
+    if (type === 'scan-resolved') return '\u2705';
+    if (type === 'scan-failed') return '\u274C';
+    return '\uD83D\uDCBF';
   }
 
   getLabel(type: string): string {
-    return type === 'concerts-updated' ? 'Concerts' : 'Releases';
+    if (type === 'concerts-updated') return 'Concerts';
+    if (type === 'scan-resolved') return 'Resolved';
+    if (type === 'scan-failed') return 'Failed to resolve';
+    return 'Releases';
   }
 }

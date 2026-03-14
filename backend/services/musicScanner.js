@@ -10,7 +10,7 @@ const AUDIO_EXTENSIONS = ['.mp3', '.flac', '.m4a', '.ogg', '.wav', '.wma', '.aac
  * @param {string} dirPath - The directory path to scan
  * @returns {Promise<Array>} Array of artist objects with MBIDs
  */
-export async function scanMusicDirectory(dirPath) {
+export async function scanMusicDirectory(dirPath, onProgress) {
   const mbids = new Set();
 
   async function scanDir(path) {
@@ -36,15 +36,28 @@ export async function scanMusicDirectory(dirPath) {
 
   // Look up each artist's name from MusicBrainz
   const artists = [];
+  const resolved = [];
+  const failed = [];
+
   for (const mbid of mbids) {
     const info = await getArtistInfo(mbid);
+    const name = info?.name || null;
+
     artists.push({
       mbid,
-      name: info?.name || mbid
+      name: name || mbid
     });
+
+    if (name) {
+      resolved.push(name);
+      if (onProgress) onProgress({ mbid, name, status: 'resolved' });
+    } else {
+      failed.push(mbid);
+      if (onProgress) onProgress({ mbid, name: mbid, status: 'failed' });
+    }
   }
 
-  return artists;
+  return { artists, resolved, failed };
 }
 
 /**

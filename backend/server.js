@@ -3,7 +3,7 @@ import cors from 'cors';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import artistRoutes from './routes/artists.js';
-import scanRoutes from './routes/scan.js';
+import scanRoutes, { scanEmitter } from './routes/scan.js';
 import releaseRoutes from './routes/releases.js';
 import concertRoutes from './routes/concerts.js';
 import geocodeRoutes from './routes/geocode.js';
@@ -45,12 +45,18 @@ app.get('/api/events', (req, res) => {
     res.write(`event: concerts-updated\ndata: ${JSON.stringify(data)}\n\n`);
   };
 
+  const onScanProgress = (data) => {
+    res.write(`event: scan-progress\ndata: ${JSON.stringify(data)}\n\n`);
+  };
+
   cronEmitter.on('artist-updated', onArtistUpdated);
   concertCronEmitter.on('concerts-updated', onConcertsUpdated);
+  scanEmitter.on('scan-progress', onScanProgress);
 
   req.on('close', () => {
     cronEmitter.off('artist-updated', onArtistUpdated);
     concertCronEmitter.off('concerts-updated', onConcertsUpdated);
+    scanEmitter.off('scan-progress', onScanProgress);
   });
 });
 
