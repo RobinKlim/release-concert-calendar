@@ -5,13 +5,9 @@ import { getArtistInfo } from './musicbrainz.js';
 
 const AUDIO_EXTENSIONS = ['.mp3', '.flac', '.m4a', '.ogg', '.wav', '.wma', '.aac'];
 
-/**
- * Recursively scans a directory for audio files and extracts MusicBrainz artist IDs
- * @param {string} dirPath - The directory path to scan
- * @returns {Promise<Array>} Array of artist objects with MBIDs
- */
 export async function scanMusicDirectory(dirPath, onProgress) {
   const mbids = new Set();
+  const albumMap = new Map();
 
   async function scanDir(path) {
     try {
@@ -24,7 +20,7 @@ export async function scanMusicDirectory(dirPath, onProgress) {
         if (stats.isDirectory()) {
           await scanDir(fullPath);
         } else if (stats.isFile() && isAudioFile(entry)) {
-          await processAudioFile(fullPath, mbids);
+          await processAudioFile(fullPath, mbids, albumMap);
         }
       }
     } catch (error) {
@@ -34,7 +30,6 @@ export async function scanMusicDirectory(dirPath, onProgress) {
 
   await scanDir(dirPath);
 
-  // Look up each artist's name from MusicBrainz
   const artists = [];
   const resolved = [];
   const failed = [];
@@ -43,10 +38,7 @@ export async function scanMusicDirectory(dirPath, onProgress) {
     const info = await getArtistInfo(mbid);
     const name = info?.name || null;
 
-    artists.push({
-      mbid,
-      name: name || mbid
-    });
+    artists.push({ mbid, name: name || mbid });
 
     if (name) {
       resolved.push(name);
@@ -57,29 +49,35 @@ export async function scanMusicDirectory(dirPath, onProgress) {
     }
   }
 
-  return { artists, resolved, failed };
+  const albums = Array.from(albumMap.values());
+
+  return { artists, albums, resolved, failed };
 }
 
-/**
- * Checks if a file is an audio file based on extension
- */
 function isAudioFile(filename) {
   const ext = filename.toLowerCase().slice(filename.lastIndexOf('.'));
   return AUDIO_EXTENSIONS.includes(ext);
 }
 
-/**
- * Processes an audio file and extracts album artist MBIDs
- */
-async function processAudioFile(filePath, mbids) {
+async function processAudioFile(filePath, mbids, albumMap) {
   try {
     const metadata = await parseFile(filePath);
 
     const albumArtistMBIDs = metadata.common.musicbrainz_albumartistid;
+    const albumId = metadata.common.musicbrainz_albumid;
+    const albumTitle = metadata.common.album;
 
     if (albumArtistMBIDs && albumArtistMBIDs.length > 0) {
       for (const mbid of albumArtistMBIDs) {
         mbids.add(mbid);
+      }
+
+      if (albumId && albumTitle && !albumMap.has(albumId)) {
+        albumMap.set(albumId, {
+          id: albumId,
+          artist_mbid: albumArtistMBIDs[0],
+          title: albumTitle,
+        });
       }
     }
   } catch (error) {

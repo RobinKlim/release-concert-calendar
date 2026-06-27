@@ -1,6 +1,6 @@
 import express from 'express';
 import { scanMusicDirectory } from '../services/musicScanner.js';
-import { saveArtists } from '../services/database.js';
+import { saveArtists, saveAlbums } from '../services/database.js';
 import { EventEmitter } from 'events';
 
 export const scanEmitter = new EventEmitter();
@@ -25,14 +25,14 @@ router.post('/', async (req, res) => {
       scanEmitter.emit('scan-progress', data);
     };
 
-    const { artists, resolved, failed } = await scanMusicDirectory(path, onProgress);
+    const { artists, albums, resolved, failed } = await scanMusicDirectory(path, onProgress);
 
     if (artists.length === 0) {
       return res.status(400).json({ error: 'No artists with MusicBrainz IDs found in directory' });
     }
 
-    // Save artists to database (also cleans up removed artists, releases, concerts)
     saveArtists(artists);
+    saveAlbums(albums);
 
     res.json({
       message: `Found ${artists.length} artists`,

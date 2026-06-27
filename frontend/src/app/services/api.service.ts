@@ -33,6 +33,14 @@ export interface Concert {
   lng: number | null;
 }
 
+export interface Album {
+  id: string;
+  artist_mbid: string;
+  artist_name: string;
+  title: string;
+  rank: number | null;
+}
+
 export interface GeoResult {
   name: string;
   lat: number;
@@ -108,6 +116,14 @@ export class ApiService {
 
   saveSettings(settings: Record<string, any>): Observable<Record<string, any>> {
     return this.http.put<Record<string, any>>(`${this.API_URL}/settings`, settings);
+  }
+
+  getAlbums(): Observable<Album[]> {
+    return this.http.get<Album[]>(`${this.API_URL}/albums`);
+  }
+
+  saveRanking(ranked: string[], unranked: string[]): Observable<{ ok: boolean }> {
+    return this.http.put<{ ok: boolean }>(`${this.API_URL}/albums/ranking`, { ranked, unranked });
   }
 
   listenToEvents(): Observable<{ mbid: string; name: string; type?: string }> {

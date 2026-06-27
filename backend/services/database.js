@@ -10,6 +10,7 @@ const ARTISTS_FILE = join(DATA_DIR, 'artists.json');
 const RELEASES_FILE = join(DATA_DIR, 'releases.json');
 const CONCERTS_FILE = join(DATA_DIR, 'concerts.json');
 const SETTINGS_FILE = join(DATA_DIR, 'settings.json');
+const ALBUMS_FILE = join(DATA_DIR, 'albums.json');
 
 // Ensure data directory exists
 if (!existsSync(DATA_DIR)) {
@@ -290,4 +291,78 @@ export function saveSettings(settings) {
     console.error('Error saving settings:', error);
     throw error;
   }
+}
+
+// Album operations
+function loadAlbums() {
+  if (!existsSync(ALBUMS_FILE)) {
+    return [];
+  }
+  try {
+    const data = readFileSync(ALBUMS_FILE, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error loading albums:', error);
+    return [];
+  }
+}
+
+function saveAlbumsToFile(albums) {
+  try {
+    writeFileSync(ALBUMS_FILE, JSON.stringify(albums, null, 2));
+  } catch (error) {
+    console.error('Error saving albums:', error);
+  }
+}
+
+export function saveAlbums(scannedAlbums) {
+  if (!scannedAlbums || scannedAlbums.length === 0) return;
+  const existing = loadAlbums();
+  const existingMap = new Map(existing.map(a => [a.id, a]));
+  const scannedIds = new Set(scannedAlbums.map(a => a.id));
+
+  const updated = scannedAlbums.map(album => {
+    const prev = existingMap.get(album.id);
+    const artist = getArtist(album.artist_mbid);
+    return {
+      id: album.id,
+      artist_mbid: album.artist_mbid,
+      artist_name: artist ? artist.name : 'Unknown Artist',
+      title: album.title,
+      rank: prev ? prev.rank : null,
+    };
+  });
+
+  // Compact ranks after removals — preserve relative order of surviving ranked albums
+  const ranked = updated
+    .filter(a => a.rank !== null)
+    .sort((a, b) => a.rank - b.rank)
+    .map((a, i) => ({ ...a, rank: i + 1 }));
+  const unranked = updated.filter(a => a.rank === null);
+
+  saveAlbumsToFile([...ranked, ...unranked]);
+}
+
+export function getAllAlbums() {
+  const albums = loadAlbums();
+  const ranked = albums.filter(a => a.rank !== null).sort((a, b) => a.rank - b.rank);
+  const unranked = albums.filter(a => a.rank === null);
+  return [...unranked, ...ranked];
+}
+
+export function saveAlbumRanking(rankedIds, unrankedIds) {
+  const albums = loadAlbums();
+  const albumMap = new Map(albums.map(a => [a.id, a]));
+
+  const updated = [];
+  rankedIds.forEach((id, i) => {
+    const album = albumMap.get(id);
+    if (album) updated.push({ ...album, rank: i + 1 });
+  });
+  unrankedIds.forEach(id => {
+    const album = albumMap.get(id);
+    if (album) updated.push({ ...album, rank: null });
+  });
+
+  saveAlbumsToFile(updated);
 }
