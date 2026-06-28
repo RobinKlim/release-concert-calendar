@@ -14,6 +14,6 @@ export class HeaderComponent {
     { label: 'Releases', path: '/', exact: true },
     { label: 'Concerts', path: '/concerts', exact: false },
     { label: 'Artists', path: '/artists', exact: false },
-    { label: 'Library', path: '/library', exact: false },
+    { label: 'Albums', path: '/library', exact: false },
   ];
 }

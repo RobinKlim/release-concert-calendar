@@ -17,6 +17,9 @@ export class LibraryComponent implements OnInit, OnDestroy {
   loading = signal(false);
   error = signal('');
 
+  gameActive = signal(false);
+  gamePair = signal<[Album, Album] | null>(null);
+
   private draggedAlbum: Album | null = null;
   private dragSource: 'ranked' | 'unranked' | null = null;
   private saveTimer: ReturnType<typeof setTimeout> | null = null;
@@ -50,6 +53,83 @@ export class LibraryComponent implements OnInit, OnDestroy {
       }
     });
   }
+
+  // --- Ranking game ---
+
+  startGame() {
+    const pair = this.nextPair();
+    if (!pair) return;
+    this.gamePair.set(pair);
+    this.gameActive.set(true);
+  }
+
+  stopGame() {
+    this.gameActive.set(false);
+    this.gamePair.set(null);
+  }
+
+  pickWinner(winner: Album) {
+    const pair = this.gamePair();
+    if (!pair) return;
+    const loser = pair[0].id === winner.id ? pair[1] : pair[0];
+    this.applyGameResult(winner, loser);
+    this.scheduleSave();
+
+    const next = this.nextPair();
+    if (next) {
+      this.gamePair.set(next);
+    } else {
+      this.stopGame();
+    }
+  }
+
+  private nextPair(): [Album, Album] | null {
+    const unranked = this.unranked();
+    const ranked = this.ranked();
+
+    if (unranked.length > 0 && ranked.length > 0) {
+      // Always one unranked vs one ranked
+      const u = unranked[Math.floor(Math.random() * unranked.length)];
+      const r = ranked[Math.floor(Math.random() * ranked.length)];
+      return Math.random() < 0.5 ? [u, r] : [r, u];
+    }
+
+    // Fallback when all ranked or all unranked
+    const all = [...unranked, ...ranked];
+    if (all.length < 2) return null;
+    const shuffled = [...all].sort(() => Math.random() - 0.5);
+    return [shuffled[0], shuffled[1]];
+  }
+
+  private applyGameResult(winner: Album, loser: Album) {
+    const allRanked = [...this.ranked()];
+    const allUnranked = [...this.unranked()];
+
+    const loserWasUnranked = allUnranked.some(a => a.id === loser.id);
+    const loserRankedIdx = allRanked.findIndex(a => a.id === loser.id);
+    const winnerRankedIdx = allRanked.findIndex(a => a.id === winner.id);
+
+    const newRanked = allRanked.filter(a => a.id !== winner.id && a.id !== loser.id);
+    const newUnranked = allUnranked.filter(a => a.id !== winner.id && a.id !== loser.id);
+
+    if (loserWasUnranked) {
+      // Ranked album won: put it back in its original slot, unranked goes to last place
+      newRanked.splice(winnerRankedIdx, 0, winner);
+      newRanked.push(loser);
+    } else if (loserRankedIdx !== -1) {
+      // Unranked album won: place it right above the ranked loser
+      // winner was unranked so it wasn't in allRanked → no index shift when removing it
+      newRanked.splice(loserRankedIdx, 0, winner, loser);
+    } else {
+      // Both unranked fallback: winner then loser at end
+      newRanked.push(winner, loser);
+    }
+
+    this.ranked.set(newRanked.map((a, i) => ({ ...a, rank: i + 1 })));
+    this.unranked.set(newUnranked);
+  }
+
+  // --- Drag & drop ---
 
   onDragStart(event: DragEvent, album: Album, source: 'ranked' | 'unranked') {
     this.draggedAlbum = album;

@@ -1,6 +1,43 @@
 <div class="min-h-screen bg-blue-100">
   <app-header></app-header>
 
+  <!-- Ranking game overlay -->
+  @if (gameActive() && gamePair()) {
+    <div class="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+      <div class="bg-white w-full max-w-2xl mx-4 p-8 relative">
+        <button
+          (click)="stopGame()"
+          class="absolute top-3 right-3 px-3 py-2 text-sm bg-white hover:bg-gray-100 text-gray-900 border hover:[box-shadow:-4px_4px_0_#3b82f6]"
+        >✕ Stop</button>
+
+        <div class="text-center mb-6">
+          <h2 class="text-2xl font-bold text-gray-900">Which do you prefer right now?</h2>
+        </div>
+
+        <div class="flex gap-6">
+          @for (album of gamePair()!; track album.id) {
+            <button
+              class="flex-1 flex flex-col border-2 border-gray-200 hover:border-amber-600 hover:shadow-xl transition-all duration-150 overflow-hidden cursor-pointer bg-white group"
+              (click)="pickWinner(album)"
+            >
+              <div class="w-full aspect-square bg-gray-100 flex items-center justify-center overflow-hidden">
+                @if (album.has_cover) {
+                  <img [src]="coverUrl(album.id)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-150" draggable="false" />
+                } @else {
+                  <span class="text-gray-300 text-6xl">♪</span>
+                }
+              </div>
+              <div class="p-4 text-left">
+                <div class="font-bold text-gray-900 truncate">{{ album.title }}</div>
+                <div class="text-gray-500 text-sm truncate">{{ album.artist_name }}</div>
+              </div>
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+  }
+
   <app-page-container>
     @if (loading()) {
       <div class="text-center py-8 text-gray-500">Loading albums...</div>
@@ -16,18 +53,18 @@
       </div>
     }
 
-    <!-- Unranked Inbox — always visible as drop target when albums exist -->
-    @if (!loading() && (unranked().length > 0 || ranked().length > 0)) {
+    <!-- Unranked Inbox — only shown when there are unranked albums -->
+    @if (!loading() && unranked().length > 0) {
       <div class="mb-8">
-        <h2 class="text-lg font-bold text-gray-900 mb-3">Unranked ({{ unranked().length }})</h2>
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-lg font-bold text-gray-900">Unranked ({{ unranked().length }})</h2>
+          <button (click)="startGame()" class="px-3 py-1 text-sm border border-gray-300 bg-white hover:bg-gray-100 text-gray-700">Start Ranking Game</button>
+        </div>
         <div
           class="min-h-12"
           (dragover)="onDragOver($event)"
           (drop)="onDropOnUnranked($event)"
         >
-          @if (unranked().length === 0) {
-            <div class="px-4 py-3 text-gray-400 text-sm select-none">Drop here to unrank</div>
-          }
           @for (album of unranked(); track album.id; let i = $index) {
             <div
               class="flex items-center gap-4 px-4 py-2 border-b border-gray-200 cursor-grab transition-all duration-150 hover:shadow-md hover:-translate-y-0.5 hover:z-10 relative"
@@ -36,8 +73,10 @@
               (dragstart)="onDragStart($event, album, 'unranked')"
             >
               <span class="w-6 text-gray-400 text-sm select-none">—</span>
-              <span class="font-medium text-gray-900">{{ album.title }}</span>
-              <span class="text-gray-500 text-sm">{{ album.artist_name }}</span>
+              <div class="flex flex-col">
+                <span class="font-medium text-gray-900">{{ album.title }}</span>
+                <span class="text-gray-500 text-sm">{{ album.artist_name }}</span>
+              </div>
               <div class="ml-auto w-20 h-20 flex-shrink-0">
                 @if (album.has_cover) {
                   <img [src]="coverUrl(album.id)" class="w-20 h-20 object-cover" draggable="false" />
@@ -50,9 +89,14 @@
     }
 
     <!-- Ranked List -->
-    @if (!loading() && (unranked().length > 0 || ranked().length > 0)) {
+    @if (!loading() && ranked().length > 0) {
       <div>
-        <h2 class="text-lg font-bold text-gray-900 mb-3">Ranked ({{ ranked().length }})</h2>
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-lg font-bold text-gray-900">Ranked ({{ ranked().length }})</h2>
+          @if (unranked().length === 0) {
+            <button (click)="startGame()" class="px-3 py-1 text-sm border border-gray-300 bg-white hover:bg-gray-100 text-gray-700">Start Ranking Game</button>
+          }
+        </div>
         <div
           class="min-h-12"
           (dragover)="onDragOver($event)"
@@ -77,8 +121,10 @@
                 (click)="$event.stopPropagation()"
                 draggable="false"
               />
-              <span class="font-medium text-gray-900">{{ album.title }}</span>
-              <span class="text-gray-500 text-sm">{{ album.artist_name }}</span>
+              <div class="flex flex-col">
+                <span class="font-medium text-gray-900">{{ album.title }}</span>
+                <span class="text-gray-500 text-sm">{{ album.artist_name }}</span>
+              </div>
               <div class="ml-auto w-20 h-20 flex-shrink-0">
                 @if (album.has_cover) {
                   <img [src]="coverUrl(album.id)" class="w-20 h-20 object-cover" draggable="false" />
