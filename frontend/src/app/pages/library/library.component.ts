@@ -23,6 +23,10 @@ export class LibraryComponent implements OnInit, OnDestroy {
 
   constructor(private apiService: ApiService) {}
 
+  coverUrl(albumId: string): string {
+    return this.apiService.albumCoverUrl(albumId);
+  }
+
   ngOnInit() {
     this.loadAlbums();
   }

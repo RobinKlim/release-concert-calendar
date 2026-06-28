@@ -37,6 +37,11 @@
               <span class="w-6 text-gray-400 text-sm select-none">—</span>
               <span class="font-medium text-gray-900">{{ album.title }}</span>
               <span class="text-gray-500 text-sm">{{ album.artist_name }}</span>
+              <div class="ml-auto w-10 h-10 flex-shrink-0">
+                @if (album.has_cover) {
+                  <img [src]="coverUrl(album.id)" class="w-10 h-10 object-cover" draggable="false" />
+                }
+              </div>
             </div>
           }
         </div>
@@ -72,6 +77,11 @@
               />
               <span class="font-medium text-gray-900">{{ album.title }}</span>
               <span class="text-gray-500 text-sm">{{ album.artist_name }}</span>
+              <div class="ml-auto w-10 h-10 flex-shrink-0">
+                @if (album.has_cover) {
+                  <img [src]="coverUrl(album.id)" class="w-10 h-10 object-cover" draggable="false" />
+                }
+              </div>
             </div>
           }
         </div>

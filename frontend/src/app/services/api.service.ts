@@ -39,6 +39,7 @@ export interface Album {
   artist_name: string;
   title: string;
   rank: number | null;
+  has_cover: boolean;
 }
 
 export interface GeoResult {
@@ -120,6 +121,10 @@ export class ApiService {
 
   getAlbums(): Observable<Album[]> {
     return this.http.get<Album[]>(`${this.API_URL}/albums`);
+  }
+
+  albumCoverUrl(albumId: string): string {
+    return `${this.API_URL}/albums/${albumId}/cover`;
   }
 
   saveRanking(ranked: string[], unranked: string[]): Observable<{ ok: boolean }> {

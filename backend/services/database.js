@@ -11,10 +11,14 @@ const RELEASES_FILE = join(DATA_DIR, 'releases.json');
 const CONCERTS_FILE = join(DATA_DIR, 'concerts.json');
 const SETTINGS_FILE = join(DATA_DIR, 'settings.json');
 const ALBUMS_FILE = join(DATA_DIR, 'albums.json');
+const COVERS_DIR = join(DATA_DIR, 'covers');
 
 // Ensure data directory exists
 if (!existsSync(DATA_DIR)) {
   mkdirSync(DATA_DIR, { recursive: true });
+}
+if (!existsSync(COVERS_DIR)) {
+  mkdirSync(COVERS_DIR, { recursive: true });
 }
 
 // Load data from JSON files
@@ -324,12 +328,24 @@ export function saveAlbums(scannedAlbums) {
   const updated = scannedAlbums.map(album => {
     const prev = existingMap.get(album.id);
     const artist = getArtist(album.artist_mbid);
+
+    let has_cover = prev?.has_cover ?? false;
+    if (album.cover) {
+      try {
+        writeFileSync(join(COVERS_DIR, album.id), album.cover.data);
+        has_cover = true;
+      } catch (err) {
+        console.error(`Error saving cover for ${album.id}:`, err.message);
+      }
+    }
+
     return {
       id: album.id,
       artist_mbid: album.artist_mbid,
       artist_name: artist ? artist.name : 'Unknown Artist',
       title: album.title,
       rank: prev ? prev.rank : null,
+      has_cover,
     };
   });
 

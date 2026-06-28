@@ -73,10 +73,12 @@ async function processAudioFile(filePath, mbids, albumMap) {
       }
 
       if (albumId && albumTitle && !albumMap.has(albumId)) {
+        const picture = metadata.common.picture?.[0];
         albumMap.set(albumId, {
           id: albumId,
           artist_mbid: albumArtistMBIDs[0],
           title: albumTitle,
+          cover: picture ? { data: picture.data, format: picture.format } : null,
         });
       }
     }
