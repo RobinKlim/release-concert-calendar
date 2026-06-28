@@ -1,26 +1,18 @@
 [
   {
-    "id": "57339ba9-ca75-4ad7-80a1-79625a64aa3e",
-    "artist_mbid": "d9fccd7c-a14c-4c1a-8a3b-17d05b2f549c",
-    "artist_name": "Warhaus",
-    "title": "Karaoke Moon",
+    "id": "aad01f77-9dba-4cd0-a07e-09f18454ef5e",
+    "artist_mbid": "a69103f5-2825-468e-908c-1e1618ebce80",
+    "artist_name": "Yukno",
+    "title": "Ich kenne kein Weekend",
     "rank": 1,
     "has_cover": true
   },
   {
-    "id": "655c7505-eef3-462c-b39e-13d8a9b619df",
-    "artist_mbid": "c5119d8a-ffee-48bc-99c3-f323bdf16d82",
-    "artist_name": "Vektor",
-    "title": "Terminal Redux",
+    "id": "57339ba9-ca75-4ad7-80a1-79625a64aa3e",
+    "artist_mbid": "d9fccd7c-a14c-4c1a-8a3b-17d05b2f549c",
+    "artist_name": "Warhaus",
+    "title": "Karaoke Moon",
     "rank": 2,
-    "has_cover": true
-  },
-  {
-    "id": "8774891c-5947-41c2-acc3-92bb2f08aeba",
-    "artist_mbid": "7ac725c0-099e-485a-82d7-a56e583b6a2f",
-    "artist_name": "Paradis",
-    "title": "Recto verso",
-    "rank": 3,
     "has_cover": true
   },
   {
@@ -28,7 +20,31 @@
     "artist_mbid": "72fd7688-8394-43b6-8f41-278657648a45",
     "artist_name": "Yussef Kamaal",
     "title": "Black Focus",
+    "rank": 3,
+    "has_cover": true
+  },
+  {
+    "id": "8a3f2d03-0a6d-4684-9823-8d734294059b",
+    "artist_mbid": "7682d624-9e0b-45b2-b7d0-d1b18b3ebd05",
+    "artist_name": "Vieux Farka Touré",
+    "title": "Ali",
     "rank": 4,
+    "has_cover": true
+  },
+  {
+    "id": "8774891c-5947-41c2-acc3-92bb2f08aeba",
+    "artist_mbid": "7ac725c0-099e-485a-82d7-a56e583b6a2f",
+    "artist_name": "Paradis",
+    "title": "Recto verso",
+    "rank": 5,
+    "has_cover": true
+  },
+  {
+    "id": "655c7505-eef3-462c-b39e-13d8a9b619df",
+    "artist_mbid": "c5119d8a-ffee-48bc-99c3-f323bdf16d82",
+    "artist_name": "Vektor",
+    "title": "Terminal Redux",
+    "rank": 6,
     "has_cover": true
   },
   {
@@ -36,7 +52,7 @@
     "artist_mbid": "26ae99ef-7161-4e39-985d-d238a624064a",
     "artist_name": "Yvon",
     "title": "Yvon Im Kreis der Liebe",
-    "rank": 5,
+    "rank": 7,
     "has_cover": true
   },
   {
@@ -44,15 +60,7 @@
     "artist_mbid": "cf82a38f-9413-4333-bacb-ca5b6db95794",
     "artist_name": "Warpaint",
     "title": "The Fool",
-    "rank": 6,
-    "has_cover": true
-  },
-  {
-    "id": "aad01f77-9dba-4cd0-a07e-09f18454ef5e",
-    "artist_mbid": "a69103f5-2825-468e-908c-1e1618ebce80",
-    "artist_name": "Yukno",
-    "title": "Ich kenne kein Weekend",
-    "rank": 7,
+    "rank": 8,
     "has_cover": true
   },
   {
@@ -948,14 +956,6 @@
     "artist_mbid": "cd66cb19-ed44-43e8-9849-645c2d12de0e",
     "artist_name": "Victor Solf",
     "title": "Still. There’s Hope",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "8a3f2d03-0a6d-4684-9823-8d734294059b",
-    "artist_mbid": "7682d624-9e0b-45b2-b7d0-d1b18b3ebd05",
-    "artist_name": "Vieux Farka Touré",
-    "title": "Ali",
     "rank": null,
     "has_cover": true
   }
