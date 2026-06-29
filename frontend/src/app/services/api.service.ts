@@ -39,6 +39,7 @@ export interface Album {
   artist_name: string;
   title: string;
   rank: number | null;
+  listening_needed: boolean;
   has_cover: boolean;
 }
 
@@ -127,8 +128,8 @@ export class ApiService {
     return `${this.API_URL}/albums/${albumId}/cover`;
   }
 
-  saveRanking(ranked: string[], unranked: string[]): Observable<{ ok: boolean }> {
-    return this.http.put<{ ok: boolean }>(`${this.API_URL}/albums/ranking`, { ranked, unranked });
+  saveRanking(ranked: string[], unranked: string[], listeningNeeded: string[]): Observable<{ ok: boolean }> {
+    return this.http.put<{ ok: boolean }>(`${this.API_URL}/albums/ranking`, { ranked, unranked, listeningNeeded });
   }
 
   listenToEvents(): Observable<{ mbid: string; name: string; type?: string }> {

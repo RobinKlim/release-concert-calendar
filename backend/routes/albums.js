@@ -37,11 +37,11 @@ router.get('/:id/cover', (req, res) => {
 
 router.put('/ranking', (req, res) => {
   try {
-    const { ranked, unranked } = req.body;
-    if (!Array.isArray(ranked) || !Array.isArray(unranked)) {
-      return res.status(400).json({ error: 'ranked and unranked must be arrays' });
+    const { ranked, unranked, listeningNeeded = [] } = req.body;
+    if (!Array.isArray(ranked) || !Array.isArray(unranked) || !Array.isArray(listeningNeeded)) {
+      return res.status(400).json({ error: 'ranked, unranked and listeningNeeded must be arrays' });
     }
-    saveAlbumRanking(ranked, unranked);
+    saveAlbumRanking(ranked, unranked, listeningNeeded);
     res.json({ ok: true });
   } catch (error) {
     console.error('Error saving album ranking:', error);

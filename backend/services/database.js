@@ -345,6 +345,7 @@ export function saveAlbums(scannedAlbums) {
       artist_name: artist ? artist.name : 'Unknown Artist',
       title: album.title,
       rank: prev ? prev.rank : null,
+      listening_needed: prev?.listening_needed ?? false,
       has_cover,
     };
   });
@@ -366,18 +367,22 @@ export function getAllAlbums() {
   return [...unranked, ...ranked];
 }
 
-export function saveAlbumRanking(rankedIds, unrankedIds) {
+export function saveAlbumRanking(rankedIds, unrankedIds, listeningNeededIds = []) {
   const albums = loadAlbums();
   const albumMap = new Map(albums.map(a => [a.id, a]));
 
   const updated = [];
   rankedIds.forEach((id, i) => {
     const album = albumMap.get(id);
-    if (album) updated.push({ ...album, rank: i + 1 });
+    if (album) updated.push({ ...album, rank: i + 1, listening_needed: false });
   });
   unrankedIds.forEach(id => {
     const album = albumMap.get(id);
-    if (album) updated.push({ ...album, rank: null });
+    if (album) updated.push({ ...album, rank: null, listening_needed: false });
+  });
+  listeningNeededIds.forEach(id => {
+    const album = albumMap.get(id);
+    if (album) updated.push({ ...album, rank: null, listening_needed: true });
   });
 
   saveAlbumsToFile(updated);

@@ -1,35 +1,39 @@
 [
   {
-    "id": "aad01f77-9dba-4cd0-a07e-09f18454ef5e",
-    "artist_mbid": "a69103f5-2825-468e-908c-1e1618ebce80",
-    "artist_name": "Yukno",
-    "title": "Ich kenne kein Weekend",
-    "rank": 1,
-    "has_cover": true
-  },
-  {
-    "id": "0e79db43-c688-4fc0-8859-7aa13696ae5d",
-    "artist_mbid": "1f5ff245-2837-4d4a-a609-e93e544478c3",
-    "artist_name": "Trivium",
-    "title": "In the Court of the Dragon",
-    "rank": 2,
-    "has_cover": true
-  },
-  {
-    "id": "57339ba9-ca75-4ad7-80a1-79625a64aa3e",
-    "artist_mbid": "d9fccd7c-a14c-4c1a-8a3b-17d05b2f549c",
-    "artist_name": "Warhaus",
-    "title": "Karaoke Moon",
-    "rank": 3,
-    "has_cover": true
-  },
-  {
     "id": "2667e8dd-6070-41dc-8242-737d5aef51f1",
     "artist_mbid": "72fd7688-8394-43b6-8f41-278657648a45",
     "artist_name": "Yussef Kamaal",
     "title": "Black Focus",
+    "rank": 1,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "f65322f4-e3fd-4341-9d7f-f27fb14522f3",
+    "artist_mbid": "ba853904-ae25-4ebb-89d6-c44cfbd71bd2",
+    "artist_name": "Blur",
+    "title": "The Ballad of Darren",
+    "rank": 2,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "8774891c-5947-41c2-acc3-92bb2f08aeba",
+    "artist_mbid": "7ac725c0-099e-485a-82d7-a56e583b6a2f",
+    "artist_name": "Paradis",
+    "title": "Recto verso",
+    "rank": 3,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "3e0e6be0-2b46-4213-bfdf-2d0dc731222f",
+    "artist_mbid": "26ae99ef-7161-4e39-985d-d238a624064a",
+    "artist_name": "Yvon",
+    "title": "Yvon Im Kreis der Liebe",
     "rank": 4,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "8a3f2d03-0a6d-4684-9823-8d734294059b",
@@ -37,583 +41,656 @@
     "artist_name": "Vieux Farka Touré",
     "title": "Ali",
     "rank": 5,
-    "has_cover": true
-  },
-  {
-    "id": "8774891c-5947-41c2-acc3-92bb2f08aeba",
-    "artist_mbid": "7ac725c0-099e-485a-82d7-a56e583b6a2f",
-    "artist_name": "Paradis",
-    "title": "Recto verso",
-    "rank": 6,
-    "has_cover": true
-  },
-  {
-    "id": "f57960b3-4735-430f-9dd0-bbb9ddd8977a",
-    "artist_mbid": "1ac970a1-2d7d-4ac6-b962-f242874f0a4a",
-    "artist_name": "Apsilon",
-    "title": "Haut wie Pelz",
-    "rank": 7,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "655c7505-eef3-462c-b39e-13d8a9b619df",
     "artist_mbid": "c5119d8a-ffee-48bc-99c3-f323bdf16d82",
     "artist_name": "Vektor",
     "title": "Terminal Redux",
-    "rank": 8,
-    "has_cover": true
-  },
-  {
-    "id": "3e0e6be0-2b46-4213-bfdf-2d0dc731222f",
-    "artist_mbid": "26ae99ef-7161-4e39-985d-d238a624064a",
-    "artist_name": "Yvon",
-    "title": "Yvon Im Kreis der Liebe",
-    "rank": 9,
-    "has_cover": true
+    "rank": 6,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "d9259473-d987-4dd2-b432-f88a30a6558e",
     "artist_mbid": "31745282-b1ea-4d62-939f-226b14d68e7c",
     "artist_name": "In Flames",
     "title": "The Jester Race ~ Black‐Ash Inheritance",
-    "rank": 10,
-    "has_cover": true
-  },
-  {
-    "id": "be3e3f45-2963-46b2-807b-21c2e947eeee",
-    "artist_mbid": "63aa26c3-d59b-4da4-84ac-716b54f1ef4d",
-    "artist_name": "Tame Impala",
-    "title": "Lonerism",
-    "rank": 11,
-    "has_cover": true
-  },
-  {
-    "id": "67b3c68a-618c-4fce-9275-61a6b50cd517",
-    "artist_mbid": "d1353a0c-26fb-4318-a116-defde9c7c9ad",
-    "artist_name": "Dido",
-    "title": "No Angel",
-    "rank": 12,
-    "has_cover": true
-  },
-  {
-    "id": "b633710d-5218-47a6-bccc-50741e679d84",
-    "artist_mbid": "cd66cb19-ed44-43e8-9849-645c2d12de0e",
-    "artist_name": "Victor Solf",
-    "title": "Still. There’s Hope",
-    "rank": 13,
-    "has_cover": true
-  },
-  {
-    "id": "d9ac274c-28c8-4342-9aca-18c9ece403b9",
-    "artist_mbid": "66fc5bf8-daa4-4241-b378-9bc9077939d2",
-    "artist_name": "Tool",
-    "title": "Ænima",
-    "rank": 14,
-    "has_cover": true
-  },
-  {
-    "id": "b92fce1e-8e4e-4f5f-9a91-805d6189fc9c",
-    "artist_mbid": "cf82a38f-9413-4333-bacb-ca5b6db95794",
-    "artist_name": "Warpaint",
-    "title": "The Fool",
-    "rank": 15,
-    "has_cover": true
-  },
-  {
-    "id": "520a72b0-5af3-43fa-a127-ee0eb1754356",
-    "artist_mbid": "5334edc0-5faf-4ca5-b1df-000de3e1f752",
-    "artist_name": "St. Vincent",
-    "title": "MASSEDUCTION",
-    "rank": 16,
-    "has_cover": true
-  },
-  {
-    "id": "8bd344f0-2a2a-4767-9b60-4c184c11d136",
-    "artist_mbid": "114f8840-8704-4b70-9673-904d60ecadc8",
-    "artist_name": "Sylosis",
-    "title": "The New Flesh",
-    "rank": 17,
-    "has_cover": true
-  },
-  {
-    "id": "e7ef14b9-bac6-4992-bcb7-38973e5859c2",
-    "artist_mbid": "44cf61b8-5197-448a-b82b-cef6ee89fac5",
-    "artist_name": "Paramore",
-    "title": "Brand New Eyes",
-    "rank": 18,
-    "has_cover": true
-  },
-  {
-    "id": "a4934efa-2e18-4238-848e-04bdb640fcc7",
-    "artist_mbid": "f83781c8-64f9-4657-85bd-51f74d195cfd",
-    "artist_name": "The Whitest Boy Alive",
-    "title": "Dreams",
-    "rank": 19,
-    "has_cover": true
-  },
-  {
-    "id": "26986b53-4038-47b1-b63e-97bad1c215fb",
-    "artist_mbid": "85002755-85e7-484e-a831-dc47c27af2b3",
-    "artist_name": "Her",
-    "title": "Her",
-    "rank": 20,
-    "has_cover": true
-  },
-  {
-    "id": "be3efc4f-93c8-4877-b6ac-c43ebc2cb675",
-    "artist_mbid": "fa354ecf-34d5-497e-b694-1a93c7c1bb3d",
-    "artist_name": "The Düsseldorf Düsterboys",
-    "title": "Nenn mich Musik",
-    "rank": 21,
-    "has_cover": true
-  },
-  {
-    "id": "9201c172-a875-4b2e-b825-2db111258034",
-    "artist_mbid": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
-    "artist_name": "Metallica",
-    "title": "…And Justice for All",
-    "rank": 22,
-    "has_cover": true
-  },
-  {
-    "id": "7c3c1edc-8f67-4115-8352-3a914da8197e",
-    "artist_mbid": "5441c29d-3602-4898-b1a1-b77fa23b8e50",
-    "artist_name": "David Bowie",
-    "title": "★",
-    "rank": 23,
-    "has_cover": true
-  },
-  {
-    "id": "caa4b150-37bc-4b60-a933-8dfaf8507764",
-    "artist_mbid": "91511517-ef93-4d71-a0f0-c858272af4a7",
-    "artist_name": "Balthazar",
-    "title": "Sand",
-    "rank": 24,
-    "has_cover": true
-  },
-  {
-    "id": "35c23d9f-9765-42c2-9ef4-f28fa61c11a3",
-    "artist_mbid": "7eb1ce54-a355-41f9-8d68-e018b096d427",
-    "artist_name": "Harry Styles",
-    "title": "Kiss All the Time. Disco, Occasionally.",
-    "rank": 25,
-    "has_cover": true
-  },
-  {
-    "id": "e33ad269-7da4-40c7-857a-e32a76df889a",
-    "artist_mbid": "1c5efd53-d6b6-4d63-9d22-a15025cf5f07",
-    "artist_name": "Gojira",
-    "title": "L'Enfant sauvage",
-    "rank": 26,
-    "has_cover": true
-  },
-  {
-    "id": "82accad3-a0eb-4a4e-89f1-cd630bfb5dfe",
-    "artist_mbid": "1595addf-f76b-450a-a097-af852ff35f27",
-    "artist_name": "Nujabes",
-    "title": "Modal Soul",
-    "rank": 27,
-    "has_cover": true
-  },
-  {
-    "id": "dac24507-0e8b-44cb-8b68-0ebdbc604446",
-    "artist_mbid": "50d1da2e-d70d-46cc-8d65-21e524802c49",
-    "artist_name": "Grian Chatten",
-    "title": "Chaos for the Fly",
-    "rank": 28,
-    "has_cover": true
-  },
-  {
-    "id": "4f5a8159-7cb9-47c3-ace4-2fd9b4851dde",
-    "artist_mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
-    "artist_name": "James Blake",
-    "title": "Playing Robots Into Heaven",
-    "rank": 29,
-    "has_cover": true
-  },
-  {
-    "id": "e14524d5-920d-4604-9881-a11b26199942",
-    "artist_mbid": "d1515727-4a93-4c0d-88cb-d7a9fce01879",
-    "artist_name": "Jamie xx",
-    "title": "In Waves",
-    "rank": 30,
-    "has_cover": true
-  },
-  {
-    "id": "36e4cf28-1995-40d7-bbb0-cb04115606c8",
-    "artist_mbid": "989a356a-deca-4957-932e-590b4590acf2",
-    "artist_name": "Sylvie Kreusch",
-    "title": "Montbray",
-    "rank": 31,
-    "has_cover": true
-  },
-  {
-    "id": "13a524af-a7e6-45a5-9c79-9d7657f316b1",
-    "artist_mbid": "cfe4a55b-b076-48c1-a9fe-585c59f14645",
-    "artist_name": "Night Moves",
-    "title": "Colored Emotions",
-    "rank": 32,
-    "has_cover": true
-  },
-  {
-    "id": "c5110b22-ce91-4e12-b2aa-895f044ab7db",
-    "artist_mbid": "144ef525-85e9-40c3-8335-02c32d0861f3",
-    "artist_name": "John Mayer",
-    "title": "Continuum",
-    "rank": 33,
-    "has_cover": true
-  },
-  {
-    "id": "9f075368-2b1b-467e-96dd-9018254cd1d6",
-    "artist_mbid": "cc197bad-dc9c-440d-a5b5-d52ba2e14234",
-    "artist_name": "Coldplay",
-    "title": "Parachutes",
-    "rank": 34,
-    "has_cover": true
-  },
-  {
-    "id": "13242174-e7f0-4458-9aa2-afe3f0ed3013",
-    "artist_mbid": "7527f6c2-d762-4b88-b5e2-9244f1e34c46",
-    "artist_name": "Deftones",
-    "title": "private music",
-    "rank": 35,
-    "has_cover": true
-  },
-  {
-    "id": "fa218b2a-f2bb-446b-bbfe-fd3987811915",
-    "artist_mbid": "e6e879c0-3d56-4f12-b3c5-3ce459661a8e",
-    "artist_name": "Jeff Buckley",
-    "title": "Grace",
-    "rank": 36,
-    "has_cover": true
-  },
-  {
-    "id": "8020d4f0-01b5-4f7c-ae1d-f83fa936aaf4",
-    "artist_mbid": "456104db-b21e-46a6-a094-1dd396f4c6a6",
-    "artist_name": "Bilderbuch",
-    "title": "SCHICK SCHOCK",
-    "rank": 37,
-    "has_cover": true
-  },
-  {
-    "id": "23a5bd1e-eed1-444f-89fe-d7507c812117",
-    "artist_mbid": "61604b45-8a91-4e33-a1b6-45d7b1fec4e5",
-    "artist_name": "Destroyer",
-    "title": "ken",
-    "rank": 38,
-    "has_cover": true
-  },
-  {
-    "id": "cd10e55c-cb93-409d-b988-cd692143a2ca",
-    "artist_mbid": "40f5d9e4-2de7-4f2d-ad41-e31a9a9fea27",
-    "artist_name": "The Smiths",
-    "title": "Hatful of Hollow",
-    "rank": 39,
-    "has_cover": true
-  },
-  {
-    "id": "0e8a1994-f0a7-481d-9be2-6c2f80e14de5",
-    "artist_mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711",
-    "artist_name": "Radiohead",
-    "title": "Kid A",
-    "rank": 40,
-    "has_cover": true
-  },
-  {
-    "id": "d8f070fd-ee88-4474-8119-4ba5e318ed41",
-    "artist_mbid": "1f5ff245-2837-4d4a-a609-e93e544478c3",
-    "artist_name": "Trivium",
-    "title": "Ember to Inferno",
-    "rank": 41,
-    "has_cover": true
-  },
-  {
-    "id": "c7fe021b-99be-4323-ab73-06cc8ca48d85",
-    "artist_mbid": "aea4c9b9-9f8d-49dc-b2ca-57d6f26e8634",
-    "artist_name": "Khruangbin",
-    "title": "The Universe Smiles Upon You ii",
-    "rank": 42,
-    "has_cover": true
-  },
-  {
-    "id": "d5d19748-72fc-3f20-aae7-7ca22da283a0",
-    "artist_mbid": "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
-    "artist_name": "The Beatles",
-    "title": "Rubber Soul",
-    "rank": 43,
-    "has_cover": true
-  },
-  {
-    "id": "dc6ffbf9-bb4e-4159-8505-e8c43cd57b3c",
-    "artist_mbid": "f7a15fef-db6f-437e-8bd0-b1829c18acfc",
-    "artist_name": "Susie Suh",
-    "title": "Susie Suh",
-    "rank": 44,
-    "has_cover": true
-  },
-  {
-    "id": "c7ed1722-eb5f-43a8-a80f-e3eb92d4ec1f",
-    "artist_mbid": "7daac7f9-8fcc-485f-a14f-f8091d98cf25",
-    "artist_name": "Pat Metheny",
-    "title": "Side‐Eye III+",
-    "rank": 45,
-    "has_cover": true
-  },
-  {
-    "id": "66e95974-2592-4ea3-b1f7-27e283f10877",
-    "artist_mbid": "4bd95eea-b9f6-4d70-a36c-cfea77431553",
-    "artist_name": "Alice in Chains",
-    "title": "Dirt",
-    "rank": 46,
-    "has_cover": true
+    "rank": 7,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "6f0a3418-8800-42a7-b135-8c269477fd2c",
     "artist_mbid": "42faad37-8aaa-42e4-a300-5a7dae79ed24",
     "artist_name": "Low",
     "title": "Double Negative",
-    "rank": 47,
-    "has_cover": true
+    "rank": 8,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "aad01f77-9dba-4cd0-a07e-09f18454ef5e",
+    "artist_mbid": "a69103f5-2825-468e-908c-1e1618ebce80",
+    "artist_name": "Yukno",
+    "title": "Ich kenne kein Weekend",
+    "rank": 9,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "67b3c68a-618c-4fce-9275-61a6b50cd517",
+    "artist_mbid": "d1353a0c-26fb-4318-a116-defde9c7c9ad",
+    "artist_name": "Dido",
+    "title": "No Angel",
+    "rank": 10,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "b633710d-5218-47a6-bccc-50741e679d84",
+    "artist_mbid": "cd66cb19-ed44-43e8-9849-645c2d12de0e",
+    "artist_name": "Victor Solf",
+    "title": "Still. There’s Hope",
+    "rank": 11,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "d9ac274c-28c8-4342-9aca-18c9ece403b9",
+    "artist_mbid": "66fc5bf8-daa4-4241-b378-9bc9077939d2",
+    "artist_name": "Tool",
+    "title": "Ænima",
+    "rank": 12,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "b92fce1e-8e4e-4f5f-9a91-805d6189fc9c",
+    "artist_mbid": "cf82a38f-9413-4333-bacb-ca5b6db95794",
+    "artist_name": "Warpaint",
+    "title": "The Fool",
+    "rank": 13,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "520a72b0-5af3-43fa-a127-ee0eb1754356",
+    "artist_mbid": "5334edc0-5faf-4ca5-b1df-000de3e1f752",
+    "artist_name": "St. Vincent",
+    "title": "MASSEDUCTION",
+    "rank": 14,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "e7ef14b9-bac6-4992-bcb7-38973e5859c2",
+    "artist_mbid": "44cf61b8-5197-448a-b82b-cef6ee89fac5",
+    "artist_name": "Paramore",
+    "title": "Brand New Eyes",
+    "rank": 15,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "a4934efa-2e18-4238-848e-04bdb640fcc7",
+    "artist_mbid": "f83781c8-64f9-4657-85bd-51f74d195cfd",
+    "artist_name": "The Whitest Boy Alive",
+    "title": "Dreams",
+    "rank": 16,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "26986b53-4038-47b1-b63e-97bad1c215fb",
+    "artist_mbid": "85002755-85e7-484e-a831-dc47c27af2b3",
+    "artist_name": "Her",
+    "title": "Her",
+    "rank": 17,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "be3efc4f-93c8-4877-b6ac-c43ebc2cb675",
+    "artist_mbid": "fa354ecf-34d5-497e-b694-1a93c7c1bb3d",
+    "artist_name": "The Düsseldorf Düsterboys",
+    "title": "Nenn mich Musik",
+    "rank": 18,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "9201c172-a875-4b2e-b825-2db111258034",
+    "artist_mbid": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+    "artist_name": "Metallica",
+    "title": "…And Justice for All",
+    "rank": 19,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "35c23d9f-9765-42c2-9ef4-f28fa61c11a3",
+    "artist_mbid": "7eb1ce54-a355-41f9-8d68-e018b096d427",
+    "artist_name": "Harry Styles",
+    "title": "Kiss All the Time. Disco, Occasionally.",
+    "rank": 20,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "e33ad269-7da4-40c7-857a-e32a76df889a",
+    "artist_mbid": "1c5efd53-d6b6-4d63-9d22-a15025cf5f07",
+    "artist_name": "Gojira",
+    "title": "L'Enfant sauvage",
+    "rank": 21,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "82accad3-a0eb-4a4e-89f1-cd630bfb5dfe",
+    "artist_mbid": "1595addf-f76b-450a-a097-af852ff35f27",
+    "artist_name": "Nujabes",
+    "title": "Modal Soul",
+    "rank": 22,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "dac24507-0e8b-44cb-8b68-0ebdbc604446",
+    "artist_mbid": "50d1da2e-d70d-46cc-8d65-21e524802c49",
+    "artist_name": "Grian Chatten",
+    "title": "Chaos for the Fly",
+    "rank": 23,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "e14524d5-920d-4604-9881-a11b26199942",
+    "artist_mbid": "d1515727-4a93-4c0d-88cb-d7a9fce01879",
+    "artist_name": "Jamie xx",
+    "title": "In Waves",
+    "rank": 24,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "c3a12ca6-b9da-4204-974a-aaed7a04aca4",
+    "artist_mbid": "9c9f1380-2516-4fc9-a3e6-f9f61941d090",
+    "artist_name": "Muse",
+    "title": "Absolution",
+    "rank": 25,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "57339ba9-ca75-4ad7-80a1-79625a64aa3e",
+    "artist_mbid": "d9fccd7c-a14c-4c1a-8a3b-17d05b2f549c",
+    "artist_name": "Warhaus",
+    "title": "Karaoke Moon",
+    "rank": 26,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "36e4cf28-1995-40d7-bbb0-cb04115606c8",
+    "artist_mbid": "989a356a-deca-4957-932e-590b4590acf2",
+    "artist_name": "Sylvie Kreusch",
+    "title": "Montbray",
+    "rank": 27,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "c5110b22-ce91-4e12-b2aa-895f044ab7db",
+    "artist_mbid": "144ef525-85e9-40c3-8335-02c32d0861f3",
+    "artist_name": "John Mayer",
+    "title": "Continuum",
+    "rank": 28,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "9f075368-2b1b-467e-96dd-9018254cd1d6",
+    "artist_mbid": "cc197bad-dc9c-440d-a5b5-d52ba2e14234",
+    "artist_name": "Coldplay",
+    "title": "Parachutes",
+    "rank": 29,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "fa218b2a-f2bb-446b-bbfe-fd3987811915",
+    "artist_mbid": "e6e879c0-3d56-4f12-b3c5-3ce459661a8e",
+    "artist_name": "Jeff Buckley",
+    "title": "Grace",
+    "rank": 30,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "8020d4f0-01b5-4f7c-ae1d-f83fa936aaf4",
+    "artist_mbid": "456104db-b21e-46a6-a094-1dd396f4c6a6",
+    "artist_name": "Bilderbuch",
+    "title": "SCHICK SCHOCK",
+    "rank": 31,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "23a5bd1e-eed1-444f-89fe-d7507c812117",
+    "artist_mbid": "61604b45-8a91-4e33-a1b6-45d7b1fec4e5",
+    "artist_name": "Destroyer",
+    "title": "ken",
+    "rank": 32,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "cd10e55c-cb93-409d-b988-cd692143a2ca",
+    "artist_mbid": "40f5d9e4-2de7-4f2d-ad41-e31a9a9fea27",
+    "artist_name": "The Smiths",
+    "title": "Hatful of Hollow",
+    "rank": 33,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "0e8a1994-f0a7-481d-9be2-6c2f80e14de5",
+    "artist_mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711",
+    "artist_name": "Radiohead",
+    "title": "Kid A",
+    "rank": 34,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "5c7ece5a-d2b9-4250-9b53-e852be198ec0",
+    "artist_mbid": "812c46e5-3d65-4e80-ada8-269450c5621b",
+    "artist_name": "Jordan Rakei",
+    "title": "Origin",
+    "rank": 35,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "d8f070fd-ee88-4474-8119-4ba5e318ed41",
+    "artist_mbid": "1f5ff245-2837-4d4a-a609-e93e544478c3",
+    "artist_name": "Trivium",
+    "title": "Ember to Inferno",
+    "rank": 36,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "c7fe021b-99be-4323-ab73-06cc8ca48d85",
+    "artist_mbid": "aea4c9b9-9f8d-49dc-b2ca-57d6f26e8634",
+    "artist_name": "Khruangbin",
+    "title": "The Universe Smiles Upon You ii",
+    "rank": 37,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "d5d19748-72fc-3f20-aae7-7ca22da283a0",
+    "artist_mbid": "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
+    "artist_name": "The Beatles",
+    "title": "Rubber Soul",
+    "rank": 38,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "dc6ffbf9-bb4e-4159-8505-e8c43cd57b3c",
+    "artist_mbid": "f7a15fef-db6f-437e-8bd0-b1829c18acfc",
+    "artist_name": "Susie Suh",
+    "title": "Susie Suh",
+    "rank": 39,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "c7ed1722-eb5f-43a8-a80f-e3eb92d4ec1f",
+    "artist_mbid": "7daac7f9-8fcc-485f-a14f-f8091d98cf25",
+    "artist_name": "Pat Metheny",
+    "title": "Side‐Eye III+",
+    "rank": 40,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "05625baf-d94b-4c76-9740-c1c7647c330b",
     "artist_mbid": "a3cb23fc-acd3-4ce0-8f36-1e5aa6a18432",
     "artist_name": "U2",
     "title": "Pop",
-    "rank": 48,
-    "has_cover": true
+    "rank": 41,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "90e144ab-2286-418b-a36f-d7045e8c9b7b",
     "artist_mbid": "169c4c28-858e-497b-81a4-8bc15e0026ea",
     "artist_name": "Porcupine Tree",
     "title": "Closure / Continuation",
-    "rank": 49,
-    "has_cover": true
+    "rank": 42,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "fee77552-7209-43fb-9bd9-609599aec466",
     "artist_mbid": "d8f43dc5-4613-48ac-8c23-a62b82f8c67a",
     "artist_name": "Caroline Polachek",
     "title": "Desire, I Want to Turn Into You",
-    "rank": 50,
-    "has_cover": true
+    "rank": 43,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "2408ef91-b30d-416b-9306-c7447021acb0",
     "artist_mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
     "artist_name": "James Blake",
     "title": "Trying Times",
-    "rank": 51,
-    "has_cover": true
+    "rank": 44,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "ea099be8-25f1-449a-a7e9-860891648a15",
     "artist_mbid": "22a1f4d7-81ff-4216-ac06-3387da6bc118",
     "artist_name": "Machine Head",
     "title": "Of Kingdom and Crown",
-    "rank": 52,
-    "has_cover": true
+    "rank": 45,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "98876d54-5e53-4daa-950b-21fd6ceb0065",
     "artist_mbid": "fc3e8983-1f51-4c80-b2b5-146bf2162dc2",
     "artist_name": "Tom Misch",
     "title": "What Kinda Music",
-    "rank": 53,
-    "has_cover": true
+    "rank": 46,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "86303132-190b-4d0b-afff-7761c242341f",
     "artist_mbid": "6a65d878-fcd0-42cf-aff9-ca1d636a8bcc",
     "artist_name": "Foals",
     "title": "Holy Fire",
-    "rank": 54,
-    "has_cover": true
-  },
-  {
-    "id": "7a18fd07-1ddb-452a-a310-4188466b4361",
-    "artist_mbid": "fd87acc7-e0a0-4a45-bc2a-d2ab5c10be68",
-    "artist_name": "Fontaines D.C.",
-    "title": "Romance",
-    "rank": 55,
-    "has_cover": true
-  },
-  {
-    "id": "77c1cbb5-c7ea-44c8-8046-95bd1ceba67b",
-    "artist_mbid": "8295ee00-0096-461d-95c7-c2263d2a4c6d",
-    "artist_name": "Killswitch Engage",
-    "title": "Killswitch Engage",
-    "rank": 56,
-    "has_cover": true
-  },
-  {
-    "id": "e4e5fd39-432a-37e0-8e84-5a63218f1b23",
-    "artist_mbid": "ca891d65-d9b0-4258-89f7-e6ba29d83767",
-    "artist_name": "Iron Maiden",
-    "title": "Powerslave",
-    "rank": 57,
-    "has_cover": true
-  },
-  {
-    "id": "a4aae562-7822-4ebe-9aed-49e4bd04c532",
-    "artist_mbid": "6a8f332b-a26d-48c3-afd9-b167abfb4562",
-    "artist_name": "Kerala Dust",
-    "title": "Light, West",
-    "rank": 58,
-    "has_cover": true
-  },
-  {
-    "id": "bfcd7bd9-f570-41c3-bb94-e26e2777199f",
-    "artist_mbid": "169c4c28-858e-497b-81a4-8bc15e0026ea",
-    "artist_name": "Porcupine Tree",
-    "title": "In Absentia",
-    "rank": 59,
-    "has_cover": true
-  },
-  {
-    "id": "1f173c8d-28f8-4caf-ba9f-84b100b29daa",
-    "artist_mbid": "5318e774-f5b6-4ee0-82cb-4dcf398c3ff8",
-    "artist_name": "Parcels",
-    "title": "Day/Night",
-    "rank": 60,
-    "has_cover": true
-  },
-  {
-    "id": "b42c9e2d-01b7-4d06-82a8-461d6033b71b",
-    "artist_mbid": "3cdb40fe-a63e-4bb9-b40d-17cda5f50979",
-    "artist_name": "Little Simz",
-    "title": "Sometimes I Might Be Introvert",
-    "rank": 61,
-    "has_cover": true
-  },
-  {
-    "id": "f5ce67d1-db2b-4cdf-8725-bbc944450716",
-    "artist_mbid": "61604b45-8a91-4e33-a1b6-45d7b1fec4e5",
-    "artist_name": "Destroyer",
-    "title": "Kaputt",
-    "rank": 62,
-    "has_cover": true
-  },
-  {
-    "id": "7570ec55-15fd-4cb8-9f54-91f15a787b49",
-    "artist_mbid": "8f6bd1e4-fbe1-4f50-aa9b-94c450ec0f11",
-    "artist_name": "Portishead",
-    "title": "Dummy",
-    "rank": 63,
-    "has_cover": true
-  },
-  {
-    "id": "5e082422-217d-46e4-9e14-e6f5a4b98528",
-    "artist_mbid": "31745282-b1ea-4d62-939f-226b14d68e7c",
-    "artist_name": "In Flames",
-    "title": "Foregone",
-    "rank": 64,
-    "has_cover": true
-  },
-  {
-    "id": "a041661f-d1c4-4398-b23d-6bd156bf1aed",
-    "artist_mbid": "6bbb3983-ce8a-4971-96e0-7cae73268fc4",
-    "artist_name": "Jungle",
-    "title": "Volcano",
-    "rank": 65,
-    "has_cover": true
-  },
-  {
-    "id": "19c2ee3b-7328-4dbd-b9d8-56209e140eb8",
-    "artist_mbid": "1789b5dc-e2ea-47aa-9ca0-48596dbb5091",
-    "artist_name": "Sextile",
-    "title": "Push",
-    "rank": 66,
-    "has_cover": true
-  },
-  {
-    "id": "e2856df6-9745-4d96-80ee-75a1c1b05e7f",
-    "artist_mbid": "fd87acc7-e0a0-4a45-bc2a-d2ab5c10be68",
-    "artist_name": "Fontaines D.C.",
-    "title": "Skinty Fia go deo",
-    "rank": 67,
-    "has_cover": true
-  },
-  {
-    "id": "97488f70-6ccd-4e65-b43d-a862abe7f518",
-    "artist_mbid": "169c4c28-858e-497b-81a4-8bc15e0026ea",
-    "artist_name": "Porcupine Tree",
-    "title": "Deadwing",
-    "rank": 68,
-    "has_cover": true
+    "rank": 47,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "e7def36e-04dc-3a80-83c5-4f705c6eab2f",
     "artist_mbid": "e21857d5-3256-4547-afb3-4b6ded592596",
     "artist_name": "Gorillaz",
     "title": "Plastic Beach",
-    "rank": 69,
-    "has_cover": true
+    "rank": 48,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "7a18fd07-1ddb-452a-a310-4188466b4361",
+    "artist_mbid": "fd87acc7-e0a0-4a45-bc2a-d2ab5c10be68",
+    "artist_name": "Fontaines D.C.",
+    "title": "Romance",
+    "rank": 49,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "77c1cbb5-c7ea-44c8-8046-95bd1ceba67b",
+    "artist_mbid": "8295ee00-0096-461d-95c7-c2263d2a4c6d",
+    "artist_name": "Killswitch Engage",
+    "title": "Killswitch Engage",
+    "rank": 50,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "e4e5fd39-432a-37e0-8e84-5a63218f1b23",
+    "artist_mbid": "ca891d65-d9b0-4258-89f7-e6ba29d83767",
+    "artist_name": "Iron Maiden",
+    "title": "Powerslave",
+    "rank": 51,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "a4aae562-7822-4ebe-9aed-49e4bd04c532",
+    "artist_mbid": "6a8f332b-a26d-48c3-afd9-b167abfb4562",
+    "artist_name": "Kerala Dust",
+    "title": "Light, West",
+    "rank": 52,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "bfcd7bd9-f570-41c3-bb94-e26e2777199f",
+    "artist_mbid": "169c4c28-858e-497b-81a4-8bc15e0026ea",
+    "artist_name": "Porcupine Tree",
+    "title": "In Absentia",
+    "rank": 53,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "f5ce67d1-db2b-4cdf-8725-bbc944450716",
+    "artist_mbid": "61604b45-8a91-4e33-a1b6-45d7b1fec4e5",
+    "artist_name": "Destroyer",
+    "title": "Kaputt",
+    "rank": 54,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "8bd344f0-2a2a-4767-9b60-4c184c11d136",
+    "artist_mbid": "114f8840-8704-4b70-9673-904d60ecadc8",
+    "artist_name": "Sylosis",
+    "title": "The New Flesh",
+    "rank": 55,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "1f173c8d-28f8-4caf-ba9f-84b100b29daa",
+    "artist_mbid": "5318e774-f5b6-4ee0-82cb-4dcf398c3ff8",
+    "artist_name": "Parcels",
+    "title": "Day/Night",
+    "rank": 56,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "f57960b3-4735-430f-9dd0-bbb9ddd8977a",
+    "artist_mbid": "1ac970a1-2d7d-4ac6-b962-f242874f0a4a",
+    "artist_name": "Apsilon",
+    "title": "Haut wie Pelz",
+    "rank": 57,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "b42c9e2d-01b7-4d06-82a8-461d6033b71b",
+    "artist_mbid": "3cdb40fe-a63e-4bb9-b40d-17cda5f50979",
+    "artist_name": "Little Simz",
+    "title": "Sometimes I Might Be Introvert",
+    "rank": 58,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "7570ec55-15fd-4cb8-9f54-91f15a787b49",
+    "artist_mbid": "8f6bd1e4-fbe1-4f50-aa9b-94c450ec0f11",
+    "artist_name": "Portishead",
+    "title": "Dummy",
+    "rank": 59,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "5e082422-217d-46e4-9e14-e6f5a4b98528",
+    "artist_mbid": "31745282-b1ea-4d62-939f-226b14d68e7c",
+    "artist_name": "In Flames",
+    "title": "Foregone",
+    "rank": 60,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "fc8bf81b-babb-47fe-99fc-841c1abfeb7c",
+    "artist_mbid": "6897b46a-9236-4480-9ed7-300f6b85d62f",
+    "artist_name": "Ninajirachi",
+    "title": "I Love My Computer",
+    "rank": 61,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "a041661f-d1c4-4398-b23d-6bd156bf1aed",
+    "artist_mbid": "6bbb3983-ce8a-4971-96e0-7cae73268fc4",
+    "artist_name": "Jungle",
+    "title": "Volcano",
+    "rank": 62,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "19c2ee3b-7328-4dbd-b9d8-56209e140eb8",
+    "artist_mbid": "1789b5dc-e2ea-47aa-9ca0-48596dbb5091",
+    "artist_name": "Sextile",
+    "title": "Push",
+    "rank": 63,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "e2856df6-9745-4d96-80ee-75a1c1b05e7f",
+    "artist_mbid": "fd87acc7-e0a0-4a45-bc2a-d2ab5c10be68",
+    "artist_name": "Fontaines D.C.",
+    "title": "Skinty Fia go deo",
+    "rank": 64,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "b8e92589-8b7c-4d0a-9986-02d129997e04",
     "artist_mbid": "cc0b7089-c08d-4c10-b6b0-873582c17fd6",
     "artist_name": "System of a Down",
     "title": "Toxicity",
-    "rank": 70,
-    "has_cover": true
+    "rank": 65,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "169957aa-2ca8-42a8-ba02-71bdf3fe26ff",
     "artist_mbid": "ada7a83c-e3e1-40f1-93f9-3e73dbc9298a",
     "artist_name": "Arctic Monkeys",
     "title": "AM",
-    "rank": 71,
-    "has_cover": true
+    "rank": 66,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "4f5a8159-7cb9-47c3-ace4-2fd9b4851dde",
+    "artist_mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
+    "artist_name": "James Blake",
+    "title": "Playing Robots Into Heaven",
+    "rank": 67,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "cad59bf6-a85b-4ce0-8a56-ae2af7ab9d98",
+    "artist_mbid": "627a2192-1645-457f-a710-3d182619f2e4",
+    "artist_name": "Bibiza",
+    "title": "Wiener Schickeria",
+    "rank": 68,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "90cf3f7e-a93a-45e0-8391-8863635ae0d5",
     "artist_mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711",
     "artist_name": "Radiohead",
     "title": "In Rainbows",
-    "rank": 72,
-    "has_cover": true
+    "rank": 69,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "578cc172-c8ff-47df-a890-38e485a64ede",
     "artist_mbid": "68d3a2a5-d1da-418f-a9bb-3fc9ef9b27a8",
     "artist_name": "Barbarossa",
     "title": "Bloodlines",
-    "rank": 73,
-    "has_cover": true
+    "rank": 70,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "c1550cdd-ccf4-4fb9-8db8-bb28e8634870",
+    "artist_mbid": "31745282-b1ea-4d62-939f-226b14d68e7c",
+    "artist_name": "In Flames",
+    "title": "Whoracle",
+    "rank": 71,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "97488f70-6ccd-4e65-b43d-a862abe7f518",
+    "artist_mbid": "169c4c28-858e-497b-81a4-8bc15e0026ea",
+    "artist_name": "Porcupine Tree",
+    "title": "Deadwing",
+    "rank": 72,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "cd3f5a6c-6de6-4265-9b0d-b67a490e61ba",
     "artist_mbid": "9974d324-3d58-4f93-812b-41eb3ca75eed",
     "artist_name": "Change",
     "title": "Miracles",
-    "rank": 74,
-    "has_cover": true
-  },
-  {
-    "id": "3b0d3f55-7f02-4244-b9e7-6913b772aca1",
-    "artist_mbid": "61604b45-8a91-4e33-a1b6-45d7b1fec4e5",
-    "artist_name": "Destroyer",
-    "title": "Labyrinthitis",
-    "rank": 75,
-    "has_cover": true
+    "rank": 73,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "325dc668-b017-446d-bcef-add30513c29c",
     "artist_mbid": "ca891d65-d9b0-4258-89f7-e6ba29d83767",
     "artist_name": "Iron Maiden",
     "title": "Senjutsu",
-    "rank": 76,
-    "has_cover": true
+    "rank": 74,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "e3e63dfb-adfc-4e6d-828d-973fc9542b71",
     "artist_mbid": "24e1b53c-3085-4581-8472-0b0088d2508c",
     "artist_name": "Avenged Sevenfold",
     "title": "Hail to the King",
+    "rank": 75,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "73b1321f-e8d6-42dc-99ea-2b76b4aac48c",
+    "artist_mbid": "42faad37-8aaa-42e4-a300-5a7dae79ed24",
+    "artist_name": "Low",
+    "title": "HEY WHAT",
+    "rank": 76,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "caa4b150-37bc-4b60-a933-8dfaf8507764",
+    "artist_mbid": "91511517-ef93-4d71-a0f0-c858272af4a7",
+    "artist_name": "Balthazar",
+    "title": "Sand",
     "rank": 77,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "0bf006ce-45a5-4963-89cb-cd285fd768bb",
@@ -621,23 +698,26 @@
     "artist_name": "Geese",
     "title": "Getting Killed",
     "rank": 78,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": false
   },
   {
-    "id": "73b1321f-e8d6-42dc-99ea-2b76b4aac48c",
-    "artist_mbid": "42faad37-8aaa-42e4-a300-5a7dae79ed24",
-    "artist_name": "Low",
-    "title": "HEY WHAT",
+    "id": "d0f570d6-bee8-4be2-9929-0a28327754d5",
+    "artist_mbid": "680466d6-f05b-44f6-858d-625d1b5087f6",
+    "artist_name": "Lianne La Havas",
+    "title": "Lianne La Havas",
     "rank": 79,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": false
   },
   {
-    "id": "96c01153-d46e-4535-bdf6-ddafaef56b01",
-    "artist_mbid": "8bfac288-ccc5-448d-9573-c33ea2aa5c30",
-    "artist_name": "Red Hot Chili Peppers",
-    "title": "By the Way",
+    "id": "13242174-e7f0-4458-9aa2-afe3f0ed3013",
+    "artist_mbid": "7527f6c2-d762-4b88-b5e2-9244f1e34c46",
+    "artist_name": "Deftones",
+    "title": "private music",
     "rank": 80,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "e028b971-bc74-41cb-b45e-ab2e5769c92a",
@@ -645,47 +725,53 @@
     "artist_name": "MIKA",
     "title": "Life in Cartoon Motion",
     "rank": 81,
-    "has_cover": true
-  },
-  {
-    "id": "d0f570d6-bee8-4be2-9929-0a28327754d5",
-    "artist_mbid": "680466d6-f05b-44f6-858d-625d1b5087f6",
-    "artist_name": "Lianne La Havas",
-    "title": "Lianne La Havas",
-    "rank": 82,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "6a09041b-0f79-3278-88d9-0552dd28d37f",
     "artist_mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711",
     "artist_name": "Radiohead",
     "title": "OK Computer",
-    "rank": 83,
-    "has_cover": true
+    "rank": 82,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "09f2bfbf-72fb-4bd1-b8de-b68a571c861b",
     "artist_mbid": "583066fd-c79d-4bb3-9ed0-da7adec70a7b",
     "artist_name": "Ferge X Fisherman",
     "title": "Blinded by the Neon",
-    "rank": 84,
-    "has_cover": true
-  },
-  {
-    "id": "11f6002c-7da2-48c6-9387-087c9d5c857f",
-    "artist_mbid": "d4d08a6d-5d08-4919-acb6-b4b7bae3ec00",
-    "artist_name": "CATT",
-    "title": "Change",
-    "rank": 85,
-    "has_cover": true
+    "rank": 83,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "0c889c27-2492-46ca-82c2-d93b536d54ec",
     "artist_mbid": "7df4c4de-3181-4a69-bd36-9d663970cebb",
     "artist_name": "Alex G",
     "title": "God Save the Animals",
+    "rank": 84,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "0e79db43-c688-4fc0-8859-7aa13696ae5d",
+    "artist_mbid": "1f5ff245-2837-4d4a-a609-e93e544478c3",
+    "artist_name": "Trivium",
+    "title": "In the Court of the Dragon",
+    "rank": 85,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "11f6002c-7da2-48c6-9387-087c9d5c857f",
+    "artist_mbid": "d4d08a6d-5d08-4919-acb6-b4b7bae3ec00",
+    "artist_name": "CATT",
+    "title": "Change",
     "rank": 86,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "d6c2bcf4-079c-425f-93ff-068d36f7c611",
@@ -693,7 +779,8 @@
     "artist_name": "Vampire Weekend",
     "title": "Only God Was Above Us",
     "rank": 87,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "71c271e3-30d1-4e26-b5c8-3805b219c51d",
@@ -701,7 +788,8 @@
     "artist_name": "Depeche Mode",
     "title": "Ultra",
     "rank": 88,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "035aae28-0ce9-4198-820f-c0ceac24eae3",
@@ -709,7 +797,8 @@
     "artist_name": "King Crimson",
     "title": "In the Court of the Crimson King",
     "rank": 89,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "62bd84b5-1c38-4d27-9176-ea0716d51064",
@@ -717,191 +806,188 @@
     "artist_name": "Mac Miller",
     "title": "Swimming",
     "rank": 90,
-    "has_cover": true
-  },
-  {
-    "id": "043406e8-b86b-4460-ba06-c069cd00c7b0",
-    "artist_mbid": "054b11f5-209b-4f18-a087-62710a34e09e",
-    "artist_name": "Kommode",
-    "title": "Analog Dance Music",
-    "rank": 91,
-    "has_cover": true
-  },
-  {
-    "id": "cad59bf6-a85b-4ce0-8a56-ae2af7ab9d98",
-    "artist_mbid": "627a2192-1645-457f-a710-3d182619f2e4",
-    "artist_name": "Bibiza",
-    "title": "Wiener Schickeria",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "6465135f-a574-49dd-888a-15e2eb50ac8f",
-    "artist_mbid": "91511517-ef93-4d71-a0f0-c858272af4a7",
-    "artist_name": "Balthazar",
-    "title": "Fever",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "f65322f4-e3fd-4341-9d7f-f27fb14522f3",
-    "artist_mbid": "ba853904-ae25-4ebb-89d6-c44cfbd71bd2",
-    "artist_name": "Blur",
-    "title": "The Ballad of Darren",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "d2b710da-af09-47f7-8107-e507974c913c",
-    "artist_mbid": "437a0e49-c6ae-42f6-a6c1-84f25ed366bc",
-    "artist_name": "Bon Iver",
-    "title": "22, a Million",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "876da12a-de9d-4c66-9582-82aba7d2d093",
-    "artist_mbid": "f57e14e4-b030-467c-b202-539453f504ec",
-    "artist_name": "Children of Bodom",
-    "title": "Follow the Reaper",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "92c85c68-e8e4-3c39-bf4e-dd9e7339427c",
-    "artist_mbid": "321531fc-db73-4ffa-a959-61a61a2908c1",
-    "artist_name": "Erykah Badu",
-    "title": "Baduizm",
-    "rank": null,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "5b2a95e1-a3c6-4e80-b051-9d09959ca291",
     "artist_mbid": "fa97dd36-1b82-43d7-a6e4-2adeafd59cef",
     "artist_name": "Fleet Foxes",
     "title": "Fleet Foxes",
-    "rank": null,
-    "has_cover": true
+    "rank": 91,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
-    "id": "2e2c0dfc-17d3-4f66-8723-98af2545f1ce",
-    "artist_mbid": "bd13909f-1c29-4c27-a874-d4aaf27c5b1a",
-    "artist_name": "Fleetwood Mac",
-    "title": "Rumours",
-    "rank": null,
-    "has_cover": true
+    "id": "96c01153-d46e-4535-bdf6-ddafaef56b01",
+    "artist_mbid": "8bfac288-ccc5-448d-9573-c33ea2aa5c30",
+    "artist_name": "Red Hot Chili Peppers",
+    "title": "By the Way",
+    "rank": 92,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
-    "id": "4c41ef93-8055-4c72-ac6b-d19b8ce70a7e",
-    "artist_mbid": "fd87acc7-e0a0-4a45-bc2a-d2ab5c10be68",
-    "artist_name": "Fontaines D.C.",
-    "title": "A Hero's Death",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "ee7cd062-576c-4114-b1cd-19e087e9c981",
-    "artist_mbid": "e21857d5-3256-4547-afb3-4b6ded592596",
-    "artist_name": "Gorillaz",
-    "title": "The Mountain",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "b12b86e1-098a-4610-8d3c-01b509e5fed7",
-    "artist_mbid": "eeb1195b-f213-4ce1-b28c-8565211f8e43",
-    "artist_name": "Guns N’ Roses",
-    "title": "Appetite for Destruction",
-    "rank": null,
-    "has_cover": true
+    "id": "043406e8-b86b-4460-ba06-c069cd00c7b0",
+    "artist_mbid": "054b11f5-209b-4f18-a087-62710a34e09e",
+    "artist_name": "Kommode",
+    "title": "Analog Dance Music",
+    "rank": 93,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "a5c29a5a-b27a-4cff-aa23-8f6985fc49f7",
     "artist_mbid": "456eabce-d1dd-4481-a206-36ab4f2eaeb8",
     "artist_name": "Herbert Grönemeyer",
     "title": "4630 Bochum",
-    "rank": null,
-    "has_cover": true
+    "rank": 94,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
-    "id": "9c91851d-d058-4f97-87ac-6fb39aa7483e",
-    "artist_mbid": "456eabce-d1dd-4481-a206-36ab4f2eaeb8",
-    "artist_name": "Herbert Grönemeyer",
-    "title": "Mensch",
-    "rank": null,
-    "has_cover": true
+    "id": "2e2c0dfc-17d3-4f66-8723-98af2545f1ce",
+    "artist_mbid": "bd13909f-1c29-4c27-a874-d4aaf27c5b1a",
+    "artist_name": "Fleetwood Mac",
+    "title": "Rumours",
+    "rank": 95,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
-    "id": "c1550cdd-ccf4-4fb9-8db8-bb28e8634870",
-    "artist_mbid": "31745282-b1ea-4d62-939f-226b14d68e7c",
-    "artist_name": "In Flames",
-    "title": "Whoracle",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "ae7c5089-ef36-31ff-95ec-eab01bff718f",
-    "artist_mbid": "ca891d65-d9b0-4258-89f7-e6ba29d83767",
-    "artist_name": "Iron Maiden",
-    "title": "Brave New World",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "3c38b725-e293-4cb9-8f5c-2afc8d9c5176",
-    "artist_mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
-    "artist_name": "James Blake",
-    "title": "Bad Cameo",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "5c7ece5a-d2b9-4250-9b53-e852be198ec0",
-    "artist_mbid": "812c46e5-3d65-4e80-ada8-269450c5621b",
-    "artist_name": "Jordan Rakei",
-    "title": "Origin",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "646f16de-a793-4172-8799-66c52fa3f9c3",
-    "artist_mbid": "4b585938-f271-45e2-b19a-91c634b5e396",
-    "artist_name": "Kate Bush",
-    "title": "Hounds of Love",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "5777f650-3b12-496d-9f66-4f5fcdda05ed",
-    "artist_mbid": "6a8f332b-a26d-48c3-afd9-b167abfb4562",
-    "artist_name": "Kerala Dust",
-    "title": "Violet Drive",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "290fd60c-a6d1-4dca-ad4f-0876eff5d680",
-    "artist_mbid": "8295ee00-0096-461d-95c7-c2263d2a4c6d",
-    "artist_name": "Killswitch Engage",
-    "title": "This Consequence",
-    "rank": null,
-    "has_cover": true
-  },
-  {
-    "id": "33aa9e5b-5e39-4e93-8aeb-ba0f3b94ab10",
-    "artist_mbid": "cf0f4547-ffbd-4011-98ad-0bec9ba022db",
-    "artist_name": "Kings of Convenience",
-    "title": "Declaration of Dependence",
-    "rank": null,
-    "has_cover": true
+    "id": "92c85c68-e8e4-3c39-bf4e-dd9e7339427c",
+    "artist_mbid": "321531fc-db73-4ffa-a959-61a61a2908c1",
+    "artist_name": "Erykah Badu",
+    "title": "Baduizm",
+    "rank": 96,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "1c50e54a-44fa-4d90-8377-ec3fd6899bee",
     "artist_mbid": "abc31be8-02b2-4bb1-867d-604d50b7be78",
     "artist_name": "L’Impératrice",
     "title": "Tako Tsubo",
-    "rank": null,
-    "has_cover": true
+    "rank": 97,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "ae7c5089-ef36-31ff-95ec-eab01bff718f",
+    "artist_mbid": "ca891d65-d9b0-4258-89f7-e6ba29d83767",
+    "artist_name": "Iron Maiden",
+    "title": "Brave New World",
+    "rank": 98,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "b12b86e1-098a-4610-8d3c-01b509e5fed7",
+    "artist_mbid": "eeb1195b-f213-4ce1-b28c-8565211f8e43",
+    "artist_name": "Guns N’ Roses",
+    "title": "Appetite for Destruction",
+    "rank": 99,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "33aa9e5b-5e39-4e93-8aeb-ba0f3b94ab10",
+    "artist_mbid": "cf0f4547-ffbd-4011-98ad-0bec9ba022db",
+    "artist_name": "Kings of Convenience",
+    "title": "Declaration of Dependence",
+    "rank": 100,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "6465135f-a574-49dd-888a-15e2eb50ac8f",
+    "artist_mbid": "91511517-ef93-4d71-a0f0-c858272af4a7",
+    "artist_name": "Balthazar",
+    "title": "Fever",
+    "rank": 101,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "59751afc-7936-4034-9125-5c648a6c2c1a",
+    "artist_mbid": "b46efb1e-ecd9-4044-9820-14c64c2d657e",
+    "artist_name": "Romy",
+    "title": "Mid Air",
+    "rank": 102,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "edb801b5-1d11-4540-bde8-dc657bf71cb9",
+    "artist_mbid": "66fc5bf8-daa4-4241-b378-9bc9077939d2",
+    "artist_name": "Tool",
+    "title": "Lateralus",
+    "rank": 103,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "5777f650-3b12-496d-9f66-4f5fcdda05ed",
+    "artist_mbid": "6a8f332b-a26d-48c3-afd9-b167abfb4562",
+    "artist_name": "Kerala Dust",
+    "title": "Violet Drive",
+    "rank": 104,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "d2b710da-af09-47f7-8107-e507974c913c",
+    "artist_mbid": "437a0e49-c6ae-42f6-a6c1-84f25ed366bc",
+    "artist_name": "Bon Iver",
+    "title": "22, a Million",
+    "rank": 105,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "626267be-f28d-49db-a349-70e1a9736955",
+    "artist_mbid": "1ed00158-c6a3-45cd-819c-2f91997fc480",
+    "artist_name": "Sister Sledge",
+    "title": "We Are Family",
+    "rank": 106,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "646f16de-a793-4172-8799-66c52fa3f9c3",
+    "artist_mbid": "4b585938-f271-45e2-b19a-91c634b5e396",
+    "artist_name": "Kate Bush",
+    "title": "Hounds of Love",
+    "rank": 107,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "4c41ef93-8055-4c72-ac6b-d19b8ce70a7e",
+    "artist_mbid": "fd87acc7-e0a0-4a45-bc2a-d2ab5c10be68",
+    "artist_name": "Fontaines D.C.",
+    "title": "A Hero's Death",
+    "rank": 108,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "9c91851d-d058-4f97-87ac-6fb39aa7483e",
+    "artist_mbid": "456eabce-d1dd-4481-a206-36ab4f2eaeb8",
+    "artist_name": "Herbert Grönemeyer",
+    "title": "Mensch",
+    "rank": 109,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "876da12a-de9d-4c66-9582-82aba7d2d093",
+    "artist_mbid": "f57e14e4-b030-467c-b202-539453f504ec",
+    "artist_name": "Children of Bodom",
+    "title": "Follow the Reaper",
+    "rank": 110,
+    "has_cover": true,
+    "listening_needed": false
   },
   {
     "id": "74a35922-10ec-49a4-ba97-918f1b1eae20",
@@ -909,23 +995,53 @@
     "artist_name": "Men I Trust",
     "title": "Equus Asinus",
     "rank": null,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": true
   },
   {
-    "id": "c3a12ca6-b9da-4204-974a-aaed7a04aca4",
-    "artist_mbid": "9c9f1380-2516-4fc9-a3e6-f9f61941d090",
-    "artist_name": "Muse",
-    "title": "Absolution",
+    "id": "ee7cd062-576c-4114-b1cd-19e087e9c981",
+    "artist_mbid": "e21857d5-3256-4547-afb3-4b6ded592596",
+    "artist_name": "Gorillaz",
+    "title": "The Mountain",
     "rank": null,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": true
   },
   {
-    "id": "fc8bf81b-babb-47fe-99fc-841c1abfeb7c",
-    "artist_mbid": "6897b46a-9236-4480-9ed7-300f6b85d62f",
-    "artist_name": "Ninajirachi",
-    "title": "I Love My Computer",
+    "id": "290fd60c-a6d1-4dca-ad4f-0876eff5d680",
+    "artist_mbid": "8295ee00-0096-461d-95c7-c2263d2a4c6d",
+    "artist_name": "Killswitch Engage",
+    "title": "This Consequence",
     "rank": null,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": true
+  },
+  {
+    "id": "7c3c1edc-8f67-4115-8352-3a914da8197e",
+    "artist_mbid": "5441c29d-3602-4898-b1a1-b77fa23b8e50",
+    "artist_name": "David Bowie",
+    "title": "★",
+    "rank": null,
+    "has_cover": true,
+    "listening_needed": true
+  },
+  {
+    "id": "3c38b725-e293-4cb9-8f5c-2afc8d9c5176",
+    "artist_mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
+    "artist_name": "James Blake",
+    "title": "Bad Cameo",
+    "rank": null,
+    "has_cover": true,
+    "listening_needed": true
+  },
+  {
+    "id": "13a524af-a7e6-45a5-9c79-9d7657f316b1",
+    "artist_mbid": "cfe4a55b-b076-48c1-a9fe-585c59f14645",
+    "artist_name": "Night Moves",
+    "title": "Colored Emotions",
+    "rank": null,
+    "has_cover": true,
+    "listening_needed": true
   },
   {
     "id": "a4864e94-6d75-4ade-bc93-0dabf3521453",
@@ -933,30 +1049,34 @@
     "artist_name": "Nine Inch Nails",
     "title": "The Fragile",
     "rank": null,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": true
   },
   {
-    "id": "59751afc-7936-4034-9125-5c648a6c2c1a",
-    "artist_mbid": "b46efb1e-ecd9-4044-9820-14c64c2d657e",
-    "artist_name": "Romy",
-    "title": "Mid Air",
+    "id": "66e95974-2592-4ea3-b1f7-27e283f10877",
+    "artist_mbid": "4bd95eea-b9f6-4d70-a36c-cfea77431553",
+    "artist_name": "Alice in Chains",
+    "title": "Dirt",
     "rank": null,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": true
   },
   {
-    "id": "626267be-f28d-49db-a349-70e1a9736955",
-    "artist_mbid": "1ed00158-c6a3-45cd-819c-2f91997fc480",
-    "artist_name": "Sister Sledge",
-    "title": "We Are Family",
+    "id": "be3e3f45-2963-46b2-807b-21c2e947eeee",
+    "artist_mbid": "63aa26c3-d59b-4da4-84ac-716b54f1ef4d",
+    "artist_name": "Tame Impala",
+    "title": "Lonerism",
     "rank": null,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": true
   },
   {
-    "id": "edb801b5-1d11-4540-bde8-dc657bf71cb9",
-    "artist_mbid": "66fc5bf8-daa4-4241-b378-9bc9077939d2",
-    "artist_name": "Tool",
-    "title": "Lateralus",
+    "id": "3b0d3f55-7f02-4244-b9e7-6913b772aca1",
+    "artist_mbid": "61604b45-8a91-4e33-a1b6-45d7b1fec4e5",
+    "artist_name": "Destroyer",
+    "title": "Labyrinthitis",
     "rank": null,
-    "has_cover": true
+    "has_cover": true,
+    "listening_needed": true
   }
 ]
