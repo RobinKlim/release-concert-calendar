@@ -106,6 +106,14 @@ export class LibraryComponent implements OnInit, OnDestroy {
     this.scheduleSave();
   }
 
+  moveRankedToListeningNeeded(album: Album) {
+    this.ranked.update(list =>
+      list.filter(a => a.id !== album.id).map((a, i) => ({ ...a, rank: i + 1 }))
+    );
+    this.listeningNeeded.update(list => [...list, { ...album, rank: null, listening_needed: true }]);
+    this.scheduleSave();
+  }
+
   // --- Ranking game ---
 
   startGame() {
@@ -156,19 +164,31 @@ export class LibraryComponent implements OnInit, OnDestroy {
     const allUnranked = [...this.unranked()];
 
     const loserWasUnranked = allUnranked.some(a => a.id === loser.id);
+    const winnerWasUnranked = allUnranked.some(a => a.id === winner.id);
     const loserRankedIdx = allRanked.findIndex(a => a.id === loser.id);
     const winnerRankedIdx = allRanked.findIndex(a => a.id === winner.id);
+
+    // Winner is already ranked higher than loser — existing order is confirmed, nothing moves.
+    if (!winnerWasUnranked && !loserWasUnranked && winnerRankedIdx < loserRankedIdx) {
+      return;
+    }
 
     const newRanked = allRanked.filter(a => a.id !== winner.id && a.id !== loser.id);
     const newUnranked = allUnranked.filter(a => a.id !== winner.id && a.id !== loser.id);
 
-    if (loserWasUnranked) {
+    if (winnerWasUnranked && loserWasUnranked) {
+      // Both unranked: append winner then loser.
+      newRanked.push(winner, loser);
+    } else if (loserWasUnranked) {
+      // Winner is ranked, loser is unranked: winner keeps its spot, loser goes to the bottom.
+      // winnerRankedIdx is safe here because loser wasn't in allRanked (no index shift).
       newRanked.splice(winnerRankedIdx, 0, winner);
       newRanked.push(loser);
-    } else if (loserRankedIdx !== -1) {
-      newRanked.splice(loserRankedIdx, 0, winner, loser);
     } else {
-      newRanked.push(winner, loser);
+      // Loser is ranked. Winner is either unranked or ranked below loser (upset).
+      // In both sub-cases winner's index >= loser's index, so removing winner doesn't
+      // shift loserRankedIdx — safe to use directly.
+      newRanked.splice(loserRankedIdx, 0, winner, loser);
     }
 
     this.ranked.set(newRanked.map((a, i) => ({ ...a, rank: i + 1 })));

@@ -219,7 +219,12 @@
                 <span class="font-medium text-gray-900">{{ album.title }}</span>
                 <span class="text-gray-500 text-sm">{{ album.artist_name }}</span>
               </div>
-              <div class="ml-auto w-20 h-20 flex-shrink-0">
+              <button
+                (click)="moveRankedToListeningNeeded(album)"
+                class="ml-auto mr-2 px-2 py-0.5 text-xs border border-amber-400 text-amber-700 hover:bg-amber-50 whitespace-nowrap flex-shrink-0"
+                title="Move to Listening needed"
+              >Listening needed</button>
+              <div class="w-20 h-20 flex-shrink-0">
                 @if (album.has_cover) {
                   <img [src]="coverUrl(album.id)" class="w-20 h-20 object-cover" draggable="false" />
                 }

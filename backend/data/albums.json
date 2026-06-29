@@ -18,236 +18,20 @@
     "listening_needed": false
   },
   {
-    "id": "8774891c-5947-41c2-acc3-92bb2f08aeba",
-    "artist_mbid": "7ac725c0-099e-485a-82d7-a56e583b6a2f",
-    "artist_name": "Paradis",
-    "title": "Recto verso",
+    "id": "c5110b22-ce91-4e12-b2aa-895f044ab7db",
+    "artist_mbid": "144ef525-85e9-40c3-8335-02c32d0861f3",
+    "artist_name": "John Mayer",
+    "title": "Continuum",
     "rank": 3,
     "has_cover": true,
     "listening_needed": false
   },
   {
-    "id": "3e0e6be0-2b46-4213-bfdf-2d0dc731222f",
-    "artist_mbid": "26ae99ef-7161-4e39-985d-d238a624064a",
-    "artist_name": "Yvon",
-    "title": "Yvon Im Kreis der Liebe",
+    "id": "8774891c-5947-41c2-acc3-92bb2f08aeba",
+    "artist_mbid": "7ac725c0-099e-485a-82d7-a56e583b6a2f",
+    "artist_name": "Paradis",
+    "title": "Recto verso",
     "rank": 4,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "8a3f2d03-0a6d-4684-9823-8d734294059b",
-    "artist_mbid": "7682d624-9e0b-45b2-b7d0-d1b18b3ebd05",
-    "artist_name": "Vieux Farka Touré",
-    "title": "Ali",
-    "rank": 5,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "655c7505-eef3-462c-b39e-13d8a9b619df",
-    "artist_mbid": "c5119d8a-ffee-48bc-99c3-f323bdf16d82",
-    "artist_name": "Vektor",
-    "title": "Terminal Redux",
-    "rank": 6,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "d9259473-d987-4dd2-b432-f88a30a6558e",
-    "artist_mbid": "31745282-b1ea-4d62-939f-226b14d68e7c",
-    "artist_name": "In Flames",
-    "title": "The Jester Race ~ Black‐Ash Inheritance",
-    "rank": 7,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "6f0a3418-8800-42a7-b135-8c269477fd2c",
-    "artist_mbid": "42faad37-8aaa-42e4-a300-5a7dae79ed24",
-    "artist_name": "Low",
-    "title": "Double Negative",
-    "rank": 8,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "aad01f77-9dba-4cd0-a07e-09f18454ef5e",
-    "artist_mbid": "a69103f5-2825-468e-908c-1e1618ebce80",
-    "artist_name": "Yukno",
-    "title": "Ich kenne kein Weekend",
-    "rank": 9,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "67b3c68a-618c-4fce-9275-61a6b50cd517",
-    "artist_mbid": "d1353a0c-26fb-4318-a116-defde9c7c9ad",
-    "artist_name": "Dido",
-    "title": "No Angel",
-    "rank": 10,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "b633710d-5218-47a6-bccc-50741e679d84",
-    "artist_mbid": "cd66cb19-ed44-43e8-9849-645c2d12de0e",
-    "artist_name": "Victor Solf",
-    "title": "Still. There’s Hope",
-    "rank": 11,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "d9ac274c-28c8-4342-9aca-18c9ece403b9",
-    "artist_mbid": "66fc5bf8-daa4-4241-b378-9bc9077939d2",
-    "artist_name": "Tool",
-    "title": "Ænima",
-    "rank": 12,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "b92fce1e-8e4e-4f5f-9a91-805d6189fc9c",
-    "artist_mbid": "cf82a38f-9413-4333-bacb-ca5b6db95794",
-    "artist_name": "Warpaint",
-    "title": "The Fool",
-    "rank": 13,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "520a72b0-5af3-43fa-a127-ee0eb1754356",
-    "artist_mbid": "5334edc0-5faf-4ca5-b1df-000de3e1f752",
-    "artist_name": "St. Vincent",
-    "title": "MASSEDUCTION",
-    "rank": 14,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "e7ef14b9-bac6-4992-bcb7-38973e5859c2",
-    "artist_mbid": "44cf61b8-5197-448a-b82b-cef6ee89fac5",
-    "artist_name": "Paramore",
-    "title": "Brand New Eyes",
-    "rank": 15,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "a4934efa-2e18-4238-848e-04bdb640fcc7",
-    "artist_mbid": "f83781c8-64f9-4657-85bd-51f74d195cfd",
-    "artist_name": "The Whitest Boy Alive",
-    "title": "Dreams",
-    "rank": 16,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "26986b53-4038-47b1-b63e-97bad1c215fb",
-    "artist_mbid": "85002755-85e7-484e-a831-dc47c27af2b3",
-    "artist_name": "Her",
-    "title": "Her",
-    "rank": 17,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "be3efc4f-93c8-4877-b6ac-c43ebc2cb675",
-    "artist_mbid": "fa354ecf-34d5-497e-b694-1a93c7c1bb3d",
-    "artist_name": "The Düsseldorf Düsterboys",
-    "title": "Nenn mich Musik",
-    "rank": 18,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "9201c172-a875-4b2e-b825-2db111258034",
-    "artist_mbid": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
-    "artist_name": "Metallica",
-    "title": "…And Justice for All",
-    "rank": 19,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "35c23d9f-9765-42c2-9ef4-f28fa61c11a3",
-    "artist_mbid": "7eb1ce54-a355-41f9-8d68-e018b096d427",
-    "artist_name": "Harry Styles",
-    "title": "Kiss All the Time. Disco, Occasionally.",
-    "rank": 20,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "e33ad269-7da4-40c7-857a-e32a76df889a",
-    "artist_mbid": "1c5efd53-d6b6-4d63-9d22-a15025cf5f07",
-    "artist_name": "Gojira",
-    "title": "L'Enfant sauvage",
-    "rank": 21,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "82accad3-a0eb-4a4e-89f1-cd630bfb5dfe",
-    "artist_mbid": "1595addf-f76b-450a-a097-af852ff35f27",
-    "artist_name": "Nujabes",
-    "title": "Modal Soul",
-    "rank": 22,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "dac24507-0e8b-44cb-8b68-0ebdbc604446",
-    "artist_mbid": "50d1da2e-d70d-46cc-8d65-21e524802c49",
-    "artist_name": "Grian Chatten",
-    "title": "Chaos for the Fly",
-    "rank": 23,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "e14524d5-920d-4604-9881-a11b26199942",
-    "artist_mbid": "d1515727-4a93-4c0d-88cb-d7a9fce01879",
-    "artist_name": "Jamie xx",
-    "title": "In Waves",
-    "rank": 24,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "c3a12ca6-b9da-4204-974a-aaed7a04aca4",
-    "artist_mbid": "9c9f1380-2516-4fc9-a3e6-f9f61941d090",
-    "artist_name": "Muse",
-    "title": "Absolution",
-    "rank": 25,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "57339ba9-ca75-4ad7-80a1-79625a64aa3e",
-    "artist_mbid": "d9fccd7c-a14c-4c1a-8a3b-17d05b2f549c",
-    "artist_name": "Warhaus",
-    "title": "Karaoke Moon",
-    "rank": 26,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "36e4cf28-1995-40d7-bbb0-cb04115606c8",
-    "artist_mbid": "989a356a-deca-4957-932e-590b4590acf2",
-    "artist_name": "Sylvie Kreusch",
-    "title": "Montbray",
-    "rank": 27,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "c5110b22-ce91-4e12-b2aa-895f044ab7db",
-    "artist_mbid": "144ef525-85e9-40c3-8335-02c32d0861f3",
-    "artist_name": "John Mayer",
-    "title": "Continuum",
-    "rank": 28,
     "has_cover": true,
     "listening_needed": false
   },
@@ -256,6 +40,222 @@
     "artist_mbid": "cc197bad-dc9c-440d-a5b5-d52ba2e14234",
     "artist_name": "Coldplay",
     "title": "Parachutes",
+    "rank": 5,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "3e0e6be0-2b46-4213-bfdf-2d0dc731222f",
+    "artist_mbid": "26ae99ef-7161-4e39-985d-d238a624064a",
+    "artist_name": "Yvon",
+    "title": "Yvon Im Kreis der Liebe",
+    "rank": 6,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "8a3f2d03-0a6d-4684-9823-8d734294059b",
+    "artist_mbid": "7682d624-9e0b-45b2-b7d0-d1b18b3ebd05",
+    "artist_name": "Vieux Farka Touré",
+    "title": "Ali",
+    "rank": 7,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "655c7505-eef3-462c-b39e-13d8a9b619df",
+    "artist_mbid": "c5119d8a-ffee-48bc-99c3-f323bdf16d82",
+    "artist_name": "Vektor",
+    "title": "Terminal Redux",
+    "rank": 8,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "d9259473-d987-4dd2-b432-f88a30a6558e",
+    "artist_mbid": "31745282-b1ea-4d62-939f-226b14d68e7c",
+    "artist_name": "In Flames",
+    "title": "The Jester Race ~ Black‐Ash Inheritance",
+    "rank": 9,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "6f0a3418-8800-42a7-b135-8c269477fd2c",
+    "artist_mbid": "42faad37-8aaa-42e4-a300-5a7dae79ed24",
+    "artist_name": "Low",
+    "title": "Double Negative",
+    "rank": 10,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "aad01f77-9dba-4cd0-a07e-09f18454ef5e",
+    "artist_mbid": "a69103f5-2825-468e-908c-1e1618ebce80",
+    "artist_name": "Yukno",
+    "title": "Ich kenne kein Weekend",
+    "rank": 11,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "67b3c68a-618c-4fce-9275-61a6b50cd517",
+    "artist_mbid": "d1353a0c-26fb-4318-a116-defde9c7c9ad",
+    "artist_name": "Dido",
+    "title": "No Angel",
+    "rank": 12,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "b633710d-5218-47a6-bccc-50741e679d84",
+    "artist_mbid": "cd66cb19-ed44-43e8-9849-645c2d12de0e",
+    "artist_name": "Victor Solf",
+    "title": "Still. There’s Hope",
+    "rank": 13,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "d9ac274c-28c8-4342-9aca-18c9ece403b9",
+    "artist_mbid": "66fc5bf8-daa4-4241-b378-9bc9077939d2",
+    "artist_name": "Tool",
+    "title": "Ænima",
+    "rank": 14,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "b92fce1e-8e4e-4f5f-9a91-805d6189fc9c",
+    "artist_mbid": "cf82a38f-9413-4333-bacb-ca5b6db95794",
+    "artist_name": "Warpaint",
+    "title": "The Fool",
+    "rank": 15,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "520a72b0-5af3-43fa-a127-ee0eb1754356",
+    "artist_mbid": "5334edc0-5faf-4ca5-b1df-000de3e1f752",
+    "artist_name": "St. Vincent",
+    "title": "MASSEDUCTION",
+    "rank": 16,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "e7ef14b9-bac6-4992-bcb7-38973e5859c2",
+    "artist_mbid": "44cf61b8-5197-448a-b82b-cef6ee89fac5",
+    "artist_name": "Paramore",
+    "title": "Brand New Eyes",
+    "rank": 17,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "a4934efa-2e18-4238-848e-04bdb640fcc7",
+    "artist_mbid": "f83781c8-64f9-4657-85bd-51f74d195cfd",
+    "artist_name": "The Whitest Boy Alive",
+    "title": "Dreams",
+    "rank": 18,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "26986b53-4038-47b1-b63e-97bad1c215fb",
+    "artist_mbid": "85002755-85e7-484e-a831-dc47c27af2b3",
+    "artist_name": "Her",
+    "title": "Her",
+    "rank": 19,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "be3efc4f-93c8-4877-b6ac-c43ebc2cb675",
+    "artist_mbid": "fa354ecf-34d5-497e-b694-1a93c7c1bb3d",
+    "artist_name": "The Düsseldorf Düsterboys",
+    "title": "Nenn mich Musik",
+    "rank": 20,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "9201c172-a875-4b2e-b825-2db111258034",
+    "artist_mbid": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+    "artist_name": "Metallica",
+    "title": "…And Justice for All",
+    "rank": 21,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "35c23d9f-9765-42c2-9ef4-f28fa61c11a3",
+    "artist_mbid": "7eb1ce54-a355-41f9-8d68-e018b096d427",
+    "artist_name": "Harry Styles",
+    "title": "Kiss All the Time. Disco, Occasionally.",
+    "rank": 22,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "e33ad269-7da4-40c7-857a-e32a76df889a",
+    "artist_mbid": "1c5efd53-d6b6-4d63-9d22-a15025cf5f07",
+    "artist_name": "Gojira",
+    "title": "L'Enfant sauvage",
+    "rank": 23,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "82accad3-a0eb-4a4e-89f1-cd630bfb5dfe",
+    "artist_mbid": "1595addf-f76b-450a-a097-af852ff35f27",
+    "artist_name": "Nujabes",
+    "title": "Modal Soul",
+    "rank": 24,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "dac24507-0e8b-44cb-8b68-0ebdbc604446",
+    "artist_mbid": "50d1da2e-d70d-46cc-8d65-21e524802c49",
+    "artist_name": "Grian Chatten",
+    "title": "Chaos for the Fly",
+    "rank": 25,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "e14524d5-920d-4604-9881-a11b26199942",
+    "artist_mbid": "d1515727-4a93-4c0d-88cb-d7a9fce01879",
+    "artist_name": "Jamie xx",
+    "title": "In Waves",
+    "rank": 26,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "c3a12ca6-b9da-4204-974a-aaed7a04aca4",
+    "artist_mbid": "9c9f1380-2516-4fc9-a3e6-f9f61941d090",
+    "artist_name": "Muse",
+    "title": "Absolution",
+    "rank": 27,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "57339ba9-ca75-4ad7-80a1-79625a64aa3e",
+    "artist_mbid": "d9fccd7c-a14c-4c1a-8a3b-17d05b2f549c",
+    "artist_name": "Warhaus",
+    "title": "Karaoke Moon",
+    "rank": 28,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
+    "id": "36e4cf28-1995-40d7-bbb0-cb04115606c8",
+    "artist_mbid": "989a356a-deca-4957-932e-590b4590acf2",
+    "artist_name": "Sylvie Kreusch",
+    "title": "Montbray",
     "rank": 29,
     "has_cover": true,
     "listening_needed": false
@@ -996,7 +996,7 @@
     "title": "Equus Asinus",
     "rank": null,
     "has_cover": true,
-    "listening_needed": true
+    "listening_needed": false
   },
   {
     "id": "ee7cd062-576c-4114-b1cd-19e087e9c981",
