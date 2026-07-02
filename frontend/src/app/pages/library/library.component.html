@@ -58,20 +58,7 @@
   }
 
   <app-page-container>
-    <!-- Search -->
-    @if (!loading()) {
-      <div class="mb-4">
-        <input
-          type="text"
-          [value]="searchText()"
-          (input)="onSearchChange($any($event.target).value)"
-          placeholder="Search by title or artist..."
-          class="w-full px-3 py-2 text-sm border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-gray-900"
-        />
-      </div>
-    }
-
-    <!-- Section Filter + Rank Albums -->
+    <!-- Search + Section Filter + Rank Albums -->
     @if (!loading()) {
       <div class="flex items-center gap-2 mb-6">
         <button
@@ -110,6 +97,13 @@
         >
           Ranked ({{ filteredRanked().length }})
         </button>
+        <input
+          type="text"
+          [value]="searchText()"
+          (input)="onSearchChange($any($event.target).value)"
+          placeholder="Search by title or artist..."
+          class="w-64 px-3 py-2 text-sm border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-gray-900"
+        />
         <button (click)="startGame()" class="rank-btn ml-auto">
           <span class="rk-star rk-s1">✦</span>
           <span class="rk-star rk-s2">★</span>
