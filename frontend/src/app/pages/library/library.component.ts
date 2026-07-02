@@ -29,6 +29,14 @@ export class LibraryComponent implements OnInit, OnDestroy {
   showRanked = computed(() => this.visibleSections().has('ranked'));
   showListeningNeeded = computed(() => this.visibleSections().has('listeningNeeded'));
 
+  searchText = signal('');
+
+  filteredUnranked = computed(() => this.filterAlbums(this.unranked(), this.searchText()));
+  filteredRanked = computed(() => this.filterAlbums(this.ranked(), this.searchText()));
+  filteredListeningNeeded = computed(() =>
+    this.filterAlbums(this.listeningNeeded(), this.searchText()),
+  );
+
   private draggedAlbum: Album | null = null;
   private dragSource: 'ranked' | 'unranked' | 'listeningNeeded' | null = null;
   private saveTimer: ReturnType<typeof setTimeout> | null = null;
@@ -51,16 +59,16 @@ export class LibraryComponent implements OnInit, OnDestroy {
     this.loading.set(true);
     this.apiService.getAlbums().subscribe({
       next: (albums) => {
-        this.listeningNeeded.set(albums.filter(a => a.listening_needed));
-        this.unranked.set(albums.filter(a => a.rank === null && !a.listening_needed));
-        this.ranked.set(albums.filter(a => a.rank !== null).sort((a, b) => a.rank! - b.rank!));
+        this.listeningNeeded.set(albums.filter((a) => a.listening_needed));
+        this.unranked.set(albums.filter((a) => a.rank === null && !a.listening_needed));
+        this.ranked.set(albums.filter((a) => a.rank !== null).sort((a, b) => a.rank! - b.rank!));
         this.loading.set(false);
       },
       error: (err) => {
         this.error.set('Failed to load albums');
         this.loading.set(false);
         console.error('Error loading albums:', err);
-      }
+      },
     });
   }
 
@@ -78,18 +86,33 @@ export class LibraryComponent implements OnInit, OnDestroy {
     return this.visibleSections().has(key);
   }
 
+  onSearchChange(value: string) {
+    this.searchText.set(value);
+  }
+
+  private filterAlbums(albums: Album[], query: string): Album[] {
+    if (!query) return albums;
+    const needle = query.toLowerCase();
+    return albums.filter(
+      (a) => a.title.toLowerCase().includes(needle) || a.artist_name.toLowerCase().includes(needle),
+    );
+  }
+
   moveToListeningNeeded(album: Album) {
-    this.unranked.update(list => list.filter(a => a.id !== album.id));
-    this.listeningNeeded.update(list => [...list, { ...album, listening_needed: true }]);
+    this.unranked.update((list) => list.filter((a) => a.id !== album.id));
+    this.listeningNeeded.update((list) => [...list, { ...album, listening_needed: true }]);
     this.scheduleSave();
   }
 
   markGameAlbumAsListeningNeeded(album: Album) {
-    this.unranked.update(list => list.filter(a => a.id !== album.id));
-    this.ranked.update(list =>
-      list.filter(a => a.id !== album.id).map((a, i) => ({ ...a, rank: i + 1 }))
+    this.unranked.update((list) => list.filter((a) => a.id !== album.id));
+    this.ranked.update((list) =>
+      list.filter((a) => a.id !== album.id).map((a, i) => ({ ...a, rank: i + 1 })),
     );
-    this.listeningNeeded.update(list => [...list, { ...album, rank: null, listening_needed: true }]);
+    this.listeningNeeded.update((list) => [
+      ...list,
+      { ...album, rank: null, listening_needed: true },
+    ]);
     this.scheduleSave();
 
     const next = this.nextPair();
@@ -101,16 +124,19 @@ export class LibraryComponent implements OnInit, OnDestroy {
   }
 
   moveToUnranked(album: Album) {
-    this.listeningNeeded.update(list => list.filter(a => a.id !== album.id));
-    this.unranked.update(list => [...list, { ...album, listening_needed: false }]);
+    this.listeningNeeded.update((list) => list.filter((a) => a.id !== album.id));
+    this.unranked.update((list) => [...list, { ...album, listening_needed: false }]);
     this.scheduleSave();
   }
 
   moveRankedToListeningNeeded(album: Album) {
-    this.ranked.update(list =>
-      list.filter(a => a.id !== album.id).map((a, i) => ({ ...a, rank: i + 1 }))
+    this.ranked.update((list) =>
+      list.filter((a) => a.id !== album.id).map((a, i) => ({ ...a, rank: i + 1 })),
     );
-    this.listeningNeeded.update(list => [...list, { ...album, rank: null, listening_needed: true }]);
+    this.listeningNeeded.update((list) => [
+      ...list,
+      { ...album, rank: null, listening_needed: true },
+    ]);
     this.scheduleSave();
   }
 
@@ -163,18 +189,18 @@ export class LibraryComponent implements OnInit, OnDestroy {
     const allRanked = [...this.ranked()];
     const allUnranked = [...this.unranked()];
 
-    const loserWasUnranked = allUnranked.some(a => a.id === loser.id);
-    const winnerWasUnranked = allUnranked.some(a => a.id === winner.id);
-    const loserRankedIdx = allRanked.findIndex(a => a.id === loser.id);
-    const winnerRankedIdx = allRanked.findIndex(a => a.id === winner.id);
+    const loserWasUnranked = allUnranked.some((a) => a.id === loser.id);
+    const winnerWasUnranked = allUnranked.some((a) => a.id === winner.id);
+    const loserRankedIdx = allRanked.findIndex((a) => a.id === loser.id);
+    const winnerRankedIdx = allRanked.findIndex((a) => a.id === winner.id);
 
     // Winner is already ranked higher than loser — existing order is confirmed, nothing moves.
     if (!winnerWasUnranked && !loserWasUnranked && winnerRankedIdx < loserRankedIdx) {
       return;
     }
 
-    const newRanked = allRanked.filter(a => a.id !== winner.id && a.id !== loser.id);
-    const newUnranked = allUnranked.filter(a => a.id !== winner.id && a.id !== loser.id);
+    const newRanked = allRanked.filter((a) => a.id !== winner.id && a.id !== loser.id);
+    const newUnranked = allUnranked.filter((a) => a.id !== winner.id && a.id !== loser.id);
 
     if (winnerWasUnranked && loserWasUnranked) {
       // Both unranked: append winner then loser.
@@ -207,7 +233,7 @@ export class LibraryComponent implements OnInit, OnDestroy {
     event.preventDefault();
   }
 
-  onDropOnRanked(event: DragEvent, targetIndex: number) {
+  onDropOnRanked(event: DragEvent, targetAlbumId: string | null) {
     event.preventDefault();
     if (!this.draggedAlbum) return;
 
@@ -215,15 +241,17 @@ export class LibraryComponent implements OnInit, OnDestroy {
     const source = this.dragSource;
 
     if (source === 'unranked') {
-      this.unranked.update(list => list.filter(a => a.id !== album.id));
+      this.unranked.update((list) => list.filter((a) => a.id !== album.id));
     } else if (source === 'ranked') {
-      this.ranked.update(list => list.filter(a => a.id !== album.id));
+      this.ranked.update((list) => list.filter((a) => a.id !== album.id));
     } else if (source === 'listeningNeeded') {
-      this.listeningNeeded.update(list => list.filter(a => a.id !== album.id));
+      this.listeningNeeded.update((list) => list.filter((a) => a.id !== album.id));
     }
 
-    this.ranked.update(list => {
+    this.ranked.update((list) => {
       const updated = [...list];
+      const foundIndex = targetAlbumId ? updated.findIndex((a) => a.id === targetAlbumId) : -1;
+      const targetIndex = foundIndex === -1 ? updated.length : foundIndex;
       updated.splice(targetIndex, 0, { ...album, rank: targetIndex + 1, listening_needed: false });
       return updated.map((a, i) => ({ ...a, rank: i + 1 }));
     });
@@ -241,14 +269,14 @@ export class LibraryComponent implements OnInit, OnDestroy {
     const source = this.dragSource;
 
     if (source === 'ranked') {
-      this.ranked.update(list =>
-        list.filter(a => a.id !== album.id).map((a, i) => ({ ...a, rank: i + 1 }))
+      this.ranked.update((list) =>
+        list.filter((a) => a.id !== album.id).map((a, i) => ({ ...a, rank: i + 1 })),
       );
     } else if (source === 'listeningNeeded') {
-      this.listeningNeeded.update(list => list.filter(a => a.id !== album.id));
+      this.listeningNeeded.update((list) => list.filter((a) => a.id !== album.id));
     }
 
-    this.unranked.update(list => [...list, { ...album, rank: null, listening_needed: false }]);
+    this.unranked.update((list) => [...list, { ...album, rank: null, listening_needed: false }]);
 
     this.draggedAlbum = null;
     this.dragSource = null;
@@ -263,14 +291,17 @@ export class LibraryComponent implements OnInit, OnDestroy {
     const source = this.dragSource;
 
     if (source === 'ranked') {
-      this.ranked.update(list =>
-        list.filter(a => a.id !== album.id).map((a, i) => ({ ...a, rank: i + 1 }))
+      this.ranked.update((list) =>
+        list.filter((a) => a.id !== album.id).map((a, i) => ({ ...a, rank: i + 1 })),
       );
     } else if (source === 'unranked') {
-      this.unranked.update(list => list.filter(a => a.id !== album.id));
+      this.unranked.update((list) => list.filter((a) => a.id !== album.id));
     }
 
-    this.listeningNeeded.update(list => [...list, { ...album, rank: null, listening_needed: true }]);
+    this.listeningNeeded.update((list) => [
+      ...list,
+      { ...album, rank: null, listening_needed: true },
+    ]);
 
     this.draggedAlbum = null;
     this.dragSource = null;
@@ -287,8 +318,8 @@ export class LibraryComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.ranked.update(list => {
-      const without = list.filter(a => a.id !== album.id);
+    this.ranked.update((list) => {
+      const without = list.filter((a) => a.id !== album.id);
       without.splice(newPos - 1, 0, album);
       return without.map((a, i) => ({ ...a, rank: i + 1 }));
     });
@@ -299,11 +330,11 @@ export class LibraryComponent implements OnInit, OnDestroy {
   private scheduleSave() {
     if (this.saveTimer) clearTimeout(this.saveTimer);
     this.saveTimer = setTimeout(() => {
-      const rankedIds = this.ranked().map(a => a.id);
-      const unrankedIds = this.unranked().map(a => a.id);
-      const listeningNeededIds = this.listeningNeeded().map(a => a.id);
+      const rankedIds = this.ranked().map((a) => a.id);
+      const unrankedIds = this.unranked().map((a) => a.id);
+      const listeningNeededIds = this.listeningNeeded().map((a) => a.id);
       this.apiService.saveRanking(rankedIds, unrankedIds, listeningNeededIds).subscribe({
-        error: (err) => console.error('Error saving ranking:', err)
+        error: (err) => console.error('Error saving ranking:', err),
       });
     }, 300);
   }

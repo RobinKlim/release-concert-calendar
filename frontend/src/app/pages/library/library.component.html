@@ -8,7 +8,9 @@
         <button
           (click)="stopGame()"
           class="absolute top-3 right-3 px-3 py-2 text-sm bg-white hover:bg-gray-100 text-gray-900 border hover:[box-shadow:-4px_4px_0_#3b82f6]"
-        >✕ Stop</button>
+        >
+          ✕ Stop
+        </button>
 
         <div class="text-center mb-2">
           <h2 class="text-2xl font-bold text-gray-900">Which do you prefer right now?</h2>
@@ -24,9 +26,15 @@
                 class="flex flex-col border-2 border-gray-200 hover:border-amber-600 hover:shadow-xl transition-all duration-150 overflow-hidden cursor-pointer bg-white group w-full"
                 (click)="pickWinner(album)"
               >
-                <div class="w-full aspect-square bg-gray-100 flex items-center justify-center overflow-hidden">
+                <div
+                  class="w-full aspect-square bg-gray-100 flex items-center justify-center overflow-hidden"
+                >
                   @if (album.has_cover) {
-                    <img [src]="coverUrl(album.id)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-150" draggable="false" />
+                    <img
+                      [src]="coverUrl(album.id)"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-150"
+                      draggable="false"
+                    />
                   } @else {
                     <span class="text-gray-300 text-6xl">♪</span>
                   }
@@ -39,7 +47,9 @@
               <button
                 (click)="markGameAlbumAsListeningNeeded(album)"
                 class="mt-2 w-full py-1 text-xs text-amber-600 hover:text-amber-800 border border-amber-300 hover:border-amber-500 bg-amber-50 hover:bg-amber-100 transition-colors"
-              >Listening needed</button>
+              >
+                Listening needed
+              </button>
             </div>
           }
         </div>
@@ -48,6 +58,18 @@
   }
 
   <app-page-container>
+    <!-- Search -->
+    @if (!loading()) {
+      <div class="mb-4">
+        <input
+          type="text"
+          [value]="searchText()"
+          (input)="onSearchChange($any($event.target).value)"
+          placeholder="Search by title or artist..."
+          class="w-full px-3 py-2 text-sm border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-gray-900"
+        />
+      </div>
+    }
 
     <!-- Section Filter + Rank Albums -->
     @if (!loading()) {
@@ -61,7 +83,9 @@
           [class.bg-white]="!isSectionVisible('unranked')"
           [class.text-gray-600]="!isSectionVisible('unranked')"
           [class.border-gray-300]="!isSectionVisible('unranked')"
-        >Unranked ({{ unranked().length }})</button>
+        >
+          Unranked ({{ filteredUnranked().length }})
+        </button>
         <button
           (click)="toggleSection('listeningNeeded')"
           class="px-3 py-1 text-sm border transition-colors"
@@ -71,7 +95,9 @@
           [class.bg-white]="!isSectionVisible('listeningNeeded')"
           [class.text-gray-600]="!isSectionVisible('listeningNeeded')"
           [class.border-gray-300]="!isSectionVisible('listeningNeeded')"
-        >Listening needed ({{ listeningNeeded().length }})</button>
+        >
+          Listening needed ({{ filteredListeningNeeded().length }})
+        </button>
         <button
           (click)="toggleSection('ranked')"
           class="px-3 py-1 text-sm border transition-colors"
@@ -81,7 +107,9 @@
           [class.bg-white]="!isSectionVisible('ranked')"
           [class.text-gray-600]="!isSectionVisible('ranked')"
           [class.border-gray-300]="!isSectionVisible('ranked')"
-        >Ranked ({{ ranked().length }})</button>
+        >
+          Ranked ({{ filteredRanked().length }})
+        </button>
         <button (click)="startGame()" class="rank-btn ml-auto">
           <span class="rk-star rk-s1">✦</span>
           <span class="rk-star rk-s2">★</span>
@@ -103,9 +131,16 @@
       <div class="border border-red-300 bg-red-50 p-4 text-red-700 mb-4">{{ error() }}</div>
     }
 
-    @if (!loading() && unranked().length === 0 && ranked().length === 0 && listeningNeeded().length === 0) {
+    @if (
+      !loading() &&
+      unranked().length === 0 &&
+      ranked().length === 0 &&
+      listeningNeeded().length === 0
+    ) {
       <div class="border border-gray-300 p-6 text-center">
-        <p class="text-gray-700">No albums found. Scan your library on the Artists page to get started.</p>
+        <p class="text-gray-700">
+          No albums found. Scan your library on the Artists page to get started.
+        </p>
       </div>
     }
 
@@ -113,14 +148,12 @@
     @if (!loading() && showUnranked() && unranked().length > 0) {
       <div class="mb-8">
         <div class="mb-3">
-          <h2 class="text-lg font-bold text-gray-900">Unranked ({{ unranked().length }})</h2>
+          <h2 class="text-lg font-bold text-gray-900">
+            Unranked ({{ filteredUnranked().length }})
+          </h2>
         </div>
-        <div
-          class="min-h-12"
-          (dragover)="onDragOver($event)"
-          (drop)="onDropOnUnranked($event)"
-        >
-          @for (album of unranked(); track album.id; let i = $index) {
+        <div class="min-h-12" (dragover)="onDragOver($event)" (drop)="onDropOnUnranked($event)">
+          @for (album of filteredUnranked(); track album.id; let i = $index) {
             <div
               class="flex items-center gap-4 px-4 py-2 border-b border-gray-200 cursor-grab transition-all duration-150 hover:shadow-md hover:-translate-y-0.5 hover:z-10 relative"
               [class.bg-blue-50]="i % 2 === 1"
@@ -135,10 +168,16 @@
                 (click)="moveToListeningNeeded(album)"
                 class="ml-auto mr-2 px-2 py-0.5 text-xs border border-amber-400 text-amber-700 hover:bg-amber-50 whitespace-nowrap flex-shrink-0"
                 title="Move to Listening needed"
-              >Listening needed</button>
+              >
+                Listening needed
+              </button>
               <div class="w-20 h-20 flex-shrink-0">
                 @if (album.has_cover) {
-                  <img [src]="coverUrl(album.id)" class="w-20 h-20 object-cover" draggable="false" />
+                  <img
+                    [src]="coverUrl(album.id)"
+                    class="w-20 h-20 object-cover"
+                    draggable="false"
+                  />
                 }
               </div>
             </div>
@@ -151,14 +190,16 @@
     @if (!loading() && showListeningNeeded() && listeningNeeded().length > 0) {
       <div class="mb-8">
         <div class="flex items-center justify-between mb-3">
-          <h2 class="text-lg font-bold text-gray-900">Listening needed ({{ listeningNeeded().length }})</h2>
+          <h2 class="text-lg font-bold text-gray-900">
+            Listening needed ({{ filteredListeningNeeded().length }})
+          </h2>
         </div>
         <div
           class="min-h-12"
           (dragover)="onDragOver($event)"
           (drop)="onDropOnListeningNeeded($event)"
         >
-          @for (album of listeningNeeded(); track album.id; let i = $index) {
+          @for (album of filteredListeningNeeded(); track album.id; let i = $index) {
             <div
               class="flex items-center gap-4 px-4 py-2 border-b border-gray-200 cursor-grab transition-all duration-150 hover:shadow-md hover:-translate-y-0.5 hover:z-10 relative"
               [class.bg-blue-50]="i % 2 === 1"
@@ -173,10 +214,16 @@
                 (click)="moveToUnranked(album)"
                 class="ml-auto mr-2 px-2 py-0.5 text-xs border border-gray-300 text-gray-600 hover:bg-gray-50 whitespace-nowrap flex-shrink-0"
                 title="Move to Unranked"
-              >Unranked</button>
+              >
+                Unranked
+              </button>
               <div class="w-20 h-20 flex-shrink-0">
                 @if (album.has_cover) {
-                  <img [src]="coverUrl(album.id)" class="w-20 h-20 object-cover" draggable="false" />
+                  <img
+                    [src]="coverUrl(album.id)"
+                    class="w-20 h-20 object-cover"
+                    draggable="false"
+                  />
                 }
               </div>
             </div>
@@ -189,21 +236,17 @@
     @if (!loading() && showRanked() && ranked().length > 0) {
       <div>
         <div class="mb-3">
-          <h2 class="text-lg font-bold text-gray-900">Ranked ({{ ranked().length }})</h2>
+          <h2 class="text-lg font-bold text-gray-900">Ranked ({{ filteredRanked().length }})</h2>
         </div>
-        <div
-          class="min-h-12"
-          (dragover)="onDragOver($event)"
-          (drop)="onDropOnRanked($event, ranked().length)"
-        >
-          @for (album of ranked(); track album.id; let i = $index) {
+        <div class="min-h-12" (dragover)="onDragOver($event)" (drop)="onDropOnRanked($event, null)">
+          @for (album of filteredRanked(); track album.id; let i = $index) {
             <div
               class="flex items-center gap-4 px-4 py-2 border-b border-gray-200 cursor-grab transition-all duration-150 hover:shadow-md hover:-translate-y-0.5 hover:z-10 relative"
               [class.bg-blue-50]="i % 2 === 1"
               draggable="true"
               (dragstart)="onDragStart($event, album, 'ranked')"
               (dragover)="onDragOver($event)"
-              (drop)="onDropOnRanked($event, i); $event.stopPropagation()"
+              (drop)="onDropOnRanked($event, album.id); $event.stopPropagation()"
             >
               <input
                 type="number"
@@ -223,10 +266,16 @@
                 (click)="moveRankedToListeningNeeded(album)"
                 class="ml-auto mr-2 px-2 py-0.5 text-xs border border-amber-400 text-amber-700 hover:bg-amber-50 whitespace-nowrap flex-shrink-0"
                 title="Move to Listening needed"
-              >Listening needed</button>
+              >
+                Listening needed
+              </button>
               <div class="w-20 h-20 flex-shrink-0">
                 @if (album.has_cover) {
-                  <img [src]="coverUrl(album.id)" class="w-20 h-20 object-cover" draggable="false" />
+                  <img
+                    [src]="coverUrl(album.id)"
+                    class="w-20 h-20 object-cover"
+                    draggable="false"
+                  />
                 }
               </div>
             </div>
