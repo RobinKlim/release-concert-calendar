@@ -104,6 +104,18 @@
           placeholder="Search by title or artist..."
           class="w-64 px-3 py-2 text-sm border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-gray-900"
         />
+        <select
+          [value]="selectedYear() ?? ''"
+          (change)="
+            onYearSelect($any($event.target).value === '' ? null : +$any($event.target).value)
+          "
+          class="px-3 py-2 text-sm border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-gray-900"
+        >
+          <option value="">All years</option>
+          @for (year of availableYears(); track year) {
+            <option [value]="year">{{ year }}</option>
+          }
+        </select>
         <button (click)="startGame()" class="rank-btn ml-auto">
           <span class="rk-star rk-s1">✦</span>
           <span class="rk-star rk-s2">★</span>
@@ -156,7 +168,20 @@
             >
               <div class="flex flex-col">
                 <span class="font-medium text-gray-900">{{ album.title }}</span>
-                <span class="text-gray-500 text-sm">{{ album.artist_name }}</span>
+                <div class="flex items-center gap-2 text-sm">
+                  <span
+                    class="text-gray-500 hover:underline cursor-pointer"
+                    (click)="filterByArtist(album); $event.stopPropagation()"
+                    >{{ album.artist_name }}</span
+                  >
+                  <span
+                    class="text-gray-400"
+                    [class.hover:underline]="album.year !== null"
+                    [class.cursor-pointer]="album.year !== null"
+                    (click)="filterByYear(album); $event.stopPropagation()"
+                    >{{ album.year ?? '—' }}</span
+                  >
+                </div>
               </div>
               <button
                 (click)="moveToListeningNeeded(album)"
@@ -202,7 +227,20 @@
             >
               <div class="flex flex-col">
                 <span class="font-medium text-gray-900">{{ album.title }}</span>
-                <span class="text-gray-500 text-sm">{{ album.artist_name }}</span>
+                <div class="flex items-center gap-2 text-sm">
+                  <span
+                    class="text-gray-500 hover:underline cursor-pointer"
+                    (click)="filterByArtist(album); $event.stopPropagation()"
+                    >{{ album.artist_name }}</span
+                  >
+                  <span
+                    class="text-gray-400"
+                    [class.hover:underline]="album.year !== null"
+                    [class.cursor-pointer]="album.year !== null"
+                    (click)="filterByYear(album); $event.stopPropagation()"
+                    >{{ album.year ?? '—' }}</span
+                  >
+                </div>
               </div>
               <button
                 (click)="moveToUnranked(album)"
@@ -254,7 +292,20 @@
               />
               <div class="flex flex-col">
                 <span class="font-medium text-gray-900">{{ album.title }}</span>
-                <span class="text-gray-500 text-sm">{{ album.artist_name }}</span>
+                <div class="flex items-center gap-2 text-sm">
+                  <span
+                    class="text-gray-500 hover:underline cursor-pointer"
+                    (click)="filterByArtist(album); $event.stopPropagation()"
+                    >{{ album.artist_name }}</span
+                  >
+                  <span
+                    class="text-gray-400"
+                    [class.hover:underline]="album.year !== null"
+                    [class.cursor-pointer]="album.year !== null"
+                    (click)="filterByYear(album); $event.stopPropagation()"
+                    >{{ album.year ?? '—' }}</span
+                  >
+                </div>
               </div>
               <button
                 (click)="moveRankedToListeningNeeded(album)"

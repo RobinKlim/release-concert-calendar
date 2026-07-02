@@ -30,12 +30,19 @@ export class LibraryComponent implements OnInit, OnDestroy {
   showListeningNeeded = computed(() => this.visibleSections().has('listeningNeeded'));
 
   searchText = signal('');
+  selectedYear = signal<number | null>(null);
 
-  filteredUnranked = computed(() => this.filterAlbums(this.unranked(), this.searchText()));
-  filteredRanked = computed(() => this.filterAlbums(this.ranked(), this.searchText()));
-  filteredListeningNeeded = computed(() =>
-    this.filterAlbums(this.listeningNeeded(), this.searchText()),
-  );
+  availableYears = computed(() => {
+    const years = new Set<number>();
+    for (const album of [...this.unranked(), ...this.ranked(), ...this.listeningNeeded()]) {
+      if (album.year != null) years.add(album.year);
+    }
+    return Array.from(years).sort((a, b) => b - a);
+  });
+
+  filteredUnranked = computed(() => this.applyFilter(this.unranked()));
+  filteredRanked = computed(() => this.applyFilter(this.ranked()));
+  filteredListeningNeeded = computed(() => this.applyFilter(this.listeningNeeded()));
 
   private draggedAlbum: Album | null = null;
   private dragSource: 'ranked' | 'unranked' | 'listeningNeeded' | null = null;
@@ -88,6 +95,31 @@ export class LibraryComponent implements OnInit, OnDestroy {
 
   onSearchChange(value: string) {
     this.searchText.set(value);
+    this.selectedYear.set(null);
+  }
+
+  onYearSelect(value: number | null) {
+    this.selectedYear.set(value);
+    this.searchText.set('');
+  }
+
+  filterByArtist(album: Album) {
+    this.searchText.set(album.artist_name);
+    this.selectedYear.set(null);
+  }
+
+  filterByYear(album: Album) {
+    if (album.year == null) return;
+    this.selectedYear.set(album.year);
+    this.searchText.set('');
+  }
+
+  private applyFilter(albums: Album[]): Album[] {
+    const year = this.selectedYear();
+    if (year !== null) {
+      return albums.filter((a) => a.year === year);
+    }
+    return this.filterAlbums(albums, this.searchText());
   }
 
   private filterAlbums(albums: Album[], query: string): Album[] {

@@ -41,6 +41,7 @@ export interface Album {
   rank: number | null;
   listening_needed: boolean;
   has_cover: boolean;
+  year: number | null;
 }
 
 export interface GeoResult {
@@ -55,14 +56,16 @@ export interface ScanResult {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
-  private readonly API_URL = window.location.port === '4200'
-    ? 'http://localhost:3000/api'
-    : `${window.location.origin}/api`;
+  private readonly API_URL =
+    window.location.port === '4200' ? 'http://localhost:3000/api' : `${window.location.origin}/api`;
 
-  constructor(private http: HttpClient, private zone: NgZone) {}
+  constructor(
+    private http: HttpClient,
+    private zone: NgZone,
+  ) {}
 
   scanDirectory(path: string): Observable<ScanResult> {
     return this.http.post<ScanResult>(`${this.API_URL}/scan`, { path });
@@ -128,12 +131,20 @@ export class ApiService {
     return `${this.API_URL}/albums/${albumId}/cover`;
   }
 
-  saveRanking(ranked: string[], unranked: string[], listeningNeeded: string[]): Observable<{ ok: boolean }> {
-    return this.http.put<{ ok: boolean }>(`${this.API_URL}/albums/ranking`, { ranked, unranked, listeningNeeded });
+  saveRanking(
+    ranked: string[],
+    unranked: string[],
+    listeningNeeded: string[],
+  ): Observable<{ ok: boolean }> {
+    return this.http.put<{ ok: boolean }>(`${this.API_URL}/albums/ranking`, {
+      ranked,
+      unranked,
+      listeningNeeded,
+    });
   }
 
   listenToEvents(): Observable<{ mbid: string; name: string; type?: string }> {
-    return new Observable(subscriber => {
+    return new Observable((subscriber) => {
       const eventSource = new EventSource(`${this.API_URL}/events`);
 
       eventSource.addEventListener('artist-updated', (event: MessageEvent) => {

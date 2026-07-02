@@ -344,6 +344,7 @@ export function saveAlbums(scannedAlbums) {
       artist_mbid: album.artist_mbid,
       artist_name: artist ? artist.name : 'Unknown Artist',
       title: album.title,
+      year: album.year ?? null,
       rank: prev ? prev.rank : null,
       listening_needed: prev?.listening_needed ?? false,
       has_cover,

@@ -66,6 +66,7 @@ async function processAudioFile(filePath, mbids, albumMap) {
     const albumArtistMBIDs = metadata.common.musicbrainz_albumartistid;
     const albumId = metadata.common.musicbrainz_albumid;
     const albumTitle = metadata.common.album;
+    const albumYear = metadata.common.year;
 
     if (albumArtistMBIDs && albumArtistMBIDs.length > 0) {
       for (const mbid of albumArtistMBIDs) {
@@ -78,6 +79,7 @@ async function processAudioFile(filePath, mbids, albumMap) {
           id: albumId,
           artist_mbid: albumArtistMBIDs[0],
           title: albumTitle,
+          year: albumYear ?? null,
           cover: picture ? { data: picture.data, format: picture.format } : null,
         });
       }
