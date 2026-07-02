@@ -45,11 +45,20 @@
     "listening_needed": false
   },
   {
+    "id": "b633710d-5218-47a6-bccc-50741e679d84",
+    "artist_mbid": "cd66cb19-ed44-43e8-9849-645c2d12de0e",
+    "artist_name": "Victor Solf",
+    "title": "Still. There’s Hope",
+    "rank": 6,
+    "has_cover": true,
+    "listening_needed": false
+  },
+  {
     "id": "3e0e6be0-2b46-4213-bfdf-2d0dc731222f",
     "artist_mbid": "26ae99ef-7161-4e39-985d-d238a624064a",
     "artist_name": "Yvon",
     "title": "Yvon Im Kreis der Liebe",
-    "rank": 6,
+    "rank": 7,
     "has_cover": true,
     "listening_needed": false
   },
@@ -58,7 +67,7 @@
     "artist_mbid": "7682d624-9e0b-45b2-b7d0-d1b18b3ebd05",
     "artist_name": "Vieux Farka Touré",
     "title": "Ali",
-    "rank": 7,
+    "rank": 8,
     "has_cover": true,
     "listening_needed": false
   },
@@ -67,7 +76,7 @@
     "artist_mbid": "c5119d8a-ffee-48bc-99c3-f323bdf16d82",
     "artist_name": "Vektor",
     "title": "Terminal Redux",
-    "rank": 8,
+    "rank": 9,
     "has_cover": true,
     "listening_needed": false
   },
@@ -76,7 +85,7 @@
     "artist_mbid": "31745282-b1ea-4d62-939f-226b14d68e7c",
     "artist_name": "In Flames",
     "title": "The Jester Race ~ Black‐Ash Inheritance",
-    "rank": 9,
+    "rank": 10,
     "has_cover": true,
     "listening_needed": false
   },
@@ -85,7 +94,7 @@
     "artist_mbid": "42faad37-8aaa-42e4-a300-5a7dae79ed24",
     "artist_name": "Low",
     "title": "Double Negative",
-    "rank": 10,
+    "rank": 11,
     "has_cover": true,
     "listening_needed": false
   },
@@ -94,7 +103,7 @@
     "artist_mbid": "a69103f5-2825-468e-908c-1e1618ebce80",
     "artist_name": "Yukno",
     "title": "Ich kenne kein Weekend",
-    "rank": 11,
+    "rank": 12,
     "has_cover": true,
     "listening_needed": false
   },
@@ -103,15 +112,6 @@
     "artist_mbid": "d1353a0c-26fb-4318-a116-defde9c7c9ad",
     "artist_name": "Dido",
     "title": "No Angel",
-    "rank": 12,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "b633710d-5218-47a6-bccc-50741e679d84",
-    "artist_mbid": "cd66cb19-ed44-43e8-9849-645c2d12de0e",
-    "artist_name": "Victor Solf",
-    "title": "Still. There’s Hope",
     "rank": 13,
     "has_cover": true,
     "listening_needed": false
@@ -369,20 +369,11 @@
     "listening_needed": false
   },
   {
-    "id": "90e144ab-2286-418b-a36f-d7045e8c9b7b",
-    "artist_mbid": "169c4c28-858e-497b-81a4-8bc15e0026ea",
-    "artist_name": "Porcupine Tree",
-    "title": "Closure / Continuation",
-    "rank": 42,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
     "id": "fee77552-7209-43fb-9bd9-609599aec466",
     "artist_mbid": "d8f43dc5-4613-48ac-8c23-a62b82f8c67a",
     "artist_name": "Caroline Polachek",
     "title": "Desire, I Want to Turn Into You",
-    "rank": 43,
+    "rank": 42,
     "has_cover": true,
     "listening_needed": false
   },
@@ -391,7 +382,7 @@
     "artist_mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
     "artist_name": "James Blake",
     "title": "Trying Times",
-    "rank": 44,
+    "rank": 43,
     "has_cover": true,
     "listening_needed": false
   },
@@ -400,7 +391,7 @@
     "artist_mbid": "22a1f4d7-81ff-4216-ac06-3387da6bc118",
     "artist_name": "Machine Head",
     "title": "Of Kingdom and Crown",
-    "rank": 45,
+    "rank": 44,
     "has_cover": true,
     "listening_needed": false
   },
@@ -409,7 +400,7 @@
     "artist_mbid": "fc3e8983-1f51-4c80-b2b5-146bf2162dc2",
     "artist_name": "Tom Misch",
     "title": "What Kinda Music",
-    "rank": 46,
+    "rank": 45,
     "has_cover": true,
     "listening_needed": false
   },
@@ -418,7 +409,7 @@
     "artist_mbid": "6a65d878-fcd0-42cf-aff9-ca1d636a8bcc",
     "artist_name": "Foals",
     "title": "Holy Fire",
-    "rank": 47,
+    "rank": 46,
     "has_cover": true,
     "listening_needed": false
   },
@@ -427,7 +418,7 @@
     "artist_mbid": "e21857d5-3256-4547-afb3-4b6ded592596",
     "artist_name": "Gorillaz",
     "title": "Plastic Beach",
-    "rank": 48,
+    "rank": 47,
     "has_cover": true,
     "listening_needed": false
   },
@@ -436,7 +427,7 @@
     "artist_mbid": "fd87acc7-e0a0-4a45-bc2a-d2ab5c10be68",
     "artist_name": "Fontaines D.C.",
     "title": "Romance",
-    "rank": 49,
+    "rank": 48,
     "has_cover": true,
     "listening_needed": false
   },
@@ -445,7 +436,7 @@
     "artist_mbid": "8295ee00-0096-461d-95c7-c2263d2a4c6d",
     "artist_name": "Killswitch Engage",
     "title": "Killswitch Engage",
-    "rank": 50,
+    "rank": 49,
     "has_cover": true,
     "listening_needed": false
   },
@@ -454,7 +445,7 @@
     "artist_mbid": "ca891d65-d9b0-4258-89f7-e6ba29d83767",
     "artist_name": "Iron Maiden",
     "title": "Powerslave",
-    "rank": 51,
+    "rank": 50,
     "has_cover": true,
     "listening_needed": false
   },
@@ -463,7 +454,7 @@
     "artist_mbid": "6a8f332b-a26d-48c3-afd9-b167abfb4562",
     "artist_name": "Kerala Dust",
     "title": "Light, West",
-    "rank": 52,
+    "rank": 51,
     "has_cover": true,
     "listening_needed": false
   },
@@ -472,7 +463,7 @@
     "artist_mbid": "169c4c28-858e-497b-81a4-8bc15e0026ea",
     "artist_name": "Porcupine Tree",
     "title": "In Absentia",
-    "rank": 53,
+    "rank": 52,
     "has_cover": true,
     "listening_needed": false
   },
@@ -481,7 +472,7 @@
     "artist_mbid": "61604b45-8a91-4e33-a1b6-45d7b1fec4e5",
     "artist_name": "Destroyer",
     "title": "Kaputt",
-    "rank": 54,
+    "rank": 53,
     "has_cover": true,
     "listening_needed": false
   },
@@ -490,7 +481,7 @@
     "artist_mbid": "114f8840-8704-4b70-9673-904d60ecadc8",
     "artist_name": "Sylosis",
     "title": "The New Flesh",
-    "rank": 55,
+    "rank": 54,
     "has_cover": true,
     "listening_needed": false
   },
@@ -499,7 +490,7 @@
     "artist_mbid": "5318e774-f5b6-4ee0-82cb-4dcf398c3ff8",
     "artist_name": "Parcels",
     "title": "Day/Night",
-    "rank": 56,
+    "rank": 55,
     "has_cover": true,
     "listening_needed": false
   },
@@ -508,7 +499,7 @@
     "artist_mbid": "1ac970a1-2d7d-4ac6-b962-f242874f0a4a",
     "artist_name": "Apsilon",
     "title": "Haut wie Pelz",
-    "rank": 57,
+    "rank": 56,
     "has_cover": true,
     "listening_needed": false
   },
@@ -517,7 +508,7 @@
     "artist_mbid": "3cdb40fe-a63e-4bb9-b40d-17cda5f50979",
     "artist_name": "Little Simz",
     "title": "Sometimes I Might Be Introvert",
-    "rank": 58,
+    "rank": 57,
     "has_cover": true,
     "listening_needed": false
   },
@@ -526,7 +517,7 @@
     "artist_mbid": "8f6bd1e4-fbe1-4f50-aa9b-94c450ec0f11",
     "artist_name": "Portishead",
     "title": "Dummy",
-    "rank": 59,
+    "rank": 58,
     "has_cover": true,
     "listening_needed": false
   },
@@ -535,7 +526,7 @@
     "artist_mbid": "31745282-b1ea-4d62-939f-226b14d68e7c",
     "artist_name": "In Flames",
     "title": "Foregone",
-    "rank": 60,
+    "rank": 59,
     "has_cover": true,
     "listening_needed": false
   },
@@ -544,7 +535,7 @@
     "artist_mbid": "6897b46a-9236-4480-9ed7-300f6b85d62f",
     "artist_name": "Ninajirachi",
     "title": "I Love My Computer",
-    "rank": 61,
+    "rank": 60,
     "has_cover": true,
     "listening_needed": false
   },
@@ -553,7 +544,7 @@
     "artist_mbid": "6bbb3983-ce8a-4971-96e0-7cae73268fc4",
     "artist_name": "Jungle",
     "title": "Volcano",
-    "rank": 62,
+    "rank": 61,
     "has_cover": true,
     "listening_needed": false
   },
@@ -562,7 +553,7 @@
     "artist_mbid": "1789b5dc-e2ea-47aa-9ca0-48596dbb5091",
     "artist_name": "Sextile",
     "title": "Push",
-    "rank": 63,
+    "rank": 62,
     "has_cover": true,
     "listening_needed": false
   },
@@ -571,7 +562,7 @@
     "artist_mbid": "fd87acc7-e0a0-4a45-bc2a-d2ab5c10be68",
     "artist_name": "Fontaines D.C.",
     "title": "Skinty Fia go deo",
-    "rank": 64,
+    "rank": 63,
     "has_cover": true,
     "listening_needed": false
   },
@@ -580,7 +571,7 @@
     "artist_mbid": "cc0b7089-c08d-4c10-b6b0-873582c17fd6",
     "artist_name": "System of a Down",
     "title": "Toxicity",
-    "rank": 65,
+    "rank": 64,
     "has_cover": true,
     "listening_needed": false
   },
@@ -589,7 +580,7 @@
     "artist_mbid": "ada7a83c-e3e1-40f1-93f9-3e73dbc9298a",
     "artist_name": "Arctic Monkeys",
     "title": "AM",
-    "rank": 66,
+    "rank": 65,
     "has_cover": true,
     "listening_needed": false
   },
@@ -598,7 +589,7 @@
     "artist_mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
     "artist_name": "James Blake",
     "title": "Playing Robots Into Heaven",
-    "rank": 67,
+    "rank": 66,
     "has_cover": true,
     "listening_needed": false
   },
@@ -607,7 +598,7 @@
     "artist_mbid": "627a2192-1645-457f-a710-3d182619f2e4",
     "artist_name": "Bibiza",
     "title": "Wiener Schickeria",
-    "rank": 68,
+    "rank": 67,
     "has_cover": true,
     "listening_needed": false
   },
@@ -616,7 +607,7 @@
     "artist_mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711",
     "artist_name": "Radiohead",
     "title": "In Rainbows",
-    "rank": 69,
+    "rank": 68,
     "has_cover": true,
     "listening_needed": false
   },
@@ -625,7 +616,7 @@
     "artist_mbid": "68d3a2a5-d1da-418f-a9bb-3fc9ef9b27a8",
     "artist_name": "Barbarossa",
     "title": "Bloodlines",
-    "rank": 70,
+    "rank": 69,
     "has_cover": true,
     "listening_needed": false
   },
@@ -634,7 +625,7 @@
     "artist_mbid": "31745282-b1ea-4d62-939f-226b14d68e7c",
     "artist_name": "In Flames",
     "title": "Whoracle",
-    "rank": 71,
+    "rank": 70,
     "has_cover": true,
     "listening_needed": false
   },
@@ -643,7 +634,7 @@
     "artist_mbid": "169c4c28-858e-497b-81a4-8bc15e0026ea",
     "artist_name": "Porcupine Tree",
     "title": "Deadwing",
-    "rank": 72,
+    "rank": 71,
     "has_cover": true,
     "listening_needed": false
   },
@@ -652,7 +643,7 @@
     "artist_mbid": "9974d324-3d58-4f93-812b-41eb3ca75eed",
     "artist_name": "Change",
     "title": "Miracles",
-    "rank": 73,
+    "rank": 72,
     "has_cover": true,
     "listening_needed": false
   },
@@ -661,7 +652,7 @@
     "artist_mbid": "ca891d65-d9b0-4258-89f7-e6ba29d83767",
     "artist_name": "Iron Maiden",
     "title": "Senjutsu",
-    "rank": 74,
+    "rank": 73,
     "has_cover": true,
     "listening_needed": false
   },
@@ -670,7 +661,7 @@
     "artist_mbid": "24e1b53c-3085-4581-8472-0b0088d2508c",
     "artist_name": "Avenged Sevenfold",
     "title": "Hail to the King",
-    "rank": 75,
+    "rank": 74,
     "has_cover": true,
     "listening_needed": false
   },
@@ -679,7 +670,7 @@
     "artist_mbid": "42faad37-8aaa-42e4-a300-5a7dae79ed24",
     "artist_name": "Low",
     "title": "HEY WHAT",
-    "rank": 76,
+    "rank": 75,
     "has_cover": true,
     "listening_needed": false
   },
@@ -688,7 +679,7 @@
     "artist_mbid": "91511517-ef93-4d71-a0f0-c858272af4a7",
     "artist_name": "Balthazar",
     "title": "Sand",
-    "rank": 77,
+    "rank": 76,
     "has_cover": true,
     "listening_needed": false
   },
@@ -697,7 +688,7 @@
     "artist_mbid": "e0c97a4d-c392-41a9-a374-57af3e3eeab3",
     "artist_name": "Geese",
     "title": "Getting Killed",
-    "rank": 78,
+    "rank": 77,
     "has_cover": true,
     "listening_needed": false
   },
@@ -706,7 +697,7 @@
     "artist_mbid": "680466d6-f05b-44f6-858d-625d1b5087f6",
     "artist_name": "Lianne La Havas",
     "title": "Lianne La Havas",
-    "rank": 79,
+    "rank": 78,
     "has_cover": true,
     "listening_needed": false
   },
@@ -715,7 +706,7 @@
     "artist_mbid": "7527f6c2-d762-4b88-b5e2-9244f1e34c46",
     "artist_name": "Deftones",
     "title": "private music",
-    "rank": 80,
+    "rank": 79,
     "has_cover": true,
     "listening_needed": false
   },
@@ -724,7 +715,7 @@
     "artist_mbid": "8a9ac1cb-faae-434e-8d60-b139a3707dfc",
     "artist_name": "MIKA",
     "title": "Life in Cartoon Motion",
-    "rank": 81,
+    "rank": 80,
     "has_cover": true,
     "listening_needed": false
   },
@@ -733,7 +724,7 @@
     "artist_mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711",
     "artist_name": "Radiohead",
     "title": "OK Computer",
-    "rank": 82,
+    "rank": 81,
     "has_cover": true,
     "listening_needed": false
   },
@@ -742,7 +733,7 @@
     "artist_mbid": "583066fd-c79d-4bb3-9ed0-da7adec70a7b",
     "artist_name": "Ferge X Fisherman",
     "title": "Blinded by the Neon",
-    "rank": 83,
+    "rank": 82,
     "has_cover": true,
     "listening_needed": false
   },
@@ -751,7 +742,7 @@
     "artist_mbid": "7df4c4de-3181-4a69-bd36-9d663970cebb",
     "artist_name": "Alex G",
     "title": "God Save the Animals",
-    "rank": 84,
+    "rank": 83,
     "has_cover": true,
     "listening_needed": false
   },
@@ -760,7 +751,7 @@
     "artist_mbid": "1f5ff245-2837-4d4a-a609-e93e544478c3",
     "artist_name": "Trivium",
     "title": "In the Court of the Dragon",
-    "rank": 85,
+    "rank": 84,
     "has_cover": true,
     "listening_needed": false
   },
@@ -769,7 +760,7 @@
     "artist_mbid": "d4d08a6d-5d08-4919-acb6-b4b7bae3ec00",
     "artist_name": "CATT",
     "title": "Change",
-    "rank": 86,
+    "rank": 85,
     "has_cover": true,
     "listening_needed": false
   },
@@ -778,7 +769,7 @@
     "artist_mbid": "af37c51c-0790-4a29-b995-456f98a6b8c9",
     "artist_name": "Vampire Weekend",
     "title": "Only God Was Above Us",
-    "rank": 87,
+    "rank": 86,
     "has_cover": true,
     "listening_needed": false
   },
@@ -787,7 +778,7 @@
     "artist_mbid": "8538e728-ca0b-4321-b7e5-cff6565dd4c0",
     "artist_name": "Depeche Mode",
     "title": "Ultra",
-    "rank": 88,
+    "rank": 87,
     "has_cover": true,
     "listening_needed": false
   },
@@ -796,7 +787,7 @@
     "artist_mbid": "b38225b8-8e5f-42aa-bcdc-7bae5b5bdab3",
     "artist_name": "King Crimson",
     "title": "In the Court of the Crimson King",
-    "rank": 89,
+    "rank": 88,
     "has_cover": true,
     "listening_needed": false
   },
@@ -805,7 +796,7 @@
     "artist_mbid": "a0e8a1b1-5f8f-475a-a253-17415c17d0ff",
     "artist_name": "Mac Miller",
     "title": "Swimming",
-    "rank": 90,
+    "rank": 89,
     "has_cover": true,
     "listening_needed": false
   },
@@ -814,7 +805,7 @@
     "artist_mbid": "fa97dd36-1b82-43d7-a6e4-2adeafd59cef",
     "artist_name": "Fleet Foxes",
     "title": "Fleet Foxes",
-    "rank": 91,
+    "rank": 90,
     "has_cover": true,
     "listening_needed": false
   },
@@ -823,7 +814,7 @@
     "artist_mbid": "8bfac288-ccc5-448d-9573-c33ea2aa5c30",
     "artist_name": "Red Hot Chili Peppers",
     "title": "By the Way",
-    "rank": 92,
+    "rank": 91,
     "has_cover": true,
     "listening_needed": false
   },
@@ -832,7 +823,7 @@
     "artist_mbid": "054b11f5-209b-4f18-a087-62710a34e09e",
     "artist_name": "Kommode",
     "title": "Analog Dance Music",
-    "rank": 93,
+    "rank": 92,
     "has_cover": true,
     "listening_needed": false
   },
@@ -841,7 +832,7 @@
     "artist_mbid": "456eabce-d1dd-4481-a206-36ab4f2eaeb8",
     "artist_name": "Herbert Grönemeyer",
     "title": "4630 Bochum",
-    "rank": 94,
+    "rank": 93,
     "has_cover": true,
     "listening_needed": false
   },
@@ -850,7 +841,7 @@
     "artist_mbid": "bd13909f-1c29-4c27-a874-d4aaf27c5b1a",
     "artist_name": "Fleetwood Mac",
     "title": "Rumours",
-    "rank": 95,
+    "rank": 94,
     "has_cover": true,
     "listening_needed": false
   },
@@ -859,7 +850,7 @@
     "artist_mbid": "321531fc-db73-4ffa-a959-61a61a2908c1",
     "artist_name": "Erykah Badu",
     "title": "Baduizm",
-    "rank": 96,
+    "rank": 95,
     "has_cover": true,
     "listening_needed": false
   },
@@ -868,7 +859,7 @@
     "artist_mbid": "abc31be8-02b2-4bb1-867d-604d50b7be78",
     "artist_name": "L’Impératrice",
     "title": "Tako Tsubo",
-    "rank": 97,
+    "rank": 96,
     "has_cover": true,
     "listening_needed": false
   },
@@ -877,7 +868,7 @@
     "artist_mbid": "ca891d65-d9b0-4258-89f7-e6ba29d83767",
     "artist_name": "Iron Maiden",
     "title": "Brave New World",
-    "rank": 98,
+    "rank": 97,
     "has_cover": true,
     "listening_needed": false
   },
@@ -886,7 +877,7 @@
     "artist_mbid": "eeb1195b-f213-4ce1-b28c-8565211f8e43",
     "artist_name": "Guns N’ Roses",
     "title": "Appetite for Destruction",
-    "rank": 99,
+    "rank": 98,
     "has_cover": true,
     "listening_needed": false
   },
@@ -895,7 +886,7 @@
     "artist_mbid": "cf0f4547-ffbd-4011-98ad-0bec9ba022db",
     "artist_name": "Kings of Convenience",
     "title": "Declaration of Dependence",
-    "rank": 100,
+    "rank": 99,
     "has_cover": true,
     "listening_needed": false
   },
@@ -904,7 +895,7 @@
     "artist_mbid": "91511517-ef93-4d71-a0f0-c858272af4a7",
     "artist_name": "Balthazar",
     "title": "Fever",
-    "rank": 101,
+    "rank": 100,
     "has_cover": true,
     "listening_needed": false
   },
@@ -913,7 +904,7 @@
     "artist_mbid": "b46efb1e-ecd9-4044-9820-14c64c2d657e",
     "artist_name": "Romy",
     "title": "Mid Air",
-    "rank": 102,
+    "rank": 101,
     "has_cover": true,
     "listening_needed": false
   },
@@ -922,7 +913,7 @@
     "artist_mbid": "66fc5bf8-daa4-4241-b378-9bc9077939d2",
     "artist_name": "Tool",
     "title": "Lateralus",
-    "rank": 103,
+    "rank": 102,
     "has_cover": true,
     "listening_needed": false
   },
@@ -931,7 +922,7 @@
     "artist_mbid": "6a8f332b-a26d-48c3-afd9-b167abfb4562",
     "artist_name": "Kerala Dust",
     "title": "Violet Drive",
-    "rank": 104,
+    "rank": 103,
     "has_cover": true,
     "listening_needed": false
   },
@@ -940,7 +931,7 @@
     "artist_mbid": "437a0e49-c6ae-42f6-a6c1-84f25ed366bc",
     "artist_name": "Bon Iver",
     "title": "22, a Million",
-    "rank": 105,
+    "rank": 104,
     "has_cover": true,
     "listening_needed": false
   },
@@ -949,7 +940,7 @@
     "artist_mbid": "1ed00158-c6a3-45cd-819c-2f91997fc480",
     "artist_name": "Sister Sledge",
     "title": "We Are Family",
-    "rank": 106,
+    "rank": 105,
     "has_cover": true,
     "listening_needed": false
   },
@@ -958,7 +949,7 @@
     "artist_mbid": "4b585938-f271-45e2-b19a-91c634b5e396",
     "artist_name": "Kate Bush",
     "title": "Hounds of Love",
-    "rank": 107,
+    "rank": 106,
     "has_cover": true,
     "listening_needed": false
   },
@@ -967,7 +958,7 @@
     "artist_mbid": "fd87acc7-e0a0-4a45-bc2a-d2ab5c10be68",
     "artist_name": "Fontaines D.C.",
     "title": "A Hero's Death",
-    "rank": 108,
+    "rank": 107,
     "has_cover": true,
     "listening_needed": false
   },
@@ -976,7 +967,7 @@
     "artist_mbid": "456eabce-d1dd-4481-a206-36ab4f2eaeb8",
     "artist_name": "Herbert Grönemeyer",
     "title": "Mensch",
-    "rank": 109,
+    "rank": 108,
     "has_cover": true,
     "listening_needed": false
   },
@@ -985,27 +976,9 @@
     "artist_mbid": "f57e14e4-b030-467c-b202-539453f504ec",
     "artist_name": "Children of Bodom",
     "title": "Follow the Reaper",
-    "rank": 110,
+    "rank": 109,
     "has_cover": true,
     "listening_needed": false
-  },
-  {
-    "id": "74a35922-10ec-49a4-ba97-918f1b1eae20",
-    "artist_mbid": "25ab7547-a4d2-480b-b028-c7f3497bc858",
-    "artist_name": "Men I Trust",
-    "title": "Equus Asinus",
-    "rank": null,
-    "has_cover": true,
-    "listening_needed": false
-  },
-  {
-    "id": "ee7cd062-576c-4114-b1cd-19e087e9c981",
-    "artist_mbid": "e21857d5-3256-4547-afb3-4b6ded592596",
-    "artist_name": "Gorillaz",
-    "title": "The Mountain",
-    "rank": null,
-    "has_cover": true,
-    "listening_needed": true
   },
   {
     "id": "290fd60c-a6d1-4dca-ad4f-0876eff5d680",
@@ -1075,6 +1048,33 @@
     "artist_mbid": "61604b45-8a91-4e33-a1b6-45d7b1fec4e5",
     "artist_name": "Destroyer",
     "title": "Labyrinthitis",
+    "rank": null,
+    "has_cover": true,
+    "listening_needed": true
+  },
+  {
+    "id": "ee7cd062-576c-4114-b1cd-19e087e9c981",
+    "artist_mbid": "e21857d5-3256-4547-afb3-4b6ded592596",
+    "artist_name": "Gorillaz",
+    "title": "The Mountain",
+    "rank": null,
+    "has_cover": true,
+    "listening_needed": true
+  },
+  {
+    "id": "90e144ab-2286-418b-a36f-d7045e8c9b7b",
+    "artist_mbid": "169c4c28-858e-497b-81a4-8bc15e0026ea",
+    "artist_name": "Porcupine Tree",
+    "title": "Closure / Continuation",
+    "rank": null,
+    "has_cover": true,
+    "listening_needed": true
+  },
+  {
+    "id": "74a35922-10ec-49a4-ba97-918f1b1eae20",
+    "artist_mbid": "25ab7547-a4d2-480b-b028-c7f3497bc858",
+    "artist_name": "Men I Trust",
+    "title": "Equus Asinus",
     "rank": null,
     "has_cover": true,
     "listening_needed": true
